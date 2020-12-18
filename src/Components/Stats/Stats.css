@@ -1,0 +1,212 @@
+
+
+.jugador{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 5rem;
+    font-family:  Arial;
+    margin-bottom: 40px;
+
+}
+.set_actual{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    font-size: 5em;
+    color: white;
+    font-family: arial;
+    text-align: center;
+}
+.nombres{
+    font-size: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px 0px;
+}
+.stats{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:0px 30px;
+}
+.pelota{
+    width: 30px;
+    width: 95px;
+}
+.nombre{
+    width: 66%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 124px;
+}
+
+.nombre_jugador_stats{
+    text-align: center;
+    min-width: 35%;
+    font-weight: bold;
+    font-family: arial;
+    color: #e5ec0a;
+    font-size: 0.8em;
+
+}
+.contenedor{width: 100%;
+    padding: 0px 60px;
+    padding-top: 5%;
+    color: black;}
+.iconoSaque_hidden{
+        visibility: hidden;
+}
+.set{
+    color:#ffffff;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: -153px;
+    width: 140px;
+    text-align: center;
+}
+.set2{
+    font-family:  Arial;
+    color: #e5ec0a;
+    font-size: 58px;
+
+}
+body{background-color:#114d0b !important;
+overflow:hidden !important;
+cursor:none !important;}
+.logo{
+    width: 350px;
+}
+.divLogo{
+ 
+    align-self: center;
+}
+.stats_jugador{
+ 
+    text-align: center;
+    min-width: 35%;
+    font-weight: bold;
+    font-family: arial;
+    color: #e5ec0a;
+
+}
+.logo-partido{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.estaditicas{
+    font-size: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px 0px;
+}
+.c_central{
+    color:white;
+    font-family: arial;
+    text-align: center;
+    width: 30%;
+}
+.pista{
+    margin-bottom: 45px;
+    width: 100%;
+    color:#ffffff;
+    font-size: 55px;
+    margin-top: 50px;
+    font-family:  Arial;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 60px;
+}
+.tamaño_puntos_stats{    font-size: 6rem;}
+.tiempo{
+    color: white;
+    /* text-align: end; */
+    font-size: 60px;
+    align-self: center;
+}
+.paddingFix{margin-bottom: 40px;}
+.puntos{
+    font-family: Arial;
+    DISPLAY: FLEX;
+    justify-content: space-between;
+    font-weight: bold;
+    color: white;
+}
+.logos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px 65px;
+    padding-top:0px;
+}
+@media (max-width: 1800px){
+    .pista{font-size: 50px;}
+    .jugador{font-size: 4.5rem;}
+    .set2{font-size: 3rem;}
+}
+@media (max-width: 1730px){
+    .pelota{width: 90px;}
+}
+@media (max-width: 1611px){
+    .jugador{font-size: 4rem;}
+    .set2{font-size: 3rem;}
+    .logo{width: 360px;}
+    .tiempo{font-size: 4rem;}
+    .pista{font-size: 45px;}
+}
+@media (max-width: 1458px){
+    .jugador{font-size: 3.5rem;}
+    .set2{font-size: 3rem;}
+    .pista{font-size: 40px;}
+}
+@media (max-width: 1538px){
+    .pelota{    width: 70px;}
+    .logo{width: 300px;}
+    .tiempo{font-size: 3.5rem;}
+}
+@media (max-width: 1300px){
+    .jugador{font-size: 3rem;}
+    .set2{font-size: 2.5rem;}
+    .logo{width: 250px;}
+    .tiempo{font-size: 3rem;}
+    .pista{font-size: 35px;}
+}
+@media (max-width: 1154px){
+    .jugador{font-size: 2.5rem;}
+    .set2{font-size: 2.5rem;}
+  
+    .logo{width: 180px;}
+    
+}
+@media (max-width: 768px){
+    .jugador{font-size: 2rem;}
+    .set2{font-size: 1.5rem;}
+    .pista{font-size: 2rem;margin: 20px 0px;}
+    .logo{width: 180px;}
+    .pelota{width: 40px;}
+    .nombre{margin-right: 45px;}
+    .set{width: 100px;}
+    .logo {width: 100px;}
+    .tiempo {font-size: 2rem;}
+}
+@media (max-width: 690px){
+    .set {width: 90px;}
+}
+@media (max-width: 670px){
+    .jugador {font-size: 1.5rem;}
+    .pista{font-size: 1.5rem;}
+    .tiempo {font-size: 1.5rem;}
+}

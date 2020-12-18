@@ -1,0 +1,18 @@
+.HeadContainer{
+    height: 81px;
+    z-index: 999;
+    position: sticky;
+    background-color: white;
+    top:0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0,0,0,.14);
+    box-shadow: 1px 1px transparent;
+}
+.Logo{
+
+    height: 80px;
+}
+.head{
+    height:40px;
+}

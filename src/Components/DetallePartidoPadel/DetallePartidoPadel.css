@@ -1,0 +1,185 @@
+.PartidoPadel{
+    color: #0B0B0B;
+    width: 100%;
+    padding: 16px;
+    background-color:#114d0b!important;
+}
+
+.horaPadel{
+    display: inline-flex;
+}
+.nombrePadel{
+
+    width: 80%;
+    color:white;
+    display:inline-block;
+}
+
+.informacionPadel{
+    padding:16px;
+    text-align: left;
+    border: 1px solid;
+    border-color: lightgrey;
+    border-radius: 18px;
+}
+.juegosPadel{
+
+    margin-right:8px;
+}
+.iconoSaquePadel{
+    height: 70px;
+}
+.iconoSaque_hiddenPadel{
+    visibility: hidden;
+    height: 40px;
+}
+.puntos_pPadel{
+    text-align: right;
+    color:#d39e00;
+    width:30%;
+
+    align-self: end;
+}
+.juegosPadel {
+    width:40px;
+}
+.setsPadel{
+    color:white;
+}
+
+.iconoPadel{
+    align-items: center;
+    display: flex;
+}
+.rondaPadel{
+    width: 33%;
+    color:white;
+    text-align: center;
+
+}
+.pistaPadel{
+    width: 33%;
+    color:white;
+}
+
+.JugadorPadel{
+    font-size: 3em;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info_Padel{
+    font-size: 2.2em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.hora_previstaPadel{
+    color:white;
+    display: flex;
+    align-items: center;
+}
+.info1Padel{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    align-self: end;
+}
+.info2Padel{
+
+    display: flex;
+    width: 30%;
+    flex-direction: row;
+    align-self: end;
+    justify-content:space-evenly;
+}
+
+.opacidadPadel{
+    opacity:0.7;
+}
+.pelotaPadel{
+    width:60%;
+}
+.setsTotalPadel{
+    margin-left: 30px;
+}
+.pierdePadel{
+    font-weight: normal;
+}
+.ganaPadel{
+    font-weight: bold;
+}
+.infoPadel .VivoPadel{
+    color: #ff0303;
+    opacity: 1;
+}
+.VivoPadel{
+    width: 33%;
+    text-align: end;
+}
+.pistaPadel{
+    text-align: left;
+}
+.auxiliar_flexPadel{
+    display: flex;
+    flex-direction: row;
+}
+.flex2Padel{
+    display: flex;
+    text-align: right;
+    flex-direction: row;
+    align-items: center;
+    width: 20%;
+}
+
+
+@media (max-width:1240px){
+    .info_Padel{
+        font-size: 1.8em;
+    }
+}
+@media (max-width:1208px){
+    .JugadorPadel{font-size: 1.5em;}
+}
+
+@media (max-width:768px){
+
+    .info_Padel{
+        font-size: 1rem;
+    }
+    .rondaPadel{
+        width:40%;
+    }
+    .iconoSaquePadel{height: 35px;}
+    .setsTotalPadel{
+        text-align: left;
+        margin-left: 20px;
+        position: inherit;
+    }
+    .puntos_pPadel{
+        width:20px;
+ 
+    }
+
+    .JugadorPadel{font-size: 1.5em;}
+    .juegosPadel {
+        width:40px;
+    }
+    .setsPadel{
+        width:10px;
+
+    }
+}
+@media (max-width:430px){
+    .JugadorPadel{font-size: 1em;}
+    .nombrePadel{
+
+        width: 100%;
+    }
+    .JugadorPadel{font-size: 15px;}
+   .iconoSaquePadel{height: 28px;}
+   .info_Padel{
+    font-size: 1rem;
+}
+}

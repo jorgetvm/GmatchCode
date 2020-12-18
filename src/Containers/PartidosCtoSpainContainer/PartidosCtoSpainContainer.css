@@ -1,0 +1,69 @@
+.PartidosCtoSpainContainer{
+    background-color:#114d0b!important;
+    margin: 0px;
+    padding: 0px;
+    max-width: 2500px;
+    display: flex;
+    flex-direction: column;
+    
+
+
+    text-align: center;
+}
+.tituloEliminatoria{
+    color:white;
+    margin: 15px 0px;
+    font-size: 3em;
+
+}
+.flexSpain{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 0px;
+    cursor:pointer;
+    width: 20%;
+ 
+}
+.chueron{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+    font-size: 20px;
+}
+.infoTorneoSpain{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.genero{
+    font-family: Light;
+    font-style: italic;
+    opacity: 0.5;
+    text-align: left;
+    padding-left: 10px;
+}
+@media (max-width:768px){
+    .tituloEliminatoria{
+        font-size: 1.8em;
+    }
+    .PartidosCtoSpainContainer h2,.PartidosCtoSpainContainer .genero{
+        text-align:left;
+ 
+    }
+    .PartidosContainer h2{
+        font-size: 20px;
+    }
+    .Partido{
+        width: 100%;
+        margin-bottom: 10px;
+        padding-top: 0px;
+        padding-bottom:0px;
+    }
+    .torneo_grande{
+        border: none;
+    }
+
+}

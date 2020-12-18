@@ -1,0 +1,14 @@
+.Nombre{
+    font-size: 14px;
+    text-align: center;
+}
+.Info{
+    font-size: 12px; 
+}
+li,ul {
+    list-style-type: none;
+}
+
+.padding0{
+    padding:0px;
+}

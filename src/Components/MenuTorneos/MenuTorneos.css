@@ -1,0 +1,7 @@
+.Card{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: auto;
+    min-width: 400px;
+}

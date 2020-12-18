@@ -1,0 +1,81 @@
+.PartidosPadelContainer{
+    background-color:#114d0b!important;
+    margin: 0px;
+    padding: 0px;
+    max-width: 2500px;
+    display: flex;
+    flex-direction: column;
+    
+    height: 80rem;
+
+    text-align: center;
+}
+.flexSpain{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 0px;
+    cursor:pointer;
+ 
+}
+.logos_padel{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.chueron{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+    font-size: 20px;
+}
+.infoTorneoPadel{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.genero{
+    font-family: Light;
+    font-style: italic;
+    opacity: 0.5;
+    text-align: left;
+    padding-left: 10px;
+}
+.logo_padel{
+    width: 270px;
+}
+.logo_padel2{
+    width: 230px;
+}
+.logo_padel3{
+    width: 200px;
+}
+@media (max-width:1318px){
+.logo_padel,.logo_padel2,.logo_padel3{
+    width: 150px;
+}
+}
+@media (max-width:768px){
+    .PartidosPadelContainer h2,.PartidosPadelContainer .genero{
+        text-align:left;
+ 
+    }
+    .logos{    flex-wrap: wrap;}
+    .PartidosContainer h2{
+        font-size: 20px;
+    }
+    .Partido{
+        width: 100%;
+        margin-bottom: 10px;
+        padding-top: 0px;
+        padding-bottom:0px;
+    }
+    .torneo_grande{
+        border: none;
+    }
+
+}

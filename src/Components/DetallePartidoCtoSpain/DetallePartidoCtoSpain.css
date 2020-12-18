@@ -1,0 +1,175 @@
+.PartidoSpain{
+    color: #0B0B0B;
+    min-width: 600px;
+    width: 33%;
+    padding: 16px;
+    background-color:#114d0b!important;
+}
+.tamanoNumeros{
+    font-size: 1.5em;
+}
+
+.horaSpain{
+    display: inline-flex;
+}
+.nombreSpain{
+    align-self: center;
+    width: 280px;
+    min-width: 280px;
+    color:white;
+    display:inline-block;
+}
+
+.informacionSpain{
+    padding: 8px;
+    text-align: left;
+    border: 1px solid;
+    border-color: lightgrey;
+    border-radius: 18px;
+}
+.juegosSpain{
+
+    margin-right:8px;
+}
+.iconoSaqueSpain{
+    height: 55px;
+}
+.iconoSaque_hiddenSpain{
+    visibility: hidden;
+    height: 55px;
+}
+.puntos_pSpain{
+
+    text-align: right;
+    color:#d39e00;
+
+
+    align-self: end;
+}
+.juegosSpain {
+    width:40px;
+}
+.setsSpain{
+    color:white;
+
+    margin-right: 15px;
+}
+
+.iconoSpain{
+    align-items: center;
+    display: flex;
+}
+.pistaSpain{
+    margin-right: 15px;
+    color:white;
+}
+.rondaSpain{
+    display: flex;
+}
+.JugadorSpain{
+    font-size: 2.5em;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info_Spain{
+    font-size: 1.8em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.hora_previstaSpain{
+    display: flex;
+    align-items: center;
+}
+.info1Spain{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-self: end;
+}
+.info2Spain{
+   
+    margin-left: 36px;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: flex-end;
+}
+.rondaSpain{
+    color: #d6b44e;
+}
+.opacidadSpain{
+    opacity:0.7;
+}
+.pelotaSpain{
+    align-self: center;
+}
+.setsTotalSpain{
+    margin-left: 30px;
+}
+.pierdeSpain{
+    font-weight: normal;
+}
+.ganaSpain{
+    font-weight: bold;
+}
+.infoSpain .VivoSpain{
+    color: #e84b4b;
+    opacity: 1;
+}
+.auxiliar_flexSpain{
+    display: flex;
+    flex-direction: row;
+}
+.flex2Spain{
+    align-items: baseline;
+    width:20%;
+}
+@media(max-width:1200px){
+
+    body{
+        overflow: auto !important;}
+    .PartidoSpain{
+min-width: 100%;
+    }
+}
+@media (max-width:768px){
+    .info_Spain{
+        font-size: 1.3em;
+    }
+
+    .pelotaSpain{
+        width: 30px;
+        height: 30px;
+    }
+  
+    .iconoSaqueSpain{height: 35px;}
+    .setsTotalSpain{
+        text-align: left;
+        margin-left: 20px;
+        position: inherit;
+    }
+    .info2Spain{
+     margin-left: 15px;
+    }
+    .JugadorSpain{font-size: 25px;}
+    .juegosSpain {
+        width:40px;
+    }
+    .setsSpain{
+        width:10px;
+        margin-right: 15px;
+    }
+}
+@media (max-width:480px){
+    .nombreSpain{
+
+        min-width: 15%;
+        max-width: 49%;
+    }
+
+    .JugadorSpain{font-size: 20px;}
+   .iconoSaqueSpain{height: 28px;}
+}

@@ -1,0 +1,148 @@
+.Partido{
+    color: #0B0B0B;
+    width:500px;
+    padding: 16px;
+    background-color:white;
+}
+.Partido:hover{
+    background-color:#eeeeee;
+}
+.hora{
+    display: inline-flex;
+}
+.nombre{
+
+    width: 250px;
+    color:black;
+    display:inline-block;
+}
+
+.informacion{
+    padding: 8px;
+    text-align: left;
+    border: 1px solid;
+    border-color: lightgrey;
+    border-radius: 18px;
+}
+.juegos{
+    margin-right:8px;
+}
+.iconoSaque{
+    height: 40px;
+}
+.iconoSaque_hidden{
+    visibility: hidden;
+    height: 40px;
+}
+.puntos_p{
+    text-align: right;
+    color:#E59866;
+    width:20px;
+    margin-right: 10px;
+    align-self: end;
+}
+.juegos {
+    width:40px;
+}
+.sets{
+    width:10px;
+    margin-right: 15px;
+}
+.info{
+    opacity: 0.8;
+    font-family: inherit;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+}
+.icono{
+    align-items: center;
+    display: flex;
+}
+.pista{
+    display: flex;
+}
+.ronda{
+    display: flex;
+}
+.Jugador{
+    font-size: 30px;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info_{
+    width: 100%;
+    opacity: 0.8;
+    font-family: inherit;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+}
+.hora_prevista{
+    display: flex;
+    align-items: center;
+}
+.info1{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-self: end;
+}
+.info2{
+    Padding-right: 1%;
+    display: flex;
+    flex-direction: row;
+    align-self: end;
+}
+
+.opacidad{
+    opacity:0.7;
+}
+.setsTotal{
+    margin-left: 30px;
+}
+.pierde{
+    font-weight: normal;
+}
+.gana{
+    font-weight: bold;
+}
+.info .Vivo{
+    color: red;
+    opacity: 1;
+}
+.auxiliar_flex{
+    display: flex;
+    flex-direction: row;
+}
+.flex2{align-items: baseline;}
+@media (max-width:768px){
+    .iconoSaque{height: 35px;}
+    .setsTotal{
+        text-align: left;
+        margin-left: 20px;
+        position: inherit;
+    }
+    .puntos_p{
+        width:20px;
+        margin-right: 10px;
+    }
+    .Jugador{font-size: 25px;}
+    .juegos {
+        width:40px;
+    }
+    .sets{
+        width:10px;
+        margin-right: 10px;
+    }
+}
+@media (max-width:430px){
+    .nombre{
+
+        width: 100%;
+    }
+    .Jugador{font-size: 20px;}
+   .iconoSaque{height: 28px;}
+}

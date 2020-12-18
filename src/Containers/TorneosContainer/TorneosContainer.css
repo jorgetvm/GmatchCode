@@ -1,0 +1,14 @@
+.TorneosContainer{
+    background-color: aliceblue;
+    margin: 0px;
+    padding: 8px;
+}
+.Titulo{
+    font-size: 20px;
+    color: gray;
+}
+@media ( max-width:768px ){
+    .TorneosContainer{
+        display: none;
+    }
+}
