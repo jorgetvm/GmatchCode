@@ -6,6 +6,7 @@ import head from '../../Imagenes/head.svg';
 import LOGO_FPRM_white from '../../Imagenes/LOGO_FPRM_white.png';
 import MiraDigital_white from '../../Imagenes/MiraDigital_white.png';
 import joma from '../../Imagenes/joma.png';
+import pista3 from '../../Imagenes/pista3.jpg';
 
 import moment from 'moment';
 import './Partido_tv.css';
@@ -33,11 +34,13 @@ console.log("partido_tv")
         const infoPartido =partido;
         
 const {resultado,arbitro,torneo} = infoPartido;
-var nombreTorneo;
+var nombreTorneo,genero;
 if(torneo){
     nombreTorneo=torneo.nombre;
+    genero=torneo.genero;
 }else{
     nombreTorneo="Campeonato de España";
+    genero="Masculino";
 }
 var autoarbitraje=0;
 let horade_inicio;
@@ -98,25 +101,7 @@ console.log(resultado)
     sets_j2=0; 
 }*/
 
-const ahora_h=moment.utc().local().format('HH');
-   const ahora_m=moment().format('mm');
-   const inicio=moment.utc(hora_inicio).format('HH');
-   const inicio_h=moment.utc(hora_inicio).format('HH');
-   const inicio_m=moment.utc(hora_inicio).local().format('mm');
-console.log(hora_inicio);
-const innicio=moment.utc(hora_inicio).format('YYYY/MM/DD HH:mm');
-const innicio2=moment.utc(hora_inicio).local();
-console.log('inicio' + innicio);
-const inico2=moment.utc(innicio).format('YYYY/MM/DD HH:mm');
-console.log('iniciow' + inico2);
-const ahora=moment.utc().local();
 
-
-console.log('ahora' + innicio2.diff(ahora,'minutes'));
-const diferencia=moment.duration().subtract(innicio2);
-
-
-console.log('diferencia' + moment.utc(diferencia).format('HH:mm'));
 const ahoraa=moment.utc().local().format('YYYYMMDD HH:mm');
 const innicio3=moment.utc(hora_inicio).format('YYYYMMDD HH:mm');
 console.log('ahora ' + ahoraa + '; inicio: ' + innicio3);
@@ -183,55 +168,117 @@ console.log(horade_inicio)
      
         return (
         <Fragment>
+        <div className="contianerPartidoTv">
+            <div className="logoPista">
+                <img className="logo_pista"  src={GMatch_NEW_WHITE}/>
+                <div className="pistaTv texto_info">{`Pista ${pista}`}</div>
+            </div>
+            <div className="nombretorneo texto_info">
+                <div className="nombre_hora">
+                    <div>{`${nombreTorneo}`} {`${genero}`} </div>
+                    <div>{mostrar_hora && (<div className="tiempoTv">{` ${h}:${min}`}</div>)}</div>
+                </div>
+            </div>
+            <div className="resultadosTv">
+                <div className="nombresTv texto_nombres">
+                    <div className="jugador1Tv">
+                        <div className="jugadorTv">
+                            <div className="saque "><img className={`pelotaTv ${claseSaque1}`} src={pelota} alt=""/></div>
+                            <span className="nombre_jugador">{jugador1}</span>
+                        </div>
+                        <div className="resultadoTv">
+                            <div className="grupo1">
+                                <div className="setTv ">{set1_j1}</div>
+                                <div className="setTv ">{set2_j1}</div>
+                                <div className="setTv">{set3_j1}</div>
+                            </div>
+                            <div className="grupo2">
+                                <div className="puntosTv ">{pj1}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="jugador2Tv">
+                        <div className="jugadorTv">
+                            <div className="saque "><img className={`pelotaTv ${claseSaque1}`} src={pelota} alt=""/></div>
+                            <span className="nombre_jugador">{jugador2}</span>
+                        </div>
+                        <div className="resultadoTv">
+                            <div className="grupo1">
+                                <div className="setTv ">{set1_j2}</div>
+                                <div className="setTv ">{set2_j2}</div>
+                                <div className="setTv">{set3_j2}</div>
+                            </div>
+                            <div className="grupo2">
+                                <div className="puntosTv ">{pj2}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+            <div className="publicidad">
+                <div className="divLogo"><img className="logoTv"   src={GMatch_NEW_WHITE}/></div>
+                <div className="divLogo"><img className="logoTv"   src={head}/></div>
+                <div className="divLogo"><img className="logoTv" src={LOGO_FPRM_white}/></div>
+                <div className="divLogo"><img className="logoTv"  src={joma}/></div>
+                <div className="divLogo"><img className="logoTv"  src={MiraDigital_white}/></div>
+
+            </div>
+
+
+
+        </div>
+        {/*
+        <div className="partidotv">
             <div className="pista">
                 <div className="pista2">{`Pista ${pista}`}</div>
                 <div className="pista2">{`${nombreTorneo}`}</div>
                 <div className="pista2">{`${ronda}`}</div>    
             </div>
     
-		<div className="contenedor">
-            <div className="jugador">
-                <div className="nombre">
-                <span className="nombre_jugador">{jugador1}</span>
-                <div className="saque tamaño_puntos"><img className={`pelota ${claseSaque1}`} src={pelota} alt=""/></div>
-                <div className="puntos tamaño_puntos">{pj1}</div>
-                </div>
-               
+            <div className="contenedor">
+                <div className="jugador">
+                    <div className="nombre">
+                    <span className="nombre_jugador">{jugador1}</span>
+                    <div className="saque tamaño_puntos"><img className={`pelota ${claseSaque1}`} src={pelota} alt=""/></div>
+                    <div className="puntos tamaño_puntos">{pj1}</div>
+                    </div>
                 
-                <div className="set tamaño_puntos">{set1_j1} <span className="set2">Set 1</span></div>
-                <div className="set tamaño_puntos">{set2_j1} <span className="set2">Set 2</span></div>
-                <div className="set tamaño_puntos">{set3_j1} <span className="set2">Set 3</span></div>
-            </div>
-            <div className="jugador paddingFix">
-                <div className="nombre">
-                <span className="nombre_jugador">{jugador2}</span>
-                <div className="saque tamaño_puntos"><img className={`pelota ${claseSaque2}`} src={pelota} alt=""/></div>
-                <div className="puntos tamaño_puntos">{pj2}</div>
+                    
+                    <div className="set tamaño_puntos">{set1_j1} <span className="set2">Set 1</span></div>
+                    <div className="set tamaño_puntos">{set2_j1} <span className="set2">Set 2</span></div>
+                    <div className="set tamaño_puntos">{set3_j1} <span className="set2">Set 3</span></div>
                 </div>
+                <div className="jugador paddingFix">
+                    <div className="nombre">
+                    <span className="nombre_jugador">{jugador2}</span>
+                    <div className="saque tamaño_puntos"><img className={`pelota ${claseSaque2}`} src={pelota} alt=""/></div>
+                    <div className="puntos tamaño_puntos">{pj2}</div>
+                    </div>
+                    
                 
-               
-                <div className="set tamaño_puntos">{set1_j2}</div>
-                <div className="set tamaño_puntos">{set2_j2}</div>
-                <div className="set tamaño_puntos">{set3_j2}</div>
+                    <div className="set tamaño_puntos">{set1_j2}</div>
+                    <div className="set tamaño_puntos">{set2_j2}</div>
+                    <div className="set tamaño_puntos">{set3_j2}</div>
+                </div>
             </div>
-        </div>
-        <div className="logo-partido">
-        <div className="logos">
-            <div className="divLogo"><img className="logo_padel"  src={GMatch_NEW_WHITE}/></div>
-            <div className="divLogo"><img className="logo_padel"   src={head}/></div>
-            <div className="divLogo"><img className="logo_padel3" src={LOGO_FPRM_white}/></div>
-            <div className="divLogo"><img className="logo_padel"  src={joma}/></div>
-            <div className="divLogo"><img className="logo_padel2"  src={MiraDigital_white}/></div>
+            <div className="logo-partido">
+            <div className="logos">
+                <div className="divLogo"><img className="logo_padel"  src={GMatch_NEW_WHITE}/></div>
+                <div className="divLogo"><img className="logo_padel"   src={head}/></div>
+                <div className="divLogo"><img className="logo_padel3" src={LOGO_FPRM_white}/></div>
+                <div className="divLogo"><img className="logo_padel"  src={joma}/></div>
+                <div className="divLogo"><img className="logo_padel2"  src={MiraDigital_white}/></div>
 
-            {/*<div className="divLogo"><img className="logo"src={MCT_REAL_neg}/></div>*/}
-            
-            {mostrar_hora && (<div className="tiempo"><i className="far fa-clock"></i>{` ${h} : ${min}`}</div>)}
-       
-        </div>
+                {/*<div className="divLogo"><img className="logo"src={MCT_REAL_neg}/></div>*
+                
+                {mostrar_hora && (<div className="tiempo"><i className="far fa-clock"></i>{` ${h} : ${min}`}</div>)}
+        
+            </div>
+            </div>
         </div>
         
-        
+        */}
 		</Fragment>
         );		
 
