@@ -79,9 +79,10 @@
     font-size: 58px;
 
 }
-body{background-color:#114d0b !important;
+body{
 overflow:hidden !important;
 cursor:none !important;}
+
 .logo{
     width: 350px;
 }

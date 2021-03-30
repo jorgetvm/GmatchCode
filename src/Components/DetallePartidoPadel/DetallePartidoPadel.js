@@ -119,10 +119,6 @@ if(hora_inicio){
    const inicio_h=moment.utc(hora_inicio).format('HH');
    const inicio_m=moment.utc(hora_inicio).local().format('mm');
 
-    console.log(ahora_h);
-    console.log(ahora_m);
-    console.log(ahora_h-inicio_h);
-    console.log(ahora_m-inicio_m);
 
    
 

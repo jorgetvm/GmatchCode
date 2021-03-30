@@ -2,10 +2,15 @@ import React, { Component, Fragment } from 'react';
 import pelota from '../../Imagenes/pelota.png';
 
 import GMatch_NEW_WHITE from '../../Imagenes/GMatch_NEW_WHITE.png';
-import head from '../../Imagenes/head.svg';
-import LOGO_FPRM_white from '../../Imagenes/LOGO_FPRM_white.png';
+import rfet1 from '../../Imagenes/rfet1.png';
+import rfet2 from '../../Imagenes/rfet2.jpg';
+import rfet3 from '../../Imagenes/rfet3.png';
+import rfet4 from '../../Imagenes/rfet4.png';
+import rfet5 from '../../Imagenes/rfet5.png';
+import MCT_REAL_neg from '../../Imagenes/MCT_REAL_neg.png';
+
 import MiraDigital_white from '../../Imagenes/MiraDigital_white.png';
-import joma from '../../Imagenes/joma.png';
+
 import pista3 from '../../Imagenes/pista3.jpg';
 
 import moment from 'moment';
@@ -104,13 +109,13 @@ console.log(resultado)
 
 const ahoraa=moment.utc().local().format('YYYYMMDD HH:mm');
 const innicio3=moment.utc(hora_inicio).format('YYYYMMDD HH:mm');
-console.log('ahora ' + ahoraa + '; inicio: ' + innicio3);
+// console.log('ahora ' + ahoraa + '; inicio: ' + innicio3);
 var date  = moment(ahoraa, "YYYYMMDD HH:mm");
-console.log(date.format('YYYYMMDD HH:mm'));
+// console.log(date.format('YYYYMMDD HH:mm'));
 var horas_ = moment(innicio3, "YYYYMMDD HH:mm");
 var minutos_ = moment(innicio3, "YYYYMMDD HH:mm");
 var minutos_ = moment(innicio3, "YYYYMMDD HH:mm:ss");
-console.log('horas_' + horas_.format('HH') + 'minutos_' + minutos_.format('mm'));
+// console.log('horas_' + horas_.format('HH') + 'minutos_' + minutos_.format('mm'));
 var horas = date.diff(horas_, "hours");
 var minutos = date.diff(minutos_, "minutes");
 var segundos = date.diff(minutos_, "seconds");
@@ -120,8 +125,8 @@ let min=Math.floor(segundos/60);
 
 let h=Math.floor(min/60);
 min=min-h*60;
-console.log(segundos+' s '+min+' m ' + h +'h'); // "7d"
-console.log(date.diff(minutos_, "minutes") + "m"); // "7m"
+// console.log(segundos+' s '+min+' m ' + h +'h'); "7d"
+// console.log(date.diff(minutos_, "minutes") + "m"); "7m"
 let mostrar_hora=false;
 if(hora_inicio){
 
@@ -130,10 +135,7 @@ if(hora_inicio){
    const inicio_h=moment.utc(hora_inicio).format('HH');
    const inicio_m=moment.utc(hora_inicio).local().format('mm');
 
-    console.log(ahora_h);
-    console.log(ahora_m);
-    console.log(ahora_h-inicio_h);
-    console.log(ahora_m-inicio_m);
+
     mostrar_hora=true;
 }
 
@@ -147,13 +149,18 @@ if (h<10){
 }          
 if(saque_actual===1){
     claseSaque2="iconoSaque_hidden";
+    claseSaque1="";
 }else{
     claseSaque1="iconoSaque_hidden";
+    claseSaque2="";
 }
 if(sets_j1+sets_j2>=3){
     claseSaque2="iconoSaque_hidden";
     claseSaque1="iconoSaque_hidden";
+
 }
+console.log('claseSaque1' +claseSaque1 + '\n' +'claseSaque2' +claseSaque2);
+
 let pj1;
 let pj2;
 console.log(horade_inicio)
@@ -199,7 +206,7 @@ console.log(horade_inicio)
                     </div>
                     <div className="jugador2Tv">
                         <div className="jugadorTv">
-                            <div className="saque "><img className={`pelotaTv ${claseSaque1}`} src={pelota} alt=""/></div>
+                            <div className="saque "><img className={`pelotaTv ${claseSaque2}`} src={pelota} alt=""/></div>
                             <span className="nombre_jugador">{jugador2}</span>
                         </div>
                         <div className="resultadoTv">
@@ -218,9 +225,9 @@ console.log(horade_inicio)
             </div>
             <div className="publicidad">
                 <div className="divLogo"><img className="logoTv"   src={GMatch_NEW_WHITE}/></div>
-                <div className="divLogo"><img className="logoTv"   src={head}/></div>
-                <div className="divLogo"><img className="logoTv" src={LOGO_FPRM_white}/></div>
-                <div className="divLogo"><img className="logoTv"  src={joma}/></div>
+
+                <div className="divLogo"><img className="logoTv2"   src={rfet5}/></div>
+                <div className="divLogo"><img className="logoTv"   src={MCT_REAL_neg}/></div>
                 <div className="divLogo"><img className="logoTv"  src={MiraDigital_white}/></div>
 
             </div>
