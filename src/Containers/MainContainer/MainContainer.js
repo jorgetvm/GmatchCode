@@ -5,6 +5,8 @@ import PartidosContainer from '../PartidosContainer/PartidosContainer';
 import InfoContainer from '../InfoContainer/InfoContainer';
 import Partido_tv from '../../Components/Partido_tv/Partido_tv';
 import Partido_obs from '../../Components/Partido_obs/Partido_obs';
+import Partido_tv_led from '../../Components/Partido_tv_led/Partido_tv_led';
+
 import Stats from '../../Components/Stats/Stats';
 
 class MainContainer extends Component {
@@ -98,6 +100,7 @@ class MainContainer extends Component {
         }
 
         var id = obtenerValorParametro('id_partido');
+        var Led = obtenerValorParametro('led');
         var obs=obtenerValorParametro('obs');
         var stats=obtenerValorParametro('stats');
   if (id){
@@ -122,14 +125,17 @@ class MainContainer extends Component {
 		<div className="mainContainer"> 
           
                
-            {(id && obs==null && stats) && (
+            {(id && obs==null && stats && Led==null) && (
               <Stats partido={infopartido_tv} />
             )}
-            {(id && obs==null && stats==null) && (
+            {(id && obs==null && stats==null && Led==null) && (
               <Partido_tv partido={infopartido_tv} />
             )}
-            {(id && obs && stats==null) && (
+            {(id && obs && stats==null && Led==null) && (
               <Partido_obs partido={infopartido_tv} obs/>
+            )}
+            {(id && obs==null && stats==null && Led) && (
+              <Partido_tv_led partido={infopartido_tv}/>
             )}
             
              </div>
