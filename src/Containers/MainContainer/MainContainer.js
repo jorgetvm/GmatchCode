@@ -100,7 +100,7 @@ class MainContainer extends Component {
         }
 
         var id = obtenerValorParametro('id_partido');
-        var Led = obtenerValorParametro('led');
+        var idLed = obtenerValorParametro('id_partido_led');
         var obs=obtenerValorParametro('obs');
         var stats=obtenerValorParametro('stats');
   if (id){
@@ -115,7 +115,7 @@ class MainContainer extends Component {
   
        if(partidos){
         partidos.forEach(partido => {
-        if(id==partido.id){
+        if(id==partido.id || idLed==partido.id ){
           infopartido_tv=partido;
         }
       });}
@@ -125,16 +125,16 @@ class MainContainer extends Component {
 		<div className="mainContainer"> 
           
                
-            {(id && obs==null && stats && Led==null) && (
+            {(id && obs==null && stats && idLed==null) && (
               <Stats partido={infopartido_tv} />
             )}
-            {(id && obs==null && stats==null && Led==null) && (
+            {(id && obs==null && stats==null && idLed==null) && (
               <Partido_tv partido={infopartido_tv} />
             )}
-            {(id && obs && stats==null && Led==null) && (
+            {(id && obs && stats==null && idLed==null) && (
               <Partido_obs partido={infopartido_tv} obs/>
             )}
-            {(id && obs==null && stats==null && Led) && (
+            {(id==null && obs==null && stats==null && idLed) && (
               <Partido_tv_led partido={infopartido_tv}/>
             )}
             

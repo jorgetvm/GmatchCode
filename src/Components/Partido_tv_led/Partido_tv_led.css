@@ -21,7 +21,7 @@
 .texto_nombresLed{
     font-family: system-ui;
     font-weight: bold;
-    font-size: 6rem;
+    font-size: 8rem;
     color: white;
 }
 .nombresTvLed{
@@ -38,9 +38,11 @@
     width: 100%;
     display: flex;
     background-color: #374a3b;
-    font-size: 4rem;
+    font-size: 5rem;
     flex-direction: row;
     justify-content: center;
+    font-family: system-ui;
+    font-weight: bold;
 }
 .nombretorneoLed .nombreTor{
     color: white;
@@ -91,7 +93,7 @@
     flex-direction: row;
     align-items: center;
     line-height: 8rem;
-    font-size: 6rem;
+    font-size: 8rem;
     font-family: arial;
     font-weight: bold;
 }
@@ -132,6 +134,13 @@
 }
 .logoTv2Led{
     width: 250px;
+}
+.tiempoTvLed{
+    font-size: 5rem;
+    flex-direction: row;
+    font-family: system-ui;
+    font-weight: bold;
+    color:white;
 }
 
 
