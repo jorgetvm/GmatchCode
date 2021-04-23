@@ -89,12 +89,11 @@ if(torneo.length==1){
         return (
             
 		<div className=" MainContainer_Padel">
-            <div className="tituloPadel">{`${nombre}`}</div>
 
                
                 <div className=" maincontainer2 padding0 ">
                   
-                    <PartidosPadelContainer Torneo={id_torneo} Torneo_id={id_torneo}/>
+                    <PartidosPadelContainer Torneo={id_torneo} Torneo_id={id_torneo} nombre={nombre}/>
       </div>
       </div>
         );		

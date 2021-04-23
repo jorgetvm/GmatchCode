@@ -69,7 +69,7 @@ class PartidosPadelContainer extends Component {
     render(){
       const nombre_torneo="Torneo Región de Murcia";
       const {mostrar} = this.state;
-    
+      const {nombre} = this.props
        
         let infoTorneos;
         let torneo=[];
@@ -89,18 +89,30 @@ let partidos=[];
         }
 
 
-
+console.log(partidos)
 
         return (
             <Fragment>
             <div className="PartidosPadelContainer">
 
            {infoTorneos && (
-            <div  className="torneo_grande"  >          
+             
+            <div  className="torneo_grande"  > 
+                        <div className="tituloPadel">{`${nombre}`}</div>
+         
               <div  className="infoTorneoPadel">
                      
-              {partidos && partidos.map((partido,index)=>
-                        
+                     
+              {partidos && partidos.sort(function (a, b) {
+  if (a.estado > b.estado) {
+    return -1;
+  }
+  if (a.estado < b.estado) {
+    return 1;
+  }
+  // a must be equal to b
+  return 0;
+}).slice(partidos.length-3).reverse().map((partido,index)=>
                         <DetallePartidoPadel Partidos={partido}  key={index.toString()} onClick={this.props.onClick} />
               )}
 
