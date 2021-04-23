@@ -182,7 +182,7 @@ console.log(horade_inicio)
             </div>
             <div className="nombretorneo texto_info">
                 <div className="nombre_hora">
-                    <div>{`${nombreTorneo}`} {`${genero}`} </div>
+                    <div>{`${nombreTorneo}`}</div>
                     <div>{mostrar_hora && (<div className="tiempoTv">{` ${h}:${min}`}</div>)}</div>
                 </div>
             </div>

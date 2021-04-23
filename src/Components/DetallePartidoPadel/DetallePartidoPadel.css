@@ -113,10 +113,13 @@
 .infoPadel .VivoPadel{
     color: #ff0303;
     opacity: 1;
-}
+  }
 .VivoPadel{
     width: 33%;
     text-align: end;
+}
+.VivoPadel i,.hora_previstaPadel i{
+    margin-right:10px;
 }
 .pistaPadel{
     text-align: left;

@@ -1,4 +1,8 @@
-
+:root {
+    --color-letras: #d2c226;
+    --jugadores-size: 7.5rem;
+    --points-size: 13rem;
+  }
 .contianerPartidoTvLed{
     height: 1200px;
     background-color:black;
@@ -21,8 +25,8 @@
 .texto_nombresLed{
     font-family: system-ui;
     font-weight: bold;
-    font-size: 8rem;
-    color: white;
+    font-size: var(--jugadores-size);
+    color: var(--color-letras);
 }
 .nombresTvLed{
     padding: 1rem;
@@ -33,7 +37,7 @@
 }
 /*dbe546*/
 .nombretorneoLed{
-    height: 15%;
+    height: 10%;
     padding: 1rem;
     width: 100%;
     display: flex;
@@ -58,10 +62,12 @@
     padding: 1rem;
     width: 100%;
     color: #114d0b;
-    background-color: white;
+    background-color: #356b4240;
 
 }
 .jugador1TvLed, .jugador2TvLed{
+    
+    height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -84,16 +90,20 @@
     justify-content: space-between;
 }
 .jugadorTvLed{
+    width: 42%;
+    min-width: 42%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 .resultadoTvLed{
+    width: 56%;
+    min-width: 56%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    line-height: 8rem;
-    font-size: 8rem;
+    line-height: 9rem;
+    font-size: var(--points-size);
     font-family: arial;
     font-weight: bold;
 }
@@ -101,20 +111,21 @@
     align-items: center;
     flex-direction: row;
     display: flex;
-    padding: 0px 0.5em;
-    color: aliceblue;
+    padding: 0px 15px;
+    color: var(--color-letras);
 }
 .grupo2Led{    
+    width: 100%;
+    justify-content: flex-end;
     align-items: center;
     flex-direction: row;
     display: flex;
-    padding: 0px 0.5em;
-    color: #114d0b;
-    background-color: white;
+    color: var(--color-letras);
+    background-color: #112917;
 }
 
 .setTvLed{
-    padding:0.3em;
+    padding:1rem;
 }
 
 .publicidadLed{
@@ -142,8 +153,22 @@
     font-weight: bold;
     color:white;
 }
-
-
+.nombreClub{
+  
+    padding: 0px 60px;
+    font-size: 3.5rem;
+    font-family: system-ui;
+    font-weight: bold;
+}
+.puntosTvLed{
+    display: flex;
+    padding: 2rem;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+   
+}
 
 
 

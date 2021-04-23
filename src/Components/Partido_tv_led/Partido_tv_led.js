@@ -22,17 +22,20 @@ const Partido_tv_led = ({partido}) => {
 
 
     const { resultado,  arbitros, torneo } = partido;
-    let nombreTorneo;
-  
+    let nombreTorneo= "Campeonato de España";
+    let nombreCLub= "REAL MURCIA CLUB DE TENIS 1919";
    
 
   
         
-if(torneo){
+if(torneo && torneo.nombre){
     nombreTorneo=torneo.nombre;
-}else{
-    nombreTorneo="Campeonato de España";
 }
+        
+if(torneo && torneo.descripcion){
+    nombreCLub=torneo.descripcion;
+}
+
 var autoarbitraje=0;
 let horade_inicio;
 //const {puntos_j1} = resultado;
@@ -180,9 +183,7 @@ console.log(horade_inicio)
             </div>
             <div className="publicidadLed">
                 <div className="divLogoLed"><img className="logoTvLed"   src={GMatch_NEW_WHITE}/></div>
-
-                <div className="divLogoLed"><img className="logoTvLed"   src={MCT_REAL_neg}/></div>
-                <div className="divLogoLed"><img className="logoTvLed"  src={MiraDigital_white}/></div>
+                <div className="nombreClub">{`${nombreCLub}`}</div>
                 <div>{mostrar_hora && (<div className="tiempoTvLed">{` ${h}:${min}`}</div>)}</div>
 
 
