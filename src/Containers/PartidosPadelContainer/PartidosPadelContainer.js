@@ -103,7 +103,7 @@ console.log(partidos)
               <div  className="infoTorneoPadel">
                      
                      
-              {partidos && partidos.sort(function (a, b) {
+              {partidos && partidos.length>0 &&partidos.sort(function (a, b) {
   if (a.estado > b.estado) {
     return -1;
   }
