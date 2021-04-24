@@ -68,7 +68,8 @@
     font-size: 58px;
 
 }
-.obs_body{background-color:#00000000 !important;
+.obs_body{
+    background-color:#00000000 !important;
    
 overflow:hidden !important;
 cursor:none !important;}
