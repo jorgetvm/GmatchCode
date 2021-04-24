@@ -40,9 +40,7 @@ body {
 }
 @media (max-width:1240px){
     .tituloPadel{font-size: 2em;}
-    .logos_padel{
-        position: relative !important;
-    }
+
 
     .logo_padel, .logo_padel2, .logo_padel3 {
         width: 100px;
@@ -50,8 +48,9 @@ body {
 }
 @media (max-width:768px){
     .logos_padel{
-        position: relative !important;
+        position: absolute ;
     }
+    
     .logo_padel, .logo_padel2, .logo_padel3 {
         width: 70px !important;
     }
@@ -71,4 +70,9 @@ body {
     }
 
 
+}
+@media (max-height:1100px){
+    .logos_padel{
+        position: relative !important ;
+    }
 }
