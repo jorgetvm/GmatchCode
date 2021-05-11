@@ -4,6 +4,7 @@
     padding: 16px;
 
 }
+.infoPadel{border-bottom: 1px solid #6c757d;}
 
 .horaPadel{
     display: inline-flex;
@@ -11,7 +12,7 @@
 .nombrePadel{
 
     width: 80%;
-    color:white;
+    color:black;
     display:inline-block;
 }
 
@@ -20,6 +21,7 @@
     text-align: left;
     border: 1px solid;
     border-color: lightgrey;
+    background-color: #e9ecef;
     border-radius: 18px;
 }
 .juegosPadel{
@@ -35,16 +37,19 @@
 }
 .puntos_pPadel{
     text-align: right;
-    color:#d39e00;
-    width:30%;
-
+    color: #d39e00;
+    width: 40%;
+    height: 100%;
+    display: flex;
     align-self: end;
+    align-items: center;
+    justify-content: flex-end;
 }
 .juegosPadel {
     width:40px;
 }
 .setsPadel{
-    color:white;
+    color:black;
 }
 
 .iconoPadel{
@@ -53,13 +58,14 @@
 }
 .rondaPadel{
     width: 33%;
-    color:white;
+    color:black;
     text-align: center;
 
 }
 .pistaPadel{
-    width: 33%;
-    color:white;
+    width: auto;
+    min-width: 25%;
+    color:black;
 }
 
 .JugadorPadel{
@@ -74,9 +80,10 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .hora_previstaPadel{
-    color:white;
+    color:black;
     display: flex;
     align-items: center;
 }
@@ -91,7 +98,7 @@
     display: flex;
     width: 30%;
     flex-direction: row;
-    align-self: end;
+    align-self: center;
     justify-content:space-evenly;
 }
 
@@ -99,7 +106,12 @@
     opacity:0.7;
 }
 .pelotaPadel{
-    width:60%;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 .setsTotalPadel{
     margin-left: 30px;
@@ -133,10 +145,20 @@
     text-align: right;
     flex-direction: row;
     align-items: center;
-    width: 20%;
+    width: 30%;
 }
 
+ @media ( max-width:768px){
 
+    .JugadorPadel,.info_Padel{font-size: 2em;}
+    .iconoSaquePadel{height: 38px;}
+    .nombrePadel {width:70%}
+ }
+ @media ( max-width:500px){
+    .JugadorPadel,.info_Padel{font-size: 1.5em;}
+    .iconoSaquePadel{height: 25px;}
+ }
+/*
 @media (max-width:1240px){
     .info_Padel{
         font-size: 1.8em;
@@ -185,4 +207,4 @@
    .info_Padel{
     font-size: 1rem;
 }
-}
+}*/

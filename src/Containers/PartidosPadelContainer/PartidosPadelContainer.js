@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import DetallePartidoPadel from '../../Components/DetallePartidoPadel/DetallePartidoPadel';
 import { createInfoPadel } from '../../Utils/Utils';
+import PieTorneos from '../../Components/PieTorneos/PieTorneos';
 import GMatch_NEW_WHITE from '../../Imagenes/GMatch_NEW_WHITE.png';
+import GMatch_NEW_BLACK from '../../Imagenes/GMatch_NEW_BLACK.png';
 /* import head from '../../Imagenes/head.svg';
 import LOGO_FPRM_white from '../../Imagenes/LOGO_FPRM_white.png'; */
 import MiraDigital_white from '../../Imagenes/MiraDigital_white.png';
@@ -100,7 +102,10 @@ class PartidosPadelContainer extends Component {
           {infoTorneos && (
 
             <div className="torneo_grande"  >
-              <div className="tituloPadel">{`${nombre}`}</div>
+              <div className="tituloPadel">
+                <div className="divLogo"><img className="logo_padel" src={GMatch_NEW_BLACK} /></div>
+                {`${nombre}`}
+              </div>
 
               <div className="infoTorneoPadel">
 
@@ -115,7 +120,7 @@ class PartidosPadelContainer extends Component {
                       return -1;
                     }
                   }
-                }).slice(partidos.length - 3).reverse().map((partido, index) =>
+                }).reverse().map((partido, index) =>
                   <DetallePartidoPadel Partidos={partido} key={index.toString()} onClick={this.props.onClick} />
                 )}
 
@@ -129,16 +134,17 @@ class PartidosPadelContainer extends Component {
 
 
 
-          <div className="logos_padel">
+          {/*<div className="logos_padel">
             <div className="logos">
               <div className="divLogo"><img className="logo_padel" src={GMatch_NEW_WHITE} /></div>
-              {/* <div className="divLogo"><img className="logo_padel" src={head} /></div> */}
+               <div className="divLogo"><img className="logo_padel" src={head} /></div> */}
               {/* <div className="divLogo"><img className="logo_padel3" src={LOGO_FPRM_white} /></div> */}
               {/* <div className="divLogo"><img className="logo_padel3" src={joma} /></div> */}
-              <div className="divLogo"><img className="logo_padel2" src={MCT_REAL_neg} /></div>
+              {/*<div className="divLogo"><img className="logo_padel2" src={MCT_REAL_neg} /></div>
               <div className="divLogo"><img className="logo_padel2" src={MiraDigital_white} /></div>
             </div>
-          </div>
+          </div>*/}
+          <PieTorneos/>
         </div>
       </Fragment>
     );
