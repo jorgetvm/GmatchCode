@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 import pelota from '../../Imagenes/pelota.png';
 
 import GMatch_NEW_WHITE from '../../Imagenes/GMatch_NEW_WHITE.png';
-import rfet1 from '../../Imagenes/rfet1.png';
-import rfet2 from '../../Imagenes/rfet2.jpg';
+import LOGO_FPRM_white from '../../Imagenes/LOGO_FPRM_white.png';
+import Dominos from '../../Imagenes/Dominos.png';
 import rfet3 from '../../Imagenes/rfet3.png';
 import rfet4 from '../../Imagenes/rfet4.png';
 import rfet5 from '../../Imagenes/rfet5.png';
@@ -225,9 +225,9 @@ console.log(horade_inicio)
             </div>
             <div className="publicidad">
                 <div className="divLogo"><img className="logoTv"   src={GMatch_NEW_WHITE}/></div>
-
-                <div className="divLogo"><img className="logoTv2"   src={rfet5}/></div>
-                <div className="divLogo"><img className="logoTv"   src={MCT_REAL_neg}/></div>
+                <img className="divLogo"src="https://cdn-magento2-static.head.com/version1618337719/frontend/Head/base/es_ES/images/logo.svg" title="" alt="" width="250px" height="auto"/>
+                <div className="divLogo"><img className="logoTv dominos"   src={Dominos}/></div>
+                <div className="divLogo"><img className="logoTv"   src={LOGO_FPRM_white}/></div>
                 <div className="divLogo"><img className="logoTv"  src={MiraDigital_white}/></div>
 
             </div>
