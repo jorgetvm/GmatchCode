@@ -1,0 +1,67 @@
+.PartidosPadelContainer{
+
+    margin: 0px;
+    padding: 0px;
+    max-width: 2500px;
+    display: flex;
+    flex-direction: column;
+    
+
+    text-align: center;
+}
+.PartidosPadelContainer .nombrePadel {
+    color:black;
+}
+.tituloPadel{
+    display: flex;
+    color: black;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    font-style: italic;
+}
+.flexSpain{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 0px;
+    cursor:pointer;
+ 
+}
+.logos_padel{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.chueron{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+    font-size: 20px;
+}
+.infoTorneoPadel{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.genero{
+    font-family: Light;
+    font-style: italic;
+    opacity: 0.5;
+    text-align: left;
+    padding-left: 10px;
+}
+.logo_padel{
+    width: 200px;
+}
+.logo_padel2{
+    width: 230px;
+}
+.logo_padel3{
+    width: 200px;
+}

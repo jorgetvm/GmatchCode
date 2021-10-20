@@ -129,21 +129,6 @@ class PartidosPadelContainer extends Component {
             </div>
 
           )}
-
-
-
-
-
-          {/*<div className="logos_padel">
-            <div className="logos">
-              <div className="divLogo"><img className="logo_padel" src={GMatch_NEW_WHITE} /></div>
-               <div className="divLogo"><img className="logo_padel" src={head} /></div> */}
-              {/* <div className="divLogo"><img className="logo_padel3" src={LOGO_FPRM_white} /></div> */}
-              {/* <div className="divLogo"><img className="logo_padel3" src={joma} /></div> */}
-              {/*<div className="divLogo"><img className="logo_padel2" src={MCT_REAL_neg} /></div>
-              <div className="divLogo"><img className="logo_padel2" src={MiraDigital_white} /></div>
-            </div>
-          </div>*/}
           <PieTorneos/>
         </div>
       </Fragment>

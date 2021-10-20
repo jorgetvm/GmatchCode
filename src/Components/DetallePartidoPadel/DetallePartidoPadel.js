@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import moment from 'moment';
 import pelota from '../../Imagenes/pelota.png';
-import {calsesSet} from '../../Utils/Utils';
+import {getClasesSet} from '../../Utils/Utils';
 
 import './DetallePartidoPadel.css';
 
@@ -45,7 +45,7 @@ class DetallePartidoPadel extends Component {
 
 
         const { Partidos } = this.props;
-
+        debugger;
 
         const {resultado}= Partidos;
         let{hora_prevista,ronda,estado,pista} = Partidos;
@@ -135,7 +135,7 @@ if (h<10){
     h=`0${h}`;
 }          
 
-       const clases=calsesSet(set1_j1,set1_j2,set2_j1,set2_j2,set3_j1,set3_j2,sets_j1,sets_j2,puntos_j1,puntos_j2);
+       const clases=getClasesSet(set1_j1,set1_j2,set2_j1,set2_j2,set3_j1,set3_j2,sets_j1,sets_j2,puntos_j1,puntos_j2);
        let clasej1='';
        let clasej2='';
        let opacidad='';

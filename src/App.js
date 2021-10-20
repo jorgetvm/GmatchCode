@@ -7,27 +7,11 @@ import './App.css';
 import  MainContainer_cto_spain from './Containers/MainContainer_cto_spain/MainContainer_cto_spain';
 import MainContaniner from './Containers/MainContainer/MainContainer';
 import MainContainer_padel from './Containers/MainContainer_padel/MainContainer_padel';
+import Torneo from './Containers/Torneo';
 
 
 
-class App extends Component {
-
-
-
-/*
- <Fragment>
-      
-        <MainContaniner/>
-
-        <BrowserRouter>
-        <Switch>
-          <Route path='/torneo' component={MainContainer_torneos}/>
-          <Route path='/' component={MainContaniner}/>
-        </Switch>
-      </BrowserRouter>
-
-      </Fragment>*/
-  
+class App extends Component {  
   render() {
     function obtenerValorParametro(sParametroNombre) {
       var sPaginaURL = window.location.search.substring(1);
@@ -48,11 +32,9 @@ class App extends Component {
     return (
       <Fragment>
 
-            {/*id=="cto_spain" && (
-              < MainContainer_cto_spain/>
-            )*/}
       {id && (
-              < MainContainer_padel id_torneo={id}/>
+              // < MainContainer_padel id_torneo={id}/>
+              <Torneo id_torneo={id}/>
             )}
       {id=="undefined" || id==null && (
         <MainContaniner/>

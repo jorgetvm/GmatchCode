@@ -139,104 +139,16 @@ export const createInfoSpain = (Partidos,torneos,nombre_torneo) =>{
             }
             
          })
-        /*switch ((seconds < 40 ? 0 :((40<seconds && seconds<50) ? 1 : ((seconds>=50) ? 2 : 0)))) {
-            
-          case 0:
-            torneos.map((torneo)=>{
-                if(torneo.nombre==nombre_torneo){
-                    aux1=[];
-                    Partidos.map((partido) => {    
-                    
-                        if(partido.torneo.id==torneo.id){
-                            if(partido.estado==1){
-                                aux1.push(partido);  
-                            }
-                        }  
-                    })
-                    aux={
-                        "torneo":torneo.id,
-                        "nombre":torneo.nombre,
-                        "genero":torneo.genero,
-                        "partidos":aux1,
-                    };
-                    infoTorneos.push(aux)
-                }
-                
-             })
-            break;
-            case 1:
-                torneos.map((torneo)=>{
-                    if(torneo.nombre==nombre_torneo){
-                    aux1=[];
-                    Partidos.map((partido) => {    
-                    
-                        if(partido.torneo.id==torneo.id){
-                            if(partido.estado==2){
-                                aux1.push(partido);  
-                            }
-                            
-                        }  
-                    })
-                    aux={
-                        "torneo":torneo.id,
-                        "nombre":torneo.nombre,
-                        "genero":torneo.genero,
-                        "partidos":aux1,
-                    };
-                    infoTorneos.push(aux)
-                }
-                 })
-            break;
-            case 2:
-                torneos.map((torneo)=>{
-                    if(torneo.nombre==nombre_torneo){
-                    aux1=[];
-                    Partidos.map((partido) => {    
-                    
-                        if(partido.torneo.id==torneo.id){
-                            if(partido.estado==0){
-                                aux1.push(partido);  
-                            }
-                        }  
-                    })
-                    aux={
-                        "torneo":torneo.id,
-                        "nombre":torneo.nombre,
-                        "genero":torneo.genero,
-                        "partidos":aux1,
-                    };
-                    infoTorneos.push(aux)
-                    }
-                 })
-            break;
-          default:
-            torneos.map((torneo)=>{
-                if(torneo.nombre==nombre_torneo){
-                aux1=[];
-                Partidos.map((partido) => {    
-                
-                    if(partido.torneo.id==torneo.id){
-                        if(partido.estado==1){
-                            aux1.push(partido);  
-                        }
-                    }  
-                })
-                aux={
-                    "torneo":torneo.id,
-                    "nombre":torneo.nombre,
-                    "genero":torneo.genero,
-                    "partidos":aux1,
-                };
-                infoTorneos.push(aux)
-                }
-             })
-            break;
-        }*/
- 
   
 return infoTorneos;
 }
 
+/**
+ * filta la info de un torneo mediante el id
+ * @param {array} Torneos array de torneos
+ * @param {string} torneo_id id a buscar
+ * @returns {object}
+ */
 export const filtraTorneo_id = (Torneos,torneo_id) =>{
     let torneo_filtrado=[];
     Torneos.map((torneo) => {    
@@ -250,6 +162,44 @@ export const filtraTorneo_id = (Torneos,torneo_id) =>{
 return torneo_filtrado;
 }
 
+/**
+ * Filtra los partidos correspondientes a un torneo según id
+ * @param {array} partidos lista de partidos
+ * @param {string} torneo_id id del torneo
+ * @returns {object}
+ */
+export const filtraPartidosDependsTorneoId = (partidos,torneo_id) =>{
+    let result=[];
+    partidos.map((partido) => {         
+        if(partido.torneo && partido.torneo.id==torneo_id){
+            result.push(partido);  
+        }  
+    })
+
+return result;
+}
+
+/**
+ * ordena los partios según el estado
+ * @param {array} partidos lista de partidos
+ * @returns {object}
+ */
+ export const ordenaPartidos = (partidos) =>{
+    let newPartidos = partidos;
+    newPartidos.sort(function (a, b) {
+        if (a.estado == 1 && b.estado!=1) {
+          return 1;
+        } else{
+          if(a.estado == 0 && b.estado==2){
+            return 1;
+          } else{
+            return -1;
+          }
+        }
+    })
+    newPartidos=newPartidos.reverse();
+return newPartidos;
+}
 
 export const createInfoPadel = (Partidos,torneo) =>{
 
@@ -283,106 +233,13 @@ console.log(torneo)
        
             
       
-        /*switch ((seconds < 40 ? 0 :((40<seconds && seconds<50) ? 1 : ((seconds>=50) ? 2 : 0)))) {
-            
-          case 0:
-            torneos.map((torneo)=>{
-                if(torneo.nombre==nombre_torneo){
-                    aux1=[];
-                    Partidos.map((partido) => {    
-                    
-                        if(partido.torneo.id==torneo.id){
-                            if(partido.estado==1){
-                                aux1.push(partido);  
-                            }
-                        }  
-                    })
-                    aux={
-                        "torneo":torneo.id,
-                        "nombre":torneo.nombre,
-                        "genero":torneo.genero,
-                        "partidos":aux1,
-                    };
-                    infoTorneos.push(aux)
-                }
-                
-             })
-            break;
-            case 1:
-                torneos.map((torneo)=>{
-                    if(torneo.nombre==nombre_torneo){
-                    aux1=[];
-                    Partidos.map((partido) => {    
-                    
-                        if(partido.torneo.id==torneo.id){
-                            if(partido.estado==2){
-                                aux1.push(partido);  
-                            }
-                            
-                        }  
-                    })
-                    aux={
-                        "torneo":torneo.id,
-                        "nombre":torneo.nombre,
-                        "genero":torneo.genero,
-                        "partidos":aux1,
-                    };
-                    infoTorneos.push(aux)
-                }
-                 })
-            break;
-            case 2:
-                torneos.map((torneo)=>{
-                    if(torneo.nombre==nombre_torneo){
-                    aux1=[];
-                    Partidos.map((partido) => {    
-                    
-                        if(partido.torneo.id==torneo.id){
-                            if(partido.estado==0){
-                                aux1.push(partido);  
-                            }
-                        }  
-                    })
-                    aux={
-                        "torneo":torneo.id,
-                        "nombre":torneo.nombre,
-                        "genero":torneo.genero,
-                        "partidos":aux1,
-                    };
-                    infoTorneos.push(aux)
-                    }
-                 })
-            break;
-          default:
-            torneos.map((torneo)=>{
-                if(torneo.nombre==nombre_torneo){
-                aux1=[];
-                Partidos.map((partido) => {    
-                
-                    if(partido.torneo.id==torneo.id){
-                        if(partido.estado==1){
-                            aux1.push(partido);  
-                        }
-                    }  
-                })
-                aux={
-                    "torneo":torneo.id,
-                    "nombre":torneo.nombre,
-                    "genero":torneo.genero,
-                    "partidos":aux1,
-                };
-                infoTorneos.push(aux)
-                }
-             })
-            break;
-        }*/
  
   
 return info_Torneos;
 }
 
 
-export const calsesSet = (set1j1,set1j2,set2j1,set2j2,set3j1,set3j2,set4j1,set4j2,puntosj1,puntosj2) =>{
+export const getClasesSet = (set1j1,set1j2,set2j1,set2j2,set3j1,set3j2,set4j1,set4j2,puntosj1,puntosj2) =>{
     let s1j1='';
     let s1j2='';
     let s2j1='';
@@ -395,7 +252,7 @@ export const calsesSet = (set1j1,set1j2,set2j1,set2j2,set3j1,set3j2,set4j1,set4j
     let p1j2='';
     let sets_totalj1='';
     let sets_totalj2='';
-    let calseSet=[];
+    let clasesSet={};
 
 
     if((puntosj1=='AD')){
@@ -471,7 +328,77 @@ export const calsesSet = (set1j1,set1j2,set2j1,set2j2,set3j1,set3j2,set4j1,set4j
         "set_totalj1":sets_totalj1,
         "set_totalj2":sets_totalj2,
     };
-    calseSet.push(aux);
+    clasesSet=aux;
   
-return calseSet;
+return clasesSet;
+}
+
+/**
+ * obtiene el set actual de un partido
+ * @param {object} resultado resultado de un partido 
+ * @returns {number}
+ */
+export const getCurretnSetfromMatch = (resultado) =>{
+    let currentSet;
+  const {sets_j1} = resultado;
+  const {sets_j2} = resultado;
+  switch (sets_j1 + sets_j2) {
+      case 0:
+          currentSet=1;
+      break;
+  
+      case 1:
+          currentSet=2;
+      break;
+      case 2:
+          currentSet=3;
+      break;
+      case 3:
+          currentSet=4;
+      break;
+      case 4:
+          currentSet=5;
+      break;
+  }
+  return currentSet;
+}
+
+/**
+ * obtiene la duración de un partido
+ * @param {string} hora_inicio hora de inicio
+ * @returns {number,number} horas y minutos
+ */
+export const getMatchDuration = (hora_inicio) =>{
+    let duracion = {
+        horas:'',
+        minutos:''
+    }
+
+
+    const ahora=moment.utc().local().format('YYYYMMDD HH:mm');
+    const innicio=moment.utc(hora_inicio).format('YYYYMMDD HH:mm');
+
+    const date  = moment(ahora, "YYYYMMDD HH:mm");
+    
+    const minutos_ = moment(innicio, "YYYYMMDD HH:mm:ss");
+    
+
+    const minutos = date.diff(minutos_, "minutes");
+    const segundos = date.diff(minutos_, "seconds");
+    let min=Math.floor(segundos/60);
+    
+    let h=Math.floor(min/60);
+    min=min-h*60;
+    if (min<10){
+        min=`0${min}`;
+    } 
+    
+    if (h<10){
+        h=`0${h}`;
+    } 
+    duracion = {
+        horas:h,
+        minutos:min
+    }
+    return duracion;
 }
