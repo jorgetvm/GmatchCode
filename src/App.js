@@ -6,7 +6,6 @@ import './App.css';
 
 import  MainContainer_cto_spain from './Containers/MainContainer_cto_spain/MainContainer_cto_spain';
 import MainContaniner from './Containers/MainContainer/MainContainer';
-import MainContainer_padel from './Containers/MainContainer_padel/MainContainer_padel';
 import Torneo from './Containers/Torneo';
 
 

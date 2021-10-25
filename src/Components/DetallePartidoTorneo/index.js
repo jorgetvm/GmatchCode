@@ -84,14 +84,14 @@ export const DetallePartidoTorneo = ({ partido }) => {
               <div className="rondaPadel">{`${ronda}`}</div>
 
               <div className={claseTime}>
-                <i class="fas fa-circle"></i>
+                <i className="fas fa-circle"></i>
                 {`${horas}:${minutos}`}
               </div>
             </div>
           )}
           {estado == 2 && (
             <div className="info_Padel">
-              <div className={claseTime} class="hora_previstaPadel">
+              <div className={claseTime} className="hora_previstaPadel">
                 Finalizado
               </div>
               <div className="pistaPadel">{`Pista ${pista}`}</div>
@@ -99,7 +99,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
           )}
           {estado == 0 && (
             <div className="info_Padel">
-              <div className={claseTime} class="hora_previstaPadel">
+              <div className={claseTime} className="hora_previstaPadel">
                 <i className="far fa-clock icono"></i>
                 {`${hora_prevista_comienzo}`}
               </div>
@@ -109,7 +109,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
         </div>
 
         <div className="JugadorPadel">
-          <div class="info1Padel">
+          <div className="info1Padel">
             <div className={`nombrePadel ${clasej1}`}>{nombrej1}</div>
             {estado == 1 && (
               <div className="flexPadel flex2Padel">

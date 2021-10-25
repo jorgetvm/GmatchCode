@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import moment from 'moment';
 
 import "./Torneo.scss";
 import PartidosPadelContainer from '../PartidosPadelContainer/PartidosPadelContainer';
+import DatePickerContainer from '../DatePickerContainer';
 import { filtraTorneo_id } from "../../Utils/Utils";
 import PartidosContainer from './PartidosContainer';
 
@@ -26,9 +28,18 @@ export const Torneo = ({ id_torneo }) => {
     const {Torneo} = infoTorneo;
     nombre = Torneo[0].nombre;
   }
+  const onChange = (Date) =>{
+    
+    console.log(Date)
+    const SelectedDate = moment(Date)
+    console.log(SelectedDate.date())
+    console.log(SelectedDate.month()+1)
+    console.log(SelectedDate.year())
+  }
   return (
-    <div className=" MainContainer_Padel">
-      <div className=" maincontainer2 padding0 ">
+    <div className="torneo">
+      <div className="torneo_containerPartido torneo_containerPartido--padding0 ">
+        <DatePickerContainer onChange={onChange} locale='es' />
         <PartidosContainer
           torneo_id={id_torneo}
           nombre={nombre}/>

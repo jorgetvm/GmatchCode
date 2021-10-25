@@ -25,9 +25,9 @@ export const PartidosContainer = ({ torneo_id, nombre }) => {
   }, []);
 
   return (
-    <div className=" MainContainer_Padel">
-      <div className="tituloPadel">
-        <div className="divLogo"><img className="logo_padel" src={GMatch_NEW_BLACK} /></div>
+    <div className="PartidosContainer">
+      <div className="PartidosContainer__titulo">
+        <div className="PartidosContainer__divLogo"><img className="PartidosContainer__divLogo--logo" src={GMatch_NEW_BLACK} /></div>
         {`${nombre}`}
       </div>
       {infoPartidos && infoPartidos.Partidos && infoPartidos.Partidos.map((partido,index) =>{

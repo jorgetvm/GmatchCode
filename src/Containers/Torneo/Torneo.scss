@@ -2,72 +2,18 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }  
-.MainContainer_Padel{
+.Torneo{
     width: 100%;
    height: fit-content;
     display: flex;
     align-content: center;
     flex-direction: column;
-
-}
-.tituloPadel{
-    padding: 0px 15px;
-    text-align: -webkit-center;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 4em;
-    color:white;
-}
-.mainContainer2{
-    width:100%;
-    background-color:#114d0b!important;
-}
-.padding0{
-    padding:0px;
-    margin: 0px;
-}
-.border1{
-    border-left: 2px solid;
-}
-.border1{
-    border-left: 2px solid;
-    border-right: 2px solid;
-}
-.border2{
-    border-right: 2px solid;
-}
-@media (max-width:1240px){
-    .tituloPadel{font-size: 2em;}
-
-
-}
-@media (max-width:768px){
-    .logos_padel{
-        position: absolute ;
-    }
-    
-    
-    .tituloPadel{font-size: 2em;}
-    .mainContainer{
-        max-width: 100%;
-    }
-    body{overflow: auto !important;}
-    .border2{
-        border:none;
-    }
-}
-@media (max-width:500px){
-    .tituloPadel{font-size: 1.5em;}
-    .maincontainer2{
-        width: 100%;
-    }
-
-
-}
-@media (max-height:1100px){
-    .logos_padel{
-        position: relative !important ;
+    &__containerPartido{
+        width:100%;
+        background-color:#114d0b!important;
+        &--padding0{
+            padding:0px;
+                margin: 0px;
+            }
     }
 }
