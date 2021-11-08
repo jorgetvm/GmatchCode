@@ -257,16 +257,16 @@ export const getClasesSet = (set1j1,set1j2,set2j1,set2j2,set3j1,set3j2,set4j1,se
 
     if((puntosj1=='AD')){
         p1j1="gana";
-        p1j2="pierde";
+        p1j2="";
         }else if((puntosj2=='AD')){
                 p1j2="gana";
-                p1j1="pierde";
+                p1j1="";
             }else if ((puntosj1>puntosj2)  ) {
                 p1j1="gana";
-                p1j2="pierde";
+                p1j2="";
                 }else if((puntosj2>puntosj1)  ){
                     p1j2="gana";
-                    p1j1="pierde";
+                    p1j1="";
                 }
     
     
@@ -305,13 +305,13 @@ export const getClasesSet = (set1j1,set1j2,set2j1,set2j2,set3j1,set3j2,set4j1,se
 
     if((set1j1+set2j1+set3j1+set4j1)>(set1j2+set2j2+set3j2+set4j2)){
         sets_totalj1="gana";
-        sets_totalj2="pierde";
+        sets_totalj2="";
     }else if((set1j1+set2j1+set3j1+set4j1)<(set1j2+set2j2+set3j2+set4j2)){
         sets_totalj2="gana";
-        sets_totalj1="pierde";
+        sets_totalj1="";
     }else{
-        sets_totalj2="pierde";
-        sets_totalj1="pierde";
+        sets_totalj2="";
+        sets_totalj1="";
     }
 
     const aux={
@@ -389,16 +389,35 @@ export const getMatchDuration = (hora_inicio) =>{
     
     let h=Math.floor(min/60);
     min=min-h*60;
-    if (min<10){
-        min=`0${min}`;
-    } 
+
     
     if (h<10){
-        h=`0${h}`;
+        h=`${h}`;
     } 
     duracion = {
         horas:h,
         minutos:min
     }
     return duracion;
+}
+
+export const ORIENTATION ={
+    VERTICAL:'vertical',
+    HORIZONTAL: 'horizontal'
+}
+
+export const getDeviceInfo = () =>{
+    let orientation = ORIENTATION.VERTICAL;
+    if(window && window.screen){
+        const {screen} = window;
+        const {availWidth, availHeight, orientation} = screen;
+        const {type} = orientation;
+
+        if(type ==='landscape-primary'){
+            orientation=ORIENTATION.HORIZONTAL;
+        } else if(type ==='portrait-primary'){
+            orientation=ORIENTATION.VERTICAL;
+        }
+        
+    }
 }

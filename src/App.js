@@ -25,7 +25,7 @@ class App extends Component {
        return null;
       }
 
-      var id = obtenerValorParametro('torneo');
+      const id = obtenerValorParametro('torneo');
 
 
     return (

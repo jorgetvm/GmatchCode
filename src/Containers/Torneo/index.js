@@ -4,6 +4,7 @@ import moment from 'moment';
 import "./Torneo.scss";
 import PartidosPadelContainer from '../PartidosPadelContainer/PartidosPadelContainer';
 import DatePickerContainer from '../DatePickerContainer';
+import PieTorneos from '../../Components/PieTorneos/PieTorneos';
 import { filtraTorneo_id } from "../../Utils/Utils";
 import PartidosContainer from './PartidosContainer';
 
@@ -37,13 +38,14 @@ export const Torneo = ({ id_torneo }) => {
     console.log(SelectedDate.year())
   }
   return (
-    <div className="torneo">
-      <div className="torneo_containerPartido torneo_containerPartido--padding0 ">
-        <DatePickerContainer onChange={onChange} locale='es' />
+    <div className="Torneo">
+      <div className="Torneo__containerPartido ">
+        {/* <DatePickerContainer onChange={onChange} locale='es' /> */}
         <PartidosContainer
           torneo_id={id_torneo}
           nombre={nombre}/>
       </div>
+      <PieTorneos/>
     </div>
   );
 };

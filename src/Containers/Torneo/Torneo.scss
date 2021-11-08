@@ -4,13 +4,9 @@ body {
 }  
 .Torneo{
     width: 100%;
-   height: fit-content;
-    display: flex;
-    align-content: center;
-    flex-direction: column;
+    min-height: 100vh;
     &__containerPartido{
-        width:100%;
-        background-color:#114d0b!important;
+        min-height: inherit;
         &--padding0{
             padding:0px;
                 margin: 0px;
