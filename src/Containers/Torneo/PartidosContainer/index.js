@@ -30,8 +30,11 @@ export const PartidosContainer = ({ torneo_id, nombre, num_torneos }) => {
     <div className="PartidosContainer">
       {num_torneos && num_torneos <=1 && ancho_pantalla<1200  && (
         <div className="PartidosContainer__divTituloLogo">
-        <div className="PartidosContainer__divTituloLogo__logo">
-          <img src={LogoGmatchNegroNuevo} />
+          
+        <div className="PartidosContainer__divTituloLogo__logo" >
+          <a href="http://info.gmatchapp.com">
+            <img src={LogoGmatchNegroNuevo} />
+          </a>
         </div>
         <div className="PartidosContainer__divTituloLogo__titulo">
           {`${nombre}`}

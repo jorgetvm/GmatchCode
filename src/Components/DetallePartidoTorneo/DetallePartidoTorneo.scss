@@ -103,7 +103,30 @@
     }
 }
 
-
+@media (min-width: 1200px) {
+    .DetallePartidoTorneoContainer{
+        .DetallePartidoTorneo{
+            &__informacion{
+                &__resultados{
+                    &__puntos{
+                        &__punto{
+                            &__pelota{
+                                .iconoSaque{
+                                    height: 36px;
+                                    }
+                                    .iconoSaque_hidden{
+                                    visibility: hidden;
+                                    height: 36px;
+                                    } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+  
+  }
 
 
 // .Partido{
