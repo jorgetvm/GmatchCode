@@ -33,9 +33,11 @@ class App extends Component {
         }
         return result;
       }
-
-
-      const torneos_ids = getTorneosId(obtenerValorParametro('torneo'));
+      const idsTorneo=obtenerValorParametro('torneo')
+      let torneos_ids = null;
+if(idsTorneo){
+  torneos_ids = getTorneosId(obtenerValorParametro('torneo'));
+}
       
     return (
       <Fragment>

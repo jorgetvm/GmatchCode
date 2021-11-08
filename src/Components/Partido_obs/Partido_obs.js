@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import pelota from '../../Imagenes/pelota.png';
 import MCT_REAL_neg from '../../Imagenes/MCT_REAL_neg.png';
-import GMatch_NEW_WHITE from '../../Imagenes/GMatch_NEW_WHITE.png';
+import LogoGmatchNegroNuevo from '../../Imagenes/LogoGmatchNegroNuevo.png';
 import moment from 'moment';
 import './Partido_obs.css';
 
@@ -182,35 +182,43 @@ console.log(horade_inicio)
             
     
 		<div className="contenedor">
-            <div className="obs_jugador obs_borde1">
-                <div className="obs_nombre">
-                <span className="obs_nombre_jugador">{jugador1}</span>
-                <div className="obs_saque"><img className={`obs_pelota ${claseSaque1}`} src={pelota} alt=""/></div>
-                <div className="obs_puntos">{pj1}</div>
-                </div>
-               
-                
-                <div className="obs_set">{set1_j1} </div>
-                {(sets_j1+sets_j2)>0 &&(<div className="obs_set">{set2_j1} </div>)}
-                {(sets_j1+sets_j2)>1 &&(<div className="obs_set">{set3_j1} </div>)}
+            <div className="obs_logos">
+                <img src={LogoGmatchNegroNuevo} />
             </div>
-            <div className="obs_jugador  obs_borde2">
-                <div className="obs_nombre">
-                <span className="obs_nombre_jugador">{jugador2}</span>
-                <div className="obs_saque"><img className={`obs_pelota ${claseSaque2}`} src={pelota} alt=""/></div>
-                <div className="obs_puntos">{pj2}</div>
-                </div>
+            <div className="obs_jugadores">
+                <div className="obs_jugador obs_borde1">
+                    <div className="obs_nombre">
+                    <span className="obs_nombre_jugador">{jugador1}</span>
+                    <div className="obs_saque"><img className={`obs_pelota ${claseSaque1}`} src={pelota} alt=""/></div>
+                    <div className="obs_puntos">{pj1}</div>
+                    </div>
                 
-               
-                <div className="obs_set">{set1_j2}</div>
-                {(sets_j1+sets_j2)>0 &&(<div className="obs_set">{set2_j2} </div>)}
-                {(sets_j1+sets_j2)>1 &&(<div className="obs_set">{set3_j2} </div>)}
+                    
+                    <div className="obs_set">{set1_j1} </div>
+                    {(sets_j1+sets_j2)>0 &&(<div className="obs_set">{set2_j1} </div>)}
+                    {(sets_j1+sets_j2)>1 &&(<div className="obs_set">{set3_j1} </div>)}
+                </div>
+                <div className="obs_jugador  obs_borde2">
+                    <div className="obs_nombre">
+                    <span className="obs_nombre_jugador">{jugador2}</span>
+                    <div className="obs_saque"><img className={`obs_pelota ${claseSaque2}`} src={pelota} alt=""/></div>
+                    <div className="obs_puntos">{pj2}</div>
+                    </div>
+                    
+                
+                    <div className="obs_set">{set1_j2}</div>
+                    {(sets_j1+sets_j2)>0 &&(<div className="obs_set">{set2_j2} </div>)}
+                    {(sets_j1+sets_j2)>1 &&(<div className="obs_set">{set3_j2} </div>)}
+                </div>
+                <div className="obs_pista">
+                    <span className="obs_pista2">{`${nombreTorneo}`}</span>
+                    <span className="obs_triangulo">&nbsp;</span>
+                </div>
             </div>
-            <div className="obs_pista">
-           
-               <span className="obs_pista2">{`${nombreTorneo}`}</span>
-               <span className="obs_triangulo">&nbsp;</span>
-           </div>
+            
+            
+            
+            
         </div>
        
         

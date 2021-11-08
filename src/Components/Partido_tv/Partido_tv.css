@@ -2,7 +2,7 @@
 .contianerPartidoTv{
     height: 1080px;
     background-image: url('../../Imagenes/pista3.jpg');
-    padding: 2em;
+    padding: 1em;
     display: flex;
     flex-direction: column;
 }

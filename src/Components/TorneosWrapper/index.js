@@ -9,7 +9,6 @@ import './TorneosWrapper.scss';
 export const TorneosWrapper = ({torneos}) =>{
     const num_torneos = torneos.length;
     const ancho_pantalla = window.screen.width;
-    console.log(ancho_pantalla)
     return (
     <div className="TorneosWrapper">
         {((num_torneos && num_torneos>1) || (ancho_pantalla>1200)) && (

@@ -121,7 +121,18 @@ cursor:none !important;}
 }
 .obs_logos{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+}
+.obs_logos img{
+    width: 450px;  
+}
+.contenedor{
+    display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    padding: 50px 65px;
+    justify-content: space-between;
+}
+.obs_jugadores{
+    width: 80%;
 }
