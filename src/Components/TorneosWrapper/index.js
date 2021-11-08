@@ -3,7 +3,10 @@ import React, { Component,Fragment } from 'react';
 import Torneo from '../../Containers/Torneo';
 import PieTorneos from '../../Components/PieTorneos/PieTorneos';
 import LogoGmatchNegroNuevo from '../../Imagenes/LogoGmatchNegroNuevo.png';
-
+import MAPFRE from '../../Imagenes/Logo MAPFRE_H RGB_B.png';
+import RMCT from '../../Imagenes/MCT_REAL_pos.png'
+import ORANGE from '../../Imagenes/Orange_2.png';
+import RFET from '../../Imagenes/Logo RFET.png';
 import './TorneosWrapper.scss';
 
 export const TorneosWrapper = ({torneos}) =>{
@@ -13,7 +16,14 @@ export const TorneosWrapper = ({torneos}) =>{
     <div className="TorneosWrapper">
         {((num_torneos && num_torneos>1) || (ancho_pantalla>1200)) && (
             <div className="TorneosWrapper__divTituloLogo">
+               
+                <img  className="mapfre" src={MAPFRE} />
+                
+                <img  className="rmct" src={RMCT} />
                 <img src={LogoGmatchNegroNuevo} />
+                
+                <img  className="mapfre" src={ORANGE} />
+                <img  className="rfet" src={RFET} />
             </div>
         )}
         <div className="TorneosWrapper__torneos">

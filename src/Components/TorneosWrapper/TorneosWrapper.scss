@@ -3,13 +3,23 @@
 .TorneosWrapper{
     &__divTituloLogo{
         display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                width: 100%;
-                box-shadow: 5px 5px 10px #888888;
-                img{
-                  width: 120px;  
-                }
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        box-shadow: 5px 5px 10px #888888;
+            img{
+              width: 120px;  
+              &.mapfre{
+                width: 14%;  
+              }
+              &.rmct{
+                width: 8%;  
+              }
+              &.rfet{
+                width: 7%;  
+              }
+            }
     }
 }
 

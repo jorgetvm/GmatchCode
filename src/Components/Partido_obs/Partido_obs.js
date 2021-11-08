@@ -182,8 +182,11 @@ console.log(horade_inicio)
             
     
 		<div className="contenedor">
-            <div className="obs_logos">
+            {/* <div className="obs_logos">
                 <img src={LogoGmatchNegroNuevo} />
+            </div> */}
+            <div className="obs_gmatch">
+                Powered by GMatch
             </div>
             <div className="obs_jugadores">
                 <div className="obs_jugador obs_borde1">

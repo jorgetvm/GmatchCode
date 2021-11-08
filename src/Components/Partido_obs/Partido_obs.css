@@ -23,7 +23,7 @@
 }
     
 .obs_borde1{
-    border-radius:40px 40px 0px 0px;
+    border-radius:40px 0px 0px 0px;
     border-bottom: 3px solid black;
 }
 .obs_borde2{
@@ -130,9 +130,18 @@ cursor:none !important;}
 }
 .contenedor{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
 }
-.obs_jugadores{
-    width: 80%;
+
+.obs_gmatch{
+    padding: 8px;
+    border: 1px solid grey;
+    border-bottom: none;
+    border-radius: 40px 40px 0px 0px;
+    font-weight: bold;
+    color: #fefefe;
+    background-color: #9f9f9f;
+    align-self: self-end;
+    font-size: 1.5em;
 }
