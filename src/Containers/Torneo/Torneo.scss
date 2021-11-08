@@ -4,12 +4,35 @@ body {
 }  
 .Torneo{
     width: 100%;
-    min-height: 100vh;
+
+   
     &__containerPartido{
         min-height: inherit;
         &--padding0{
             padding:0px;
-                margin: 0px;
+            margin: 0px;
+        }
+        &__divTituloLogo{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            width: 100%;
+            box-shadow: 5px 5px 10px #888888;
+            img{
+              width: 120px;  
             }
+        }
+        &__nombreSolitario{
+            padding:8px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            font-weight: 700;
+            border-bottom: 1px solid #9098a7;
+           
+        }
     }
+}
+.only1{
+    min-height: 100vh;
 }

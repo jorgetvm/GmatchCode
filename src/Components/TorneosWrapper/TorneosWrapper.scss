@@ -1,0 +1,35 @@
+
+
+.TorneosWrapper{
+    &__divTituloLogo{
+        display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                width: 100%;
+                box-shadow: 5px 5px 10px #888888;
+                img{
+                  width: 120px;  
+                }
+    }
+}
+
+@media (min-width: 1500px) {
+    .TorneosWrapper{
+            &__torneos{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                
+                
+                &__torneo{
+                    width: 100%;
+                    
+                    padding: 20px;
+                }
+                .doble{
+                    width: 50%;
+                }
+            }
+    }
+  }

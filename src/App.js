@@ -6,7 +6,7 @@ import './App.css';
 
 import  MainContainer_cto_spain from './Containers/MainContainer_cto_spain/MainContainer_cto_spain';
 import MainContaniner from './Containers/MainContainer/MainContainer';
-import Torneo from './Containers/Torneo';
+import TorneosWrapper from './Components/TorneosWrapper';
 
 
 
@@ -18,24 +18,32 @@ class App extends Component {
         for (var i = 0; i < sURLVariables.length; i++) {
           var sParametro = sURLVariables[i].split('=');
           if (sParametro[0] == sParametroNombre) {
-  
             return sParametro[1];
           }
         }
        return null;
       }
 
-      const id = obtenerValorParametro('torneo');
+      const getTorneosId = (ids) =>{
+        let result = [];
+        if(ids.indexOf('_') >- 1){
+          result = ids.split('_');
+        } else {
+          result.push(ids)
+        }
+        return result;
+      }
 
 
+      const torneos_ids = getTorneosId(obtenerValorParametro('torneo'));
+      
     return (
       <Fragment>
 
-      {id && (
-              // < MainContainer_padel id_torneo={id}/>
-              <Torneo id_torneo={id}/>
-            )}
-      {id=="undefined" || id==null && (
+      {torneos_ids && (
+            <TorneosWrapper torneos={torneos_ids}/>
+      )}
+      {torneos_ids=="undefined" || torneos_ids==null && (
         <MainContaniner/>
       )}
 

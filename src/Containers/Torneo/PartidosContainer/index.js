@@ -5,7 +5,7 @@ import {normalizeInfoTorneo} from '../Normalizer/index';
 import DetallePartidoTorneo from '../../../Components/DetallePartidoTorneo';
 import "./PartidosContainer.scss";
 
-export const PartidosContainer = ({ torneo_id, nombre }) => {
+export const PartidosContainer = ({ torneo_id, nombre, num_torneos }) => {
   const [infoPartidos, setInfoPartidos] = useState("");
   const getInfo = () => {
     fetch("https://gmatchapp.com/api/v1/partidos")
@@ -23,26 +23,28 @@ export const PartidosContainer = ({ torneo_id, nombre }) => {
       getInfo();
     }, 10000);
   }, []);
-  if(infoPartidos){
-    
-console.log(infoPartidos)
-  }
+  const ancho_pantalla = window.screen.width;
+
     
   return (
     <div className="PartidosContainer">
-      <div className="PartidosContainer">
+      {num_torneos && num_torneos <=1 && ancho_pantalla<1200  && (
         <div className="PartidosContainer__divTituloLogo">
-          <div className="PartidosContainer__divTituloLogo__logo">
-            <img src={LogoGmatchNegroNuevo} />
-          </div>
-          <div className="PartidosContainer__divTituloLogo__titulo">
-            {`${nombre}`}
-          </div>
+        <div className="PartidosContainer__divTituloLogo__logo">
+          <img src={LogoGmatchNegroNuevo} />
+        </div>
+        <div className="PartidosContainer__divTituloLogo__titulo">
+          {`${nombre}`}
         </div>
       </div>
-      {infoPartidos && infoPartidos.Partidos && infoPartidos.Partidos.map((partido,index) =>{
-        return <DetallePartidoTorneo partido={partido} />
-      })}
+      )}
+      {infoPartidos && infoPartidos.Partidos && (
+        <div className="PartidosContainer__Partidos">
+          {infoPartidos.Partidos.map((partido,index) =>{
+            return <DetallePartidoTorneo partido={partido} />
+          })}
+        </div>
+      )}
 
     </div>
   );
