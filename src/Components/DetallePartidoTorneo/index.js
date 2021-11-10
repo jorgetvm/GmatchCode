@@ -27,7 +27,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
     hora_inicio,
     set_actual
     } = resultado;
-  let { ronda } = resultado;
+  let { ronda } = partido;
   const nombrej1 = partido.jugadores[0].nombre;
   const nombrej2 = partido.jugadores[1].nombre;
   let claseSaque1 = "iconoSaque";
@@ -38,6 +38,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
   } else {
     claseSaque1 = "iconoSaque_hidden";
   }
+
   if (!ronda) {
     ronda = "Cuartos de final";
   }
