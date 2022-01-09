@@ -8,6 +8,9 @@ import rfet3 from '../../Imagenes/rfet3.png';
 import rfet4 from '../../Imagenes/rfet4.png';
 import rfet5 from '../../Imagenes/rfet5.png';
 import MCT_REAL_neg from '../../Imagenes/MCT_REAL_neg.png';
+import {
+    getMatchDuration,
+  } from "../../Utils/Utils";
 
 import MiraDigital_white from '../../Imagenes/MiraDigital_white.png';
 
@@ -32,7 +35,6 @@ class Partido_tv extends Component {
  
 
     render(){
-console.log("partido_tv")
 
         const { partido } = this.props;
   
@@ -85,32 +87,15 @@ console.log(resultado)
     sets_j2=resultado.sets_j2; 
 }
 
+let { horas, minutos } = getMatchDuration(hora_inicio);
 
-const ahoraa=moment.utc().format('YYYYMMDD HH:mm');
-const innicio3=moment.utc(hora_inicio).format('YYYYMMDD HH:mm');
-var date  = moment(ahoraa, "YYYYMMDD HH:mm");
-var horas_ = moment(innicio3, "YYYYMMDD HH:mm");
-var minutos_ = moment(innicio3, "YYYYMMDD HH:mm:ss");
-var horas = date.diff(horas_, "hours");
-var minutos = date.diff(minutos_, "minutes");
-var segundos = date.diff(minutos_, "seconds");
-let min=Math.floor(segundos/60);
-
-let h=Math.floor(min/60);
-min=min-h*60;
 let mostrar_hora=false;
 if(hora_inicio){
     mostrar_hora=true;
 }
 
 
-if (min<10){
-    min=`0${min}`;
-} 
-
-if (h<10){
-    h=`0${h}`;
-}          
+          
 if(saque_actual===1){
     claseSaque2="iconoSaque_hidden";
     claseSaque1="";
@@ -127,7 +112,6 @@ console.log('claseSaque1' +claseSaque1 + '\n' +'claseSaque2' +claseSaque2);
 
 let pj1;
 let pj2;
-console.log(horade_inicio)
 
    if (autoarbitraje==1) {
     pj1=sets_j1;
@@ -147,7 +131,7 @@ console.log(horade_inicio)
             <div className="nombretorneo texto_info">
                 <div className="nombre_hora">
                     <div>{`${nombreTorneo}`}</div>
-                    <div>{mostrar_hora && (<div className="tiempoTv">{` ${h}:${min}`}</div>)}</div>
+                    <div>{mostrar_hora && (<div className="tiempoTv">{` ${horas}:${minutos}`}</div>)}</div>
                 </div>
             </div>
             <div className="resultadosTv">

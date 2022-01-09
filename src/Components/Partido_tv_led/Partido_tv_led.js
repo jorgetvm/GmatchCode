@@ -1,6 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import pelota from '../../Imagenes/pelota.png';
 
+import {
+    getMatchDuration,
+  } from "../../Utils/Utils";
 import GMatch_NEW_WHITE from '../../Imagenes/GMatch_NEW_WHITE.png';
 import rfet1 from '../../Imagenes/rfet1.png';
 import rfet2 from '../../Imagenes/rfet2.jpg';
@@ -37,8 +40,6 @@ if(torneo && torneo.descripcion){
 }
 
 var autoarbitraje=0;
-let horade_inicio;
-//const {puntos_j1} = resultado;
 var juegosj1,claseSaque2,claseSaque1;
 var puntos_j1,juegos_j1,set1_j1,set2_j1,set3_j1,saque_actual,sets_j1,ganador,jugador1,jugador2,pista,ronda;
 var puntos_j2,juegos_j2,set1_j2,set2_j2,set3_j2,sets_j2;
@@ -52,7 +53,6 @@ if( arbitros){
 }
  
 if(resultado){
-console.log(resultado)
     jugador1=partido.jugadores[0].nombre;
     jugador2=partido.jugadores[1].nombre;
     pista=partido.pista;
@@ -76,30 +76,14 @@ console.log(resultado)
 }
 
 
-const ahoraa=moment.utc().format('YYYYMMDD HH:mm');
-const innicio3=moment.utc(hora_inicio).format('YYYYMMDD HH:mm');
-var date  = moment(ahoraa, "YYYYMMDD HH:mm");
-var minutos_ = moment(innicio3, "YYYYMMDD HH:mm:ss");
-var segundos = date.diff(minutos_, "seconds");
-let min=Math.floor(segundos/60);
 
-let h=Math.floor(min/60);
-min=min-h*60;
-h=h;
+let { horas, minutos } = getMatchDuration(hora_inicio);
 
 let mostrar_hora=false;
 if(hora_inicio){
     mostrar_hora=true;
 }
-
-
-if (min<10){
-    min=`0${min}`;
-} 
-
-if (h<10){
-    h=`0${h}`;
-}          
+        
 if(saque_actual===1){
     claseSaque2="iconoSaque_hidden";
     claseSaque1="";
@@ -112,11 +96,9 @@ if(sets_j1+sets_j2>=3){
     claseSaque1="iconoSaque_hidden";
 
 }
-console.log('claseSaque1' +claseSaque1 + '\n' +'claseSaque2' +claseSaque2);
 
 let pj1;
 let pj2;
-console.log(horade_inicio)
 
    if (autoarbitraje==1) {
     pj1=sets_j1;
@@ -170,7 +152,7 @@ console.log(horade_inicio)
             <div className="publicidadLed">
                 <div className="divLogoLed"><img className="logoTvLed"   src={GMatch_NEW_WHITE}/></div>
                 <div className="nombreClub">{`${nombreCLub}`}</div>
-                <div>{mostrar_hora && (<div className="tiempoTvLed">{` ${h}:${min}`}</div>)}</div>
+                <div>{mostrar_hora && (<div className="tiempoTvLed">{` ${horas}:${minutos}`}</div>)}</div>
 
 
             </div>
