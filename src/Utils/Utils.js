@@ -375,7 +375,7 @@ export const getMatchDuration = (hora_inicio) =>{
     }
 
 
-    const ahora=moment.utc().local().format('YYYYMMDD HH:mm');
+    const ahora=moment.utc().format('YYYYMMDD HH:mm');
     const innicio=moment.utc(hora_inicio).format('YYYYMMDD HH:mm');
 
     const date  = moment(ahora, "YYYYMMDD HH:mm");

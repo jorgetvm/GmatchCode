@@ -76,6 +76,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
     else clasej2 = "gana";
   }
 
+
   return (
     <div className="DetallePartidoTorneoContainer">
       <div className="DetallePartidoTorneoContainer__upperInfo">

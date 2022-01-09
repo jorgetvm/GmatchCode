@@ -76,32 +76,19 @@ console.log(resultado)
 }
 
 
-const ahoraa=moment.utc().local().format('YYYYMMDD HH:mm');
+const ahoraa=moment.utc().format('YYYYMMDD HH:mm');
 const innicio3=moment.utc(hora_inicio).format('YYYYMMDD HH:mm');
 var date  = moment(ahoraa, "YYYYMMDD HH:mm");
-var horas_ = moment(innicio3, "YYYYMMDD HH:mm");
-var minutos_ = moment(innicio3, "YYYYMMDD HH:mm");
 var minutos_ = moment(innicio3, "YYYYMMDD HH:mm:ss");
-var horas = date.diff(horas_, "hours");
-var minutos = date.diff(minutos_, "minutes");
 var segundos = date.diff(minutos_, "seconds");
-const horass=minutos/60;
-const resto=minutos%60;
 let min=Math.floor(segundos/60);
 
 let h=Math.floor(min/60);
 min=min-h*60;
-// console.log(segundos+' s '+min+' m ' + h +'h'); "7d"
-// console.log(date.diff(minutos_, "minutes") + "m"); "7m"
+h=h;
+
 let mostrar_hora=false;
 if(hora_inicio){
-
-   const ahora_h=moment.utc().local().format('HH');
-   const ahora_m=moment().format('mm');
-   const inicio_h=moment.utc(hora_inicio).format('HH');
-   const inicio_m=moment.utc(hora_inicio).local().format('mm');
-
-
     mostrar_hora=true;
 }
 
@@ -138,7 +125,6 @@ console.log(horade_inicio)
     pj1=puntos_j1;
     pj2=puntos_j2;
    }
-      
         return (
         <div className="contianerPartidoTvLed">
             <div className="nombretorneoLed ">    

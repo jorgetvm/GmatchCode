@@ -83,59 +83,23 @@ console.log(resultado)
     set2_j2=resultado.set2_j2;
     set3_j2=resultado.set3_j2;
     sets_j2=resultado.sets_j2; 
-}/*else{
-    /*jugador1="Rafa Nadal";
-    jugador2="Roger Federer";
-    pista="1";
-
-    hora_prevista=moment.utc(hora_prevista).local().format('HH:mm');
-    hora_inicio=moment.utc(hora_prevista).local().format('HH:mm');
-    puntos_j1="15";
-    juegos_j1="2";
-    set1_j1="6";
-    set2_j1="2";
-    set3_j1="0";
-    saque_actual=1;
-    sets_j1=1;
-    ganador=null;
-    puntos_j2="30";
-    juegos_j2="5";
-    set1_j2="4";
-    set2_j2="5";
-    set3_j2="0";
-    sets_j2=0; 
-}*/
+}
 
 
-const ahoraa=moment.utc().local().format('YYYYMMDD HH:mm');
+const ahoraa=moment.utc().format('YYYYMMDD HH:mm');
 const innicio3=moment.utc(hora_inicio).format('YYYYMMDD HH:mm');
-// console.log('ahora ' + ahoraa + '; inicio: ' + innicio3);
 var date  = moment(ahoraa, "YYYYMMDD HH:mm");
-// console.log(date.format('YYYYMMDD HH:mm'));
 var horas_ = moment(innicio3, "YYYYMMDD HH:mm");
-var minutos_ = moment(innicio3, "YYYYMMDD HH:mm");
 var minutos_ = moment(innicio3, "YYYYMMDD HH:mm:ss");
-// console.log('horas_' + horas_.format('HH') + 'minutos_' + minutos_.format('mm'));
 var horas = date.diff(horas_, "hours");
 var minutos = date.diff(minutos_, "minutes");
 var segundos = date.diff(minutos_, "seconds");
-const horass=minutos/60;
-const resto=minutos%60;
 let min=Math.floor(segundos/60);
 
 let h=Math.floor(min/60);
 min=min-h*60;
-// console.log(segundos+' s '+min+' m ' + h +'h'); "7d"
-// console.log(date.diff(minutos_, "minutes") + "m"); "7m"
 let mostrar_hora=false;
 if(hora_inicio){
-
-   const ahora_h=moment.utc().local().format('HH');
-   const ahora_m=moment().format('mm');
-   const inicio_h=moment.utc(hora_inicio).format('HH');
-   const inicio_m=moment.utc(hora_inicio).local().format('mm');
-
-
     mostrar_hora=true;
 }
 
