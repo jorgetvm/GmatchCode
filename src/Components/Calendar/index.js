@@ -4,16 +4,17 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import './Calendar.scss';
 
 export const Calendar = ({
-  nextDayOnClick, prevDayOnClick, day, month, diaSemana,
+  nextDayOnClick, prevDayOnClick, day, month, diaSemana,prevDayMatchs,netxDayMatchs,
 }) => {
   const diasSemana = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
   const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
   let bloquedButtonLeft = '';
   let bloquedButtonRight = '';
-  if (prevDayOnClick) {
+  debugger;
+  if (!prevDayMatchs) {
     bloquedButtonLeft = 'Calendar__flecha--bloqued';
   }
-  if (nextDayOnClick) {
+  if (!netxDayMatchs) {
     bloquedButtonRight = 'Calendar__flecha--bloqued';
   }
   return (

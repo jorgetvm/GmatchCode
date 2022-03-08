@@ -426,25 +426,27 @@ export const getTorneosId = (ids) => {
 
 
 export const filterPartidosByDate = (infoPartidos, dia, mes, año) => {
-  const partidosFiltrados = [];
-  const { Partidos } = infoPartidos;
-  Partidos.forEach((partido) => {
-    const d = new Date(partido.hora_prevista);
-    const diaPartido = d.getUTCDate();
-    const mesPartido = d.getUTCMonth() + 1;
-    const añoPartido = d.getUTCFullYear();
-    console.log(dia);
-    console.log(diaPartido);
-    console.log(mes);
-    console.log(mesPartido);
-    console.log(año);
-    console.log(añoPartido);
-    if (dia === diaPartido && mes === mesPartido && año === añoPartido) {
-      partidosFiltrados.push(partido);
-    }
-    // partidosFiltrados.push(partido);
-  });
-  return partidosFiltrados;
+  if(infoPartidos) {
+    const partidosFiltrados = [];
+    const { Partidos } = infoPartidos;
+    Partidos.forEach((partido) => {
+      const d = new Date(partido.hora_prevista);
+      const diaPartido = d.getUTCDate();
+      const mesPartido = d.getUTCMonth() + 1;
+      const añoPartido = d.getUTCFullYear();
+      console.log(dia);
+      console.log(diaPartido);
+      console.log(mes);
+      console.log(mesPartido);
+      console.log(año);
+      console.log(añoPartido);
+      if (dia === diaPartido && mes === mesPartido && año === añoPartido) {
+        partidosFiltrados.push(partido);
+      }
+      // partidosFiltrados.push(partido);
+    });
+    return partidosFiltrados;
+  }else return null
 };
 
 export const checkNextDaymatchs = (infoPartidos, date) => {
@@ -462,6 +464,7 @@ export const checkNextDaymatchs = (infoPartidos, date) => {
 };
 
 export const checkPrevDaymatchs = (infoPartidos, date) => {
+  debugger;
   let result = false;
   const prevDate = new Date(date);
   debugger;

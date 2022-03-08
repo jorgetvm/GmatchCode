@@ -47,7 +47,7 @@ export const PartidosContainer = ({ torneo_id, nombre, num_torneos }) => {
       const nextDate = new Date(date);
       nextDate.setDate(nextDate.getDate() - 1);
       setDate(nextDate);
-    }else return null
+    }
   };
   useEffect(() => {
     setDay(date.getUTCDate());
@@ -73,7 +73,7 @@ export const PartidosContainer = ({ torneo_id, nombre, num_torneos }) => {
 
       <section>
         {(day && month) && (
-        <Calendar nextDayOnClick={nextDayOnClick} prevDayOnClick={prevDayOnClick} day={day} month={month} diaSemana={date.getDay()} />
+        <Calendar nextDayOnClick={nextDayOnClick} netxDayMatchs={checkNextDaymatchs(infoPartidos, date)} prevDayOnClick={prevDayOnClick} prevDayMatchs={checkPrevDaymatchs(infoPartidos, date)} day={day} month={month} diaSemana={date.getDay()} />
         )}
         {partidosNormalizados && partidosNormalizados.length > 0 && (
         <div className="PartidosContainer__Partidos">
