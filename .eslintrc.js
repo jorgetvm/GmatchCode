@@ -28,6 +28,7 @@ module.exports = {
     "rules": {
         "import/no-named-as-default": "off",
         "linebreak-style": "off",
+        "react/forbid-prop-types": [false, { forbid: ['off'], checkContextTypes: false, checkChildContextTypes: false }],
         "react/jsx-pascal-case": [0, { allowAllCaps: true, allowNamespace: true, allowLeadingUnderscore: false }],
         "react/jsx-filename-extension": [
             2,

@@ -142,7 +142,7 @@ export const createInfoSpain = (Partidos, torneos, nombre_torneo) => {
 export const filtraTorneo_id = (Torneos, torneo_id) => {
   const torneo_filtrado = [];
   Torneos.map((torneo) => {
-    if (torneo.id == torneo_id) {
+    if (torneo.id == torneo_id || torneo.hashid == torneo_id) {
       torneo_filtrado.push(torneo);
     }
   });
@@ -159,7 +159,7 @@ export const filtraTorneo_id = (Torneos, torneo_id) => {
 export const filtraPartidosDependsTorneoId = (partidos, torneo_id) => {
   const result = [];
   partidos.map((partido) => {
-    if (partido.torneo && partido.torneo.id == torneo_id) {
+    if (partido.torneo && partido.torneo.id == torneo_id ||  partido.torneo.hashid == torneo_id) {
       result.push(partido);
     }
   });
@@ -439,10 +439,10 @@ export const filterPartidosByDate = (infoPartidos, dia, mes, año) => {
     console.log(mesPartido);
     console.log(año);
     console.log(añoPartido);
-    // if (dia === diaPartido && mes === mesPartido && año === añoPartido) {
-    //   partidosFiltrados.push(partido);
-    // }
-    partidosFiltrados.push(partido);
+    if (dia === diaPartido && mes === mesPartido && año === añoPartido) {
+      partidosFiltrados.push(partido);
+    }
+    // partidosFiltrados.push(partido);
   });
   return partidosFiltrados;
 };
@@ -464,6 +464,7 @@ export const checkNextDaymatchs = (infoPartidos, date) => {
 export const checkPrevDaymatchs = (infoPartidos, date) => {
   let result = false;
   const prevDate = new Date(date);
+  debugger;
   prevDate.setDate(prevDate.getDate() - 1);
   const day = prevDate.getDate();
   const month = prevDate.getUTCMonth() + 1;

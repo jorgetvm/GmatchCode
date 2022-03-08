@@ -14,7 +14,7 @@ export const PartidosContainer = ({ torneo_id, nombre, num_torneos }) => {
   const [year, setYear] = useState(date.getUTCFullYear());
   const [partidosNormalizados, setPartidosNormalizados] = useState([]);
   const getInfo = () => {
-    fetch('https://gmatchapp.com/api/v1/partidos')
+    fetch('https://test.gmatchapp.com/api/v1/partidos')
       .then((response) => response.json())
       .then((data) => {
         setInfoPartidos({ Partidos: normalizeInfoTorneo(data, torneo_id) });
@@ -47,7 +47,7 @@ export const PartidosContainer = ({ torneo_id, nombre, num_torneos }) => {
       const nextDate = new Date(date);
       nextDate.setDate(nextDate.getDate() - 1);
       setDate(nextDate);
-    }
+    }else return null
   };
   useEffect(() => {
     setDay(date.getUTCDate());

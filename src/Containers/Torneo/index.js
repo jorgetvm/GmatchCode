@@ -11,10 +11,11 @@ import PartidosContainer from './PartidosContainer';
 export const Torneo = ({ id_torneo, num_torneos }) => {
   const [infoTorneo, setInfoTorneo] = useState('');
   const getInfo = () => {
-    fetch('https://gmatchapp.com/api/v1/torneos')
+    fetch('https://test.gmatchapp.com/api/v1/torneos')
       .then((response) => response.json())
       .then((data) => {
         const dataFiltered = filtraTorneo_id(data, id_torneo);
+        console.log(dataFiltered)
         setInfoTorneo({ Torneo: dataFiltered });
       })
       .catch((error) => console.log('error', error));
