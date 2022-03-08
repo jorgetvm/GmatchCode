@@ -9,6 +9,9 @@ import rfet3 from '../../Imagenes/rfet3.png';
 import rfet4 from '../../Imagenes/rfet4.png';
 import rfet5 from '../../Imagenes/rfet5.png';
 import MCT_REAL_neg from '../../Imagenes/MCT_REAL_neg.png';
+import {
+  getMatchDuration,
+} from '../../Utils/Utils';
 
 import MiraDigital_white from '../../Imagenes/MiraDigital_white.png';
 

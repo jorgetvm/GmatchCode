@@ -41,6 +41,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
   } else {
     claseSaque1 = 'iconoSaque_hidden';
   }
+
   if (!ronda) {
     ronda = 'Cuartos de final';
   }
@@ -77,6 +78,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
     if (ganador === 1) clasej1 = 'gana';
     else clasej2 = 'gana';
   }
+
 
   return (
     <div className="DetallePartidoTorneoContainer">

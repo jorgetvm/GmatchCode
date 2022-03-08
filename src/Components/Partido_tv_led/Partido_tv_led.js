@@ -2,6 +2,9 @@ import React, { Component, Fragment } from 'react';
 import moment from 'moment';
 import pelota from '../../Imagenes/pelota.png';
 
+import {
+  getMatchDuration,
+} from '../../Utils/Utils';
 import GMatch_NEW_WHITE from '../../Imagenes/GMatch_NEW_WHITE.png';
 import rfet1 from '../../Imagenes/rfet1.png';
 import rfet2 from '../../Imagenes/rfet2.jpg';
