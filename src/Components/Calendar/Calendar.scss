@@ -1,0 +1,15 @@
+.Calendar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 10px 0px;
+    border-bottom: 1px solid;
+    &__flecha{
+        cursor:pointer;
+        &--bloqued{
+            opacity: 0.2;
+            cursor: not-allowed;
+        }
+    }
+}

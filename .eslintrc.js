@@ -6,7 +6,6 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
         "airbnb",
     ],
     "env": {
@@ -14,9 +13,8 @@ module.exports = {
       },
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
     },
-    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -26,9 +24,11 @@ module.exports = {
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
     ],
     "rules": {
+        "import/no-named-as-default": "off",
+        "linebreak-style": "off",
+        "react/jsx-pascal-case": [0, { allowAllCaps: true, allowNamespace: true, allowLeadingUnderscore: false }],
         "react/jsx-filename-extension": [
             2,
             {
@@ -37,5 +37,6 @@ module.exports = {
                 ".jsx"
               ]
             }
+        ]
     }
 };

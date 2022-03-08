@@ -5,36 +5,32 @@ import DetallePartido from '../DetallePartido/DetallePartido';
 
 
 class Partido extends Component {
-
-    constructor(props) {
-        super(props)
-		this.state = {
-            id:'',
-            Partidos: []
-		}
-       
-    }
-
- 
-
-    render(){
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: '',
+      Partidos: [],
+    };
+  }
 
 
-        const { Partido,NombreTorneo } = this.props;
-        const { pista,hora,tipo_partido,ronda} = Partido;
-     console.log(Partido)
-        return (
-		<div className="torneoContainer">
-            <h2>{`${NombreTorneo}`}</h2>	
-            {Partido && Partido.map(((partido,index) =>
-                <div key={index.toString()}>
-                <DetallePartido Partido={partido}/>
-                </div>)
-            )}    
-        </div>
-		
-        );		
+  render() {
+    const { Partido, NombreTorneo } = this.props;
+    const {
+      pista, hora, tipo_partido, ronda,
+    } = Partido;
+    console.log(Partido);
+    return (
+      <div className="torneoContainer">
+        <h2>{`${NombreTorneo}`}</h2>
+        {Partido && Partido.map(((partido, index) => (
+          <div key={index.toString()}>
+            <DetallePartido Partido={partido} />
+          </div>
+        )))}
+      </div>
 
-}
+    );
+  }
 }
 export default Partido;

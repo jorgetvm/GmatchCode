@@ -1,17 +1,15 @@
 
-import { SHOW_USERS } from '../actions'
- 
+import { SHOW_USERS } from '../actions';
+
 const initialState = {
-    list: []
-}
- 
+  list: [],
+};
+
 export function showUsers(state = initialState, action) {
-    
-    switch (action.type) {
-        case SHOW_USERS:
-            return Object.assign({}, state, {list: action.payload})
-        default:
-            return state 
-    }
-    
+  switch (action.type) {
+    case SHOW_USERS:
+      return { ...state, list: action.payload };
+    default:
+      return state;
+  }
 }

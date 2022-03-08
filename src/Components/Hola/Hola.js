@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
- 
+
 class Hola extends Component {
   render() {
     return (
@@ -7,5 +7,5 @@ class Hola extends Component {
     );
   }
 }
- 
+
 export default Hola;

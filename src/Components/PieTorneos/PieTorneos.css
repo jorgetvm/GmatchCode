@@ -2,4 +2,7 @@
     background-color: #f8f9fa;
     padding: 10px;
     margin-top: 20px;
+    bottom: 0;
+    width: -webkit-fill-available;
+    z-index: 999999;
 }

@@ -1,60 +1,35 @@
-import React, { Component,Fragment } from 'react';
-
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import './App.css';
- 
-
-import  MainContainer_cto_spain from './Containers/MainContainer_cto_spain/MainContainer_cto_spain';
-import MainContaniner from './Containers/MainContainer/MainContainer';
-import TorneosWrapper from './Components/TorneosWrapper';
 
 
+import TorneosPage from './Pages/Torneos/TorneosPage';
+import PartidoWeb from './Pages/Partidos/Web/PartidoWeb';
+import PartidoObs from './Pages/Partidos/Obs/PartidoObs';
+import PartidoLed from './Pages/Partidos/Led/PartidoLed';
+import PartidoStats from './Pages/Partidos/Stats/PartidoStats';
 
-class App extends Component {  
-  render() {
-    function obtenerValorParametro(sParametroNombre) {
-      var sPaginaURL = window.location.search.substring(1);
-       var sURLVariables = sPaginaURL.split('&');
-        for (var i = 0; i < sURLVariables.length; i++) {
-          var sParametro = sURLVariables[i].split('=');
-          if (sParametro[0] == sParametroNombre) {
-            return sParametro[1];
-          }
-        }
-       return null;
-      }
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/tenis/torneo" component={TorneosPage} />
+          <Route exact path="/tenis/partido/web" component={PartidoWeb} />
+          <Route exact path="/tenis/partido/obs" component={PartidoObs} />
+          <Route exact path="/tenis/partido/led" component={PartidoLed} />
+          <Route exact path="/tenis/partido/stats" component={PartidoStats} />
+          <Route exact path="/tenis/partido" component={PartidoWeb} />
+        </Switch>
 
-      const getTorneosId = (ids) =>{
-        let result = [];
-        if(ids.indexOf('_') >- 1){
-          result = ids.split('_');
-        } else {
-          result.push(ids)
-        }
-        return result;
-      }
-      const idsTorneo=obtenerValorParametro('torneo')
-      let torneos_ids = null;
-if(idsTorneo){
-  torneos_ids = getTorneosId(obtenerValorParametro('torneo'));
-}
-      
-    return (
-      <Fragment>
-
-      {torneos_ids && (
-            <TorneosWrapper torneos={torneos_ids}/>
-      )}
-      {torneos_ids=="undefined" || torneos_ids==null && (
-        <MainContaniner/>
-      )}
-
-      
-       
-     </Fragment>
-    );
-  };
+      </div>
+    </Router>
+  );
 }
 
- 
+
 export default App;
