@@ -30,7 +30,7 @@ export const PartidoLedPage = () => {
 
   if (infoPartido) {
     infoPartido.forEach((partido) => {
-      if (idPartido === partido.id) {
+      if (idPartido === partido.hashid) {
         infopartidoTv = partido;
       }
     });

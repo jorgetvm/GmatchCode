@@ -31,7 +31,7 @@ export const PartidoWebPage = () => {
 
   if (infoPartido) {
     infoPartido.forEach((partido) => {
-      if (idPartido == partido.id) {
+      if (idPartido == partido.hashid) {
         infopartido_tv = partido;
       }
     });

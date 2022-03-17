@@ -45,7 +45,7 @@ class DetallePartidoPadel extends Component {
 
 
         const { Partidos } = this.props;
-        debugger;
+        
 
         const {resultado}= Partidos;
         let{hora_prevista,ronda,estado,pista} = Partidos;

@@ -30,6 +30,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
     hora_inicio,
     set_actual,
   } = resultado;
+  console.log(resultado)
   let { ronda } = resultado;
   const nombrej1 = partido.jugadores[0] ? partido.jugadores[0].nombre : '';
   const nombrej2 = partido.jugadores[1] ? partido.jugadores[1].nombre : '';
@@ -79,7 +80,8 @@ export const DetallePartidoTorneo = ({ partido }) => {
     else clasej2 = 'gana';
   }
 
-
+console.log(partido)
+console.log(hora_prevista_comienzo)
   return (
     <div className="DetallePartidoTorneoContainer">
       <div className="DetallePartidoTorneoContainer__upperInfo">
@@ -97,7 +99,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
                 {`${horas > 0 ? `${horas}h:` : ''}${minutos}'`}
               </div>
             )}
-            {estado == 0 && (
+            {estado == 0 || estado === 'Programado'  && (
               <div className="DetallePartidoTorneo__horaPista__hora__horarioComienzo">
                 <i className="far fa-clock" />
                 {hora_prevista_comienzo}

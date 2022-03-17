@@ -11,7 +11,6 @@ export const TorneosPage = () => {
     torneosIds = getTorneosId(obtenerValorParametro('id'));
   }
 
-
   return (
     <section className="TorneosPage">
       {torneosIds && (

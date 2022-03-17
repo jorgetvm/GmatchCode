@@ -8,7 +8,7 @@ import PieTorneos from '../../Components/PieTorneos/PieTorneos';
 import { filtraTorneo_id } from '../../Utils/Utils';
 import PartidosContainer from './PartidosContainer';
 
-export const Torneo = ({ id_torneo, num_torneos }) => {
+export const Torneo = ({ id_torneo, numTorneos }) => {
   const [infoTorneo, setInfoTorneo] = useState('');
   const getInfo = () => {
     fetch('https://test.gmatchapp.com/api/v1/torneos')
@@ -30,9 +30,9 @@ export const Torneo = ({ id_torneo, num_torneos }) => {
   }
   const anchoPantalla = window.screen.width;
   return (
-    <div className={`Torneo ${num_torneos === 1 ? 'only1' : ''}`}>
+    <div className={`Torneo ${numTorneos === 1 ? 'only1' : ''}`}>
       <div className="Torneo__containerPartido ">
-        {((num_torneos && num_torneos > 1) || (anchoPantalla > 1200)) && (
+        {((numTorneos && numTorneos > 1) || (anchoPantalla > 1200)) && (
           <div className="Torneo__containerPartido__nombreSolitario">
             {nombre}
           </div>
@@ -40,12 +40,12 @@ export const Torneo = ({ id_torneo, num_torneos }) => {
         <PartidosContainer
           torneo_id={id_torneo}
           nombre={nombre}
-          num_torneos={num_torneos}
+          numTorneos={numTorneos}
         />
 
 
       </div>
-      {num_torneos && num_torneos === 1 && anchoPantalla <= 1200 && (
+      {numTorneos && numTorneos === 1 && anchoPantalla <= 1200 && (
         <PieTorneos />
       )}
     </div>

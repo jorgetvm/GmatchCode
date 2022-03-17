@@ -6,7 +6,7 @@ import DetallePartidoTorneo from '../../../Components/DetallePartidoTorneo';
 import './PartidosContainer.scss';
 import Calendar from '../../../Components/Calendar';
 
-export const PartidosContainer = ({ torneo_id, nombre, num_torneos }) => {
+export const PartidosContainer = ({ torneo_id, nombre, numTorneos }) => {
   const [infoPartidos, setInfoPartidos] = useState('');
   const [date, setDate] = useState(new Date());
   const [day, setDay] = useState(date.getDate());
@@ -54,10 +54,9 @@ export const PartidosContainer = ({ torneo_id, nombre, num_torneos }) => {
     setMonth(date.getUTCMonth() + 1);
     getInfo();
   }, [date]);
-
   return (
     <div className="PartidosContainer">
-      {num_torneos && num_torneos <= 1 && anchoPantalla < 1200 && (
+      {numTorneos && numTorneos <= 1 && anchoPantalla < 1200 && (
         <div className="PartidosContainer__divTituloLogo">
 
           <div className="PartidosContainer__divTituloLogo__logo">

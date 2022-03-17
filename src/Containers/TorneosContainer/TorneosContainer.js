@@ -16,7 +16,6 @@ class TorneosContainer extends Component {
       listStyleType: 'none',
       padding: '0px',
     };
-    console.log(this.props);
     const { Torneos } = this.props;
     return (
       <div className="TorneosContainer">

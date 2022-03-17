@@ -8,7 +8,14 @@ import Dominos from '../../Imagenes/Dominos.png';
 import rfet3 from '../../Imagenes/rfet3.png';
 import rfet4 from '../../Imagenes/rfet4.png';
 import rfet5 from '../../Imagenes/rfet5.png';
+import CEDU_white from '../../Imagenes/Logos_CEU_blancos_png/CEDU_white.png';
 import MCT_REAL_neg from '../../Imagenes/MCT_REAL_neg.png';
+import CostaCalida_white from '../../Imagenes/Logos_CEU_blancos_png/CostaCalida_white.png';
+import CSD_white from '../../Imagenes/Logos_CEU_blancos_png/CSD_white.png';
+import RegiodeMurcia_white from '../../Imagenes/Logos_CEU_blancos_png/RegiodeMurcia_white.png';
+import UCAM25 from '../../Imagenes/Logos_CEU_blancos_png/UCAM25.png';
+
+
 import {
   getMatchDuration,
 } from '../../Utils/Utils';
@@ -220,13 +227,15 @@ class Partido_tv extends Component {
             </div>
 
           </div>
+
+          
           <div className="publicidad">
             <div className="divLogo"><img className="logoTv" src={GMatch_NEW_WHITE} /></div>
-            <img className="divLogo" src="https://cdn-magento2-static.head.com/version1618337719/frontend/Head/base/es_ES/images/logo.svg" title="" alt="" width="250px" height="auto" />
-            <div className="divLogo"><img className="logoTv dominos" src={Dominos} /></div>
-            <div className="divLogo"><img className="logoTv" src={LOGO_FPRM_white} /></div>
-            <div className="divLogo"><img className="logoTv" src={MiraDigital_white} /></div>
-
+            <div className="divLogo"><img className="logoTv dominos" src={RegiodeMurcia_white} /></div>
+            <div className="divLogo"><img className="logoTv dominos altura_modificada" src={CSD_white} /></div>
+            <div className="divLogo"><img className="logoTv" src={CostaCalida_white} /></div>
+            <div className="divLogo"><img className="logoTv" src={MCT_REAL_neg} /></div>
+            <div className="divLogo"><img className="logoTv" src={UCAM25} /></div>
           </div>
 
 

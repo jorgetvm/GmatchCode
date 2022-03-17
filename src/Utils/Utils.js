@@ -356,8 +356,7 @@ export const getMatchDuration = (hora_inicio) => {
 
 
   const ahora = moment.utc().local().format('YYYYMMDD HH:mm');
-  const innicio = moment.utc(hora_inicio).format('YYYYMMDD HH:mm');
-
+  const innicio = moment.utc(hora_inicio).local().format('YYYYMMDD HH:mm');
   const date = moment(ahora, 'YYYYMMDD HH:mm');
 
   const minutos_ = moment(innicio, 'YYYYMMDD HH:mm:ss');
@@ -372,7 +371,7 @@ export const getMatchDuration = (hora_inicio) => {
 
 
   if (h < 10) {
-    h = `${h}`;
+    h = `${h-1}`;
   }
   duracion = {
     horas: h,
@@ -434,12 +433,6 @@ export const filterPartidosByDate = (infoPartidos, dia, mes, año) => {
       const diaPartido = d.getUTCDate();
       const mesPartido = d.getUTCMonth() + 1;
       const añoPartido = d.getUTCFullYear();
-      console.log(dia);
-      console.log(diaPartido);
-      console.log(mes);
-      console.log(mesPartido);
-      console.log(año);
-      console.log(añoPartido);
       if (dia === diaPartido && mes === mesPartido && año === añoPartido) {
         partidosFiltrados.push(partido);
       }
@@ -464,10 +457,10 @@ export const checkNextDaymatchs = (infoPartidos, date) => {
 };
 
 export const checkPrevDaymatchs = (infoPartidos, date) => {
-  debugger;
+  
   let result = false;
   const prevDate = new Date(date);
-  debugger;
+  
   prevDate.setDate(prevDate.getDate() - 1);
   const day = prevDate.getDate();
   const month = prevDate.getUTCMonth() + 1;

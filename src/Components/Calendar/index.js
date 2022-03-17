@@ -10,7 +10,7 @@ export const Calendar = ({
   const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
   let bloquedButtonLeft = '';
   let bloquedButtonRight = '';
-  debugger;
+  
   if (!prevDayMatchs) {
     bloquedButtonLeft = 'Calendar__flecha--bloqued';
   }
