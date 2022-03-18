@@ -10,7 +10,7 @@ export const TorneosPage = () => {
   if (idsTorneo) {
     torneosIds = getTorneosId(obtenerValorParametro('id'));
   }
-
+  console.log(torneosIds)
   return (
     <section className="TorneosPage">
       {torneosIds && (
