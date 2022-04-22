@@ -15,8 +15,7 @@
 .texto_info{
     font-family: arial;
     font-weight: bold;
-    font-size: 3vw;
-    height: 10vh;
+    font-size: 7vh;
 }
 .texto_nombres{
     font-family: arial;
@@ -118,19 +117,19 @@
     background-color: #374a3b;
 }
 .logoTv{
-    width: 5vw;
+    width: 4vw;
 }
 .logoTv2{
-    width: 11vw;
+    width: 10vw;
 }
 .logoTv3{
-    width: 6vw;
+    width:5vw;
 }
 .logoTv4{
-    width: 9vw;
+    width: 8vw;
 }
 .logoTv5{
-    width: 16vw;
+    width: 15vw;
 }
 .dominos{
     width: 100px;
