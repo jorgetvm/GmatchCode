@@ -230,12 +230,12 @@ class Partido_tv extends Component {
 
           
           <div className="publicidad">
-            <div className="divLogo"><img className="logoTv" src={GMatch_NEW_WHITE} /></div>
-            <div className="divLogo"><img className="logoTv dominos" src={RegiodeMurcia_white} /></div>
-            <div className="divLogo"><img className="logoTv dominos altura_modificada" src={CSD_white} /></div>
-            <div className="divLogo"><img className="logoTv" src={CostaCalida_white} /></div>
-            <div className="divLogo"><img className="logoTv" src={MCT_REAL_neg} /></div>
-            <div className="divLogo"><img className="logoTv" src={UCAM25} /></div>
+            <div className="divLogo"><img className="logoTv3" src={GMatch_NEW_WHITE} /></div>
+            <div className="divLogo"><img className="logoTv " src={RegiodeMurcia_white} /></div>
+            <div className="divLogo"><img className="logoTv4 " src={CSD_white} /></div>
+            <div className="divLogo"><img className="logoTv2" src={CostaCalida_white} /></div>
+            <div className="divLogo"><img className="logoTv5" src={UCAM25} /></div>
+            <div className="divLogo"><img className="logoTv4" src={MCT_REAL_neg} /></div>
           </div>
 
 

@@ -404,7 +404,6 @@ export const getDeviceInfo = () => {
 export const obtenerValorParametro = (parametro) => {
   const sPaginaURL = window.location.search.substring(1);
   const sURLVariables = sPaginaURL.split('&');
-  debugger;
   for (let i = 0; i < sURLVariables.length; i++) {
     const sParametro = sURLVariables[i].split('=');
     if (sParametro[0] == parametro) {

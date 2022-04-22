@@ -1,42 +1,51 @@
 
 .contianerPartidoTv{
-    height: 1080px;
+    height: 100vh;
     background-image: url('../../Imagenes/pista3.jpg');
-    padding: 1em;
+    padding: 1vw;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 .resultadosTv{
-    margin-top: 30px;
+    height: 45vh;
     background-color: #19331f;
    
 }
 .texto_info{
     font-family: arial;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 3vw;
+    height: 10vh;
 }
 .texto_nombres{
     font-family: arial;
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 4vw;
     color: aliceblue;
 }
 .nombresTv{
-    padding: 0rem 2rem;
+    padding: 0rem 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
 }
 .nombretorneo{
-    padding: 1rem;
+    height: 10vh;
+    padding: 0 1vw;
     width: 100%;
     color: #114d0b;
     background-color: white;
 }
 .pistaTv{
-    
-    padding: 1rem;
     width: 100%;
+    display: flex;
     color: #114d0b;
     background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 .jugador1Tv, .jugador2Tv{
@@ -45,69 +54,83 @@
     justify-content: space-between;
 }
 .pelotaTv{
-    width: 60px;
+    width: 3vw;
 }
 
 .logoPista{
+    height: 20vh;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 .logoPista .logo_pista{
-    width: 310px;
+    width: 25vh;
 }
 .nombre_hora{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    align-content: center;
 }
 .jugadorTv{
+    width: 70%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 .resultadoTv{
+    width: 30%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    line-height: 8rem;
-    font-size: 5rem;
+    font-size: 4vw;
     font-family: arial;
     font-weight: bold;
+    justify-content: space-evenly;
 }
 .grupo1{    
+    width: 80%;
     align-items: center;
     flex-direction: row;
     display: flex;
-    padding: 0px 0.5em;
     color: aliceblue;
 }
 .grupo2{    
+    width: 20%;
     align-items: center;
     flex-direction: row;
     display: flex;
-    padding: 0px 0.5em;
     color: #114d0b;
     background-color: white;
+    justify-content: center;
+}
+.setTv{
+    padding: 0 1vw;
 }
 
-.setTv{
-    padding:0.3em;
-}
 
 .publicidad{
+    height: 13vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-top: 30px;
+    justify-content: space-around;
     background-color: #374a3b;
-    padding: 0px 2rem;
 }
 .logoTv{
-    width: 190px;
+    width: 5vw;
 }
 .logoTv2{
-    width: 250px;
+    width: 11vw;
+}
+.logoTv3{
+    width: 6vw;
+}
+.logoTv4{
+    width: 9vw;
+}
+.logoTv5{
+    width: 16vw;
 }
 .dominos{
     width: 100px;
@@ -139,162 +162,3 @@
 .partidotv{
     background-image: url('../../Imagenes/pista3.jpg');
 }
-/*
-.jugador{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 7rem;
-    font-family:  Arial;
-    margin-bottom: 40px;
-
-}
-    
-.pelota{
-    width: 30px;
-    width: 95px;
-}
-.nombre{
-    width: 66%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 124px;
-}
-.nombre_jugador{
-    font-weight: bold;
-    align-self: center;
-    width: 80%;
-    font-family: arial;
-    color:#e5ec0a;
-}
-.contenedor{width: 100%;
-    padding: 0px 60px;
-    padding-top: 5%;
-    color: black;}
-.iconoSaque_hidden{
-        visibility: hidden;
-}
-.set{
-    color:#ffffff;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column-reverse;
-    margin-top: -153px;
-    width: 140px;
-    text-align: center;
-}
-.set2{
-    font-family:  Arial;
-    color: #e5ec0a;
-    font-size: 58px;
-
-}
-body{background-color:#114d0b !important;
-overflow:hidden !important;
-cursor:none !important;}
-.logo{
-    width: 350px;
-}
-.divLogo{
- 
-    align-self: center;
-}
-.logo-partido{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-}
-.pista{
-    margin-bottom: 100px;
-    width: 100%;
-    color:#ffffff;
-    font-size: 55px;
-    margin-top: 50px;
-    font-family:  Arial;
-    align-self: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0px 60px;
-}
-.tamaño_puntos{    font-size: 11rem;}
-.tiempo{
-    color: white;
-
-    font-size: 60px;
-    align-self: center;
-}
-.paddingFix{margin-bottom: 40px;}
-.puntos{
-    font-family: Arial;
-   
-    font-weight: bold;
-    color: white;
-}
-.logos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 20px 65px;
-    padding-top:0px;
-}
-@media (max-width: 1800px){
-    .pista{font-size: 50px;}
-    .jugador{font-size: 4.5rem;}
-    .set2{font-size: 3rem;}
-}
-@media (max-width: 1730px){
-    .pelota{width: 90px;}
-}
-@media (max-width: 1611px){
-    .jugador{font-size: 4rem;}
-    .set2{font-size: 3rem;}
-    .logo{width: 360px;}
-    .tiempo{font-size: 4rem;}
-    .pista{font-size: 45px;}
-}
-@media (max-width: 1458px){
-    .jugador{font-size: 3.5rem;}
-    .set2{font-size: 3rem;}
-    .pista{font-size: 40px;}
-}
-@media (max-width: 1538px){
-    .pelota{    width: 70px;}
-    .logo{width: 300px;}
-    .tiempo{font-size: 3.5rem;}
-}
-@media (max-width: 1300px){
-    .jugador{font-size: 3rem;}
-    .set2{font-size: 2.5rem;}
-    .logo{width: 250px;}
-    .tiempo{font-size: 3rem;}
-    .pista{font-size: 35px;}
-}
-@media (max-width: 1154px){
-    .jugador{font-size: 2.5rem;}
-    .set2{font-size: 2.5rem;}
-  
-    .logo{width: 180px;}
-    
-}
-@media (max-width: 768px){
-    .jugador{font-size: 2rem;}
-    .set2{font-size: 1.5rem;}
-    .pista{font-size: 2rem;margin: 20px 0px;}
-    .logo{width: 180px;}
-    .pelota{width: 40px;}
-    .nombre{margin-right: 45px;}
-    .set{width: 100px;}
-    .logo {width: 100px;}
-    .tiempo {font-size: 2rem;}
-}
-@media (max-width: 690px){
-    .set {width: 90px;}
-}
-@media (max-width: 670px){
-    .jugador {font-size: 1.5rem;}
-    .pista{font-size: 1.5rem;}
-    .tiempo {font-size: 1.5rem;}
-}*/
