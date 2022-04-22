@@ -1,7 +1,7 @@
 :root {
     --color-letras: #d2c226;
-    --jugadores-size: 4vw;
-    --points-size: 7vw;
+    --jugadores-size: 6vw;
+    --points-size: 8vw;
     --tituloTorneo-size: 3vw;
     --relojTv-size: 2.5vw;
     --nombreClub-size: 3vw;
@@ -10,10 +10,14 @@
     height: 100vh;
     background-color:black;
     font-family: system-ui;
-    padding: 10px;
+    padding: 1vh 2vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+.nombre_jugadorLed{
+    text-align: -webkit-left;
+    line-height: 12vh;
 }
 .resultadosTvLed{
     background-color: #19331f;
@@ -26,7 +30,7 @@
     color: var(--color-letras);
 }
 .nombresTvLed{
-    padding: 10px;
+    padding: 0 1vw;
     display: flex;
     height: 100%;
     flex-direction: column;
