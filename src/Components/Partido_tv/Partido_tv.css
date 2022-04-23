@@ -8,7 +8,7 @@
     justify-content: space-between;
 }
 .resultadosTv{
-    height: 45vh;
+    height: 60vh;
     background-color: #19331f;
    
 }
@@ -20,7 +20,7 @@
 .texto_nombres{
     font-family: arial;
     font-weight: bold;
-    font-size: 4vw;
+    font-size: 7vw;
     color: aliceblue;
 }
 .nombresTv{
@@ -33,7 +33,7 @@
 .nombretorneo{
     height: 10vh;
     padding: 0 1vw;
-    width: 100%;
+    width: 70%;
     color: #114d0b;
     background-color: white;
 }
@@ -53,7 +53,7 @@
     justify-content: space-between;
 }
 .pelotaTv{
-    width: 3vw;
+    width: 5vw;
 }
 
 .logoPista{
@@ -61,9 +61,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
 }
 .logoPista .logo_pista{
-    width: 25vh;
+    width: 26vh;
 }
 .nombre_hora{
     display: flex;
@@ -73,17 +74,19 @@
     align-content: center;
 }
 .jugadorTv{
-    width: 70%;
+    width: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 .resultadoTv{
-    width: 30%;
+    width: 41%;
+    min-width: 41%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 6vw;
+    font-size: 10vw;
+    line-height: 29vh;
     font-family: arial;
     font-weight: bold;
     justify-content: space-evenly;
@@ -91,6 +94,10 @@
 .nombre_jugador{
     text-align: -webkit-left;
     line-height: 10vh;
+}
+.textoPequeño{
+    font-size: 5vw;
+    line-height: 12vh;
 }
 .grupo1{    
     width: 66%;
@@ -100,7 +107,7 @@
     color: aliceblue;
 }
 .grupo2{    
-    line-height: 15vh;
+    line-height: 25vh;
     width: 33%;
     align-items: center;
     flex-direction: row;
@@ -131,10 +138,10 @@
     width:5vw;
 }
 .logoTv4{
-    width: 8vw;
+    width: 13vw;
 }
 .logoTv5{
-    width: 15vw;
+    width: 18vw;
 }
 .dominos{
     width: 100px;

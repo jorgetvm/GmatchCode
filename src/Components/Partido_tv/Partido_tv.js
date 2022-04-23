@@ -176,26 +176,35 @@ class Partido_tv extends Component {
       pj1 = puntos_j1;
       pj2 = puntos_j2;
     }
-
+    const espaciosJ1 = jugador1.split(" ").length >2 ? 'textoPequeño' : '' ;
+    const espaciosJ2 = jugador2.split(" ").length >2 ? 'textoPequeño' : '' ;
+    const textoPequeño = espaciosJ1 || espaciosJ2;
+    debugger;
     return (
       <>
         <div className="contianerPartidoTv">
-          <div className="logoPista">
-            <img className="logo_pista" src={GMatch_NEW_WHITE} />
-            <div className="pistaTv texto_info">{`Pista ${pista}`}</div>
-          </div>
+        <div className="logoPista">
+          <img className="logo_pista" src={GMatch_NEW_WHITE} />
           <div className="nombretorneo texto_info">
             <div className="nombre_hora">
               <div>{`${nombreTorneo}`}</div>
               <div>{mostrar_hora && (<div className="tiempoTv">{` ${h}:${min}`}</div>)}</div>
             </div>
           </div>
+          <img className="logo_pista" src={MCT_REAL_neg} />
+        </div>
+        
+          {/* <div className="logoPista">
+            <img className="logo_pista" src={GMatch_NEW_WHITE} />
+            <div className="pistaTv texto_info">{`Pista ${pista}`}</div>
+          </div> */}
+          
           <div className="resultadosTv">
             <div className="nombresTv texto_nombres">
               <div className="jugador1Tv">
                 <div className="jugadorTv">
                   <div className="saque "><img className={`pelotaTv ${claseSaque1}`} src={pelota} alt="" /></div>
-                  <span className="nombre_jugador">{jugador1}</span>
+                  <span className={`nombre_jugador ${textoPequeño}`}>{jugador1}</span>
                 </div>
                 <div className="resultadoTv">
                   <div className="grupo1">
@@ -211,7 +220,7 @@ class Partido_tv extends Component {
               <div className="jugador2Tv">
                 <div className="jugadorTv">
                   <div className="saque "><img className={`pelotaTv ${claseSaque2}`} src={pelota} alt="" /></div>
-                  <span className="nombre_jugador">{jugador2}</span>
+                  <span className={`nombre_jugador ${textoPequeño}`}>{jugador2}</span>
                 </div>
                 <div className="resultadoTv">
                   <div className="grupo1">
@@ -230,12 +239,10 @@ class Partido_tv extends Component {
 
           
           <div className="publicidad">
-            <div className="divLogo"><img className="logoTv3" src={GMatch_NEW_WHITE} /></div>
             <div className="divLogo"><img className="logoTv " src={RegiodeMurcia_white} /></div>
             <div className="divLogo"><img className="logoTv4 " src={CSD_white} /></div>
-            <div className="divLogo"><img className="logoTv2" src={CostaCalida_white} /></div>
+            <div className="divLogo"><img className="logoTv4" src={CostaCalida_white} /></div>
             <div className="divLogo"><img className="logoTv5" src={UCAM25} /></div>
-            <div className="divLogo"><img className="logoTv4" src={MCT_REAL_neg} /></div>
           </div>
 
 
