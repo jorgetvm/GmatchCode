@@ -18,17 +18,13 @@ import './TorneosWrapper.scss';
 export const TorneosWrapper = ({ torneos }) => {
   const numTorneos = torneos.length;
   const anchoPantalla = window.screen.width;
-  console.log("por aqui")
   return (
     <div className="TorneosWrapper">
       {((numTorneos && numTorneos > 1) || (anchoPantalla > 1200)) && (
         <div className="TorneosWrapper__divTituloLogo">
-
           <img className="mapfre" src={CEDU} alt="logo mapfre" />
-
           <img className="rfet2" src={CostaCalida} alt="logo RMCT" />
           <img src={LogoGmatchNegroNuevo} alt="logo gmatch" />
-
           <img className="mapfre" src={CSD} alt="logo ORANGE" />
           <img className="rfet" src={RegiondeMurcia} alt="logo RFET" />
           <img className="rfet2" src={UCAM25_color} alt="logo RFET" />

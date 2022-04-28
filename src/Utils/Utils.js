@@ -431,7 +431,7 @@ export const filterPartidosByDate = (infoPartidos, dia, mes, año) => {
     Partidos.forEach((partido) => {
       const d = new Date(partido.hora_prevista);
       const diaPartido = d.getUTCDate();
-      const mesPartido = d.getUTCMonth() + 1;
+      const mesPartido = d.getUTCMonth();
       const añoPartido = d.getUTCFullYear();
       if (dia === diaPartido && mes === mesPartido && año === añoPartido) {
         partidosFiltrados.push(partido);
@@ -447,7 +447,7 @@ export const checkNextDaymatchs = (infoPartidos, date) => {
   const nextDate = new Date(date);
   nextDate.setDate(nextDate.getDate() + 1);
   const day = nextDate.getDate();
-  const month = nextDate.getUTCMonth() + 1;
+  const month = nextDate.getUTCMonth();
   const year = nextDate.getFullYear();
   const partidos = filterPartidosByDate(infoPartidos, day, month, year);
   if (partidos && partidos.length > 0) {
@@ -463,7 +463,7 @@ export const checkPrevDaymatchs = (infoPartidos, date) => {
   
   prevDate.setDate(prevDate.getDate() - 1);
   const day = prevDate.getDate();
-  const month = prevDate.getUTCMonth() + 1;
+  const month = prevDate.getUTCMonth();
   const year = prevDate.getFullYear();
   const partidos = filterPartidosByDate(infoPartidos, day, month, year);
   if (partidos && partidos.length > 0) {
