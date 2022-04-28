@@ -4,7 +4,7 @@ import MainContainer from '../../../Containers/MainContainer/MainContainer';
 import { obtenerValorParametro, getTorneosId } from '../../../Utils/Utils';
 import Partido_obs from '../../../Components/Partido_obs/Partido_obs';
 import { API_PARTIDOS, TIME_API_PARTIDOS } from '../../../Utils/Constants';
-
+import './PartidoObs.scss';
 export const PartidoObsPage = () => {
   const [infoPartido, setInfoPartido] = useState(null);
   const [idPartido, setIdPartido] = useState(obtenerValorParametro('id'));

@@ -355,10 +355,11 @@ export const getMatchDuration = (hora_inicio) => {
   };
 
 
-  const ahora = moment.utc().local().format('YYYYMMDD HH:mm');
-  const innicio = moment.utc(hora_inicio).local().format('YYYYMMDD HH:mm');
+  let ahora = moment.utc().format();
+  ahora = moment.utc(ahora).format('YYYYMMDD HH:mm')
+  let innicio =  moment.utc(hora_inicio, "YYYYMMDD HH:mm").local().format('YYYYMMDD HH:mm');
   const date = moment(ahora, 'YYYYMMDD HH:mm');
-
+debugger;
   const minutos_ = moment(innicio, 'YYYYMMDD HH:mm:ss');
 
 
@@ -368,10 +369,12 @@ export const getMatchDuration = (hora_inicio) => {
 
   let h = Math.floor(min / 60);
   min -= h * 60;
-
+  if(min < 10 ){
+    min = `0${min}`
+  }
 
   if (h < 10) {
-    h = `${h-1}`;
+    h = `${h}`;
   }
   duracion = {
     horas: h,

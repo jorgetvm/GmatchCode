@@ -33,7 +33,7 @@
 .nombretorneo{
     height: 10vh;
     padding: 0 1vw;
-    width: 70%;
+    width: 65vw;
     color: #114d0b;
     background-color: white;
 }
@@ -64,7 +64,7 @@
     justify-content: space-around;
 }
 .logoPista .logo_pista{
-    width: 26vh;
+    width: 12vw;
 }
 .nombre_hora{
     display: flex;
