@@ -8,26 +8,9 @@ import PieTorneos from '../../Components/PieTorneos/PieTorneos';
 import { filtraTorneo_id } from '../../Utils/Utils';
 import PartidosContainer from './PartidosContainer';
 
-export const Torneo = ({ id_torneo, numTorneos }) => {
-  const [infoTorneo, setInfoTorneo] = useState('');
-  const getInfo = () => {
-    fetch('https://test.gmatchapp.com/api/v1/torneos')
-      .then((response) => response.json())
-      .then((data) => {
-        const dataFiltered = filtraTorneo_id(data, id_torneo);
-        console.log(dataFiltered)
-        setInfoTorneo({ Torneo: dataFiltered });
-      })
-      .catch((error) => console.log('error', error));
-  };
-  useEffect(() => {
-    getInfo();
-  }, []);
-  let nombre = '';
-  if (infoTorneo) {
-    const { Torneo } = infoTorneo;
-    nombre = Torneo[0].nombre;
-  }
+export const Torneo = ({ id_torneo, numTorneos, nombre }) => {
+  
+ 
   const anchoPantalla = window.screen.width;
   return (
     <div className={`Torneo ${numTorneos === 1 ? 'only1' : ''}`}>

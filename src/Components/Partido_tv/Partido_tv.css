@@ -33,7 +33,7 @@
 .nombretorneo{
     height: 10vh;
     padding: 0 1vw;
-    width: 65vw;
+    width: 70vw;
     color: #114d0b;
     background-color: white;
 }
@@ -45,13 +45,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
+
 .jugador1Tv, .jugador2Tv{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 .pelotaTv{
     width: 5vw;
 }
@@ -61,10 +62,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0rem 1vw;
 }
 .logoPista .logo_pista{
-    width: 12vw;
+    width: 22vh;
 }
 .nombre_hora{
     display: flex;
@@ -150,25 +152,6 @@
 .altura_modificada{
     height: 50px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .partidotv{
     background-image: url('../../Imagenes/pista3.jpg');

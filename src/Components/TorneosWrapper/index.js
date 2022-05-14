@@ -1,5 +1,5 @@
 
-import React, { Component, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Torneo from '../../Containers/Torneo';
 import PieTorneos from '../PieTorneos/PieTorneos';
@@ -16,27 +16,48 @@ import UCAM25_color from '../../Imagenes/Logos_CEU_blancos_png/UCAM25_color.png'
 import './TorneosWrapper.scss';
 
 export const TorneosWrapper = ({ torneos }) => {
+  const [infoTorneo, setInfoTorneo] = useState('');
+  let logos = [];
+  let nombre = '';
   const numTorneos = torneos.length;
   const anchoPantalla = window.screen.width;
+  const apiUrl = `https://gmatchapp.com/api/v1/torneos/${torneos[0]}`;
+  const getInfo = () => {
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        setInfoTorneo({ Torneo: data });
+      })
+      .catch((error) => console.log('error', error));
+  };
+  useEffect(() => {
+    getInfo();
+  }, []);
+
+  if (infoTorneo) {
+    const { Torneo } = infoTorneo;
+    nombre = Torneo.nombre;
+    logos = Torneo.imagenes_patrocinadores;
+  }
+  const printLogos = (logos) =>{
+    return(
+      <div className="TorneosWrapper__divTituloLogo">
+        <img src={LogoGmatchNegroNuevo} alt="logo gmatch" />
+        {logos.map(eachLogo =>{
+          return(
+            <img src={eachLogo} alt='logo' />
+          )
+        })}
+      </div>
+    )
+  }
   return (
     <div className="TorneosWrapper">
-      {((numTorneos && numTorneos > 1) || (anchoPantalla > 1200)) && (
-        <div className="TorneosWrapper__divTituloLogo">
-          <img className="mapfre" src={CEDU} alt="logo mapfre" />
-          <img className="rfet2" src={CostaCalida} alt="logo RMCT" />
-          <img src={LogoGmatchNegroNuevo} alt="logo gmatch" />
-          <img className="mapfre" src={CSD} alt="logo ORANGE" />
-          <img className="rfet" src={RegiondeMurcia} alt="logo RFET" />
-          <img className="rfet2" src={UCAM25_color} alt="logo RFET" />
-        </div>
-      )}
-
+      {logos && logos.length >= 1 && printLogos(logos)}
       <div className="TorneosWrapper__torneos">
-        {torneos.map((hashid) => (
-          <div className={`TorneosWrapper__torneos__torneo ${numTorneos > 1 ? 'doble' : ''}`}>
-            <Torneo id_torneo={hashid} numTorneos={torneos.length} />
-          </div>
-        ))}
+        <div className={`TorneosWrapper__torneos__torneo ${numTorneos > 1 ? 'doble' : ''}`}>
+          <Torneo id_torneo={torneos[0]} numTorneos={torneos.length} nombre={nombre} />
+        </div>
       </div>
       {numTorneos && numTorneos > 1 && anchoPantalla < 1200 && (
         <PieTorneos />

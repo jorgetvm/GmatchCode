@@ -137,7 +137,6 @@ class Partido_tv extends Component {
               <div>{mostrar_hora && (<div className="tiempoTv">{` ${horas}:${minutos}`}</div>)}</div>
             </div>
           </div>
-          <img className="logo_pista" src={MCT_REAL_neg} />
         </div>
         
           {/* <div className="logoPista">

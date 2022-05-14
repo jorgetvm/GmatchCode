@@ -20,7 +20,7 @@ export const PartidoWebPage = () => {
       updateData();
     }, TIME_API_PARTIDOS);
 
-    fetch(API_PARTIDOS, {})
+    fetch(`${API_PARTIDOS}/${idPartido}`, {})
       .then((response) => response.json())
       .then((data) => {
         setInfoPartido(data);
@@ -30,11 +30,9 @@ export const PartidoWebPage = () => {
 
 
   if (infoPartido) {
-    infoPartido.forEach((partido) => {
-      if (idPartido == partido.hashid) {
-        infopartido_tv = partido;
+      if (idPartido === infoPartido.hashid) {
+        infopartido_tv = infoPartido;
       }
-    });
   }
 
   console.log(infopartido_tv);
