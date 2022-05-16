@@ -45,7 +45,7 @@ class Partido_tv extends Component {
     const infoPartido = partido;
 
     const { resultado, arbitro, torneo, torneo_media } = infoPartido;
-    const {imagen_logo, imagenes_patrocinadores} = torneo_media;
+    const {imagen_logo, imagenes_patrocinadores, club_logo} = torneo_media;
     let nombreTorneo; let genero;
     if (torneo) {
       nombreTorneo = torneo.nombre;
@@ -138,8 +138,8 @@ class Partido_tv extends Component {
               <div>{mostrar_hora && (<div className="tiempoTv">{` ${horas}:${minutos}`}</div>)}</div>
             </div>
           </div>
-          {imagen_logo && imagen_logo.length > 0 && (
-            imagen_logo.map((eachLogo) => {
+          {club_logo && club_logo.length > 0 && (
+            club_logo.map((eachLogo) => {
               return <img className="logo" src={eachLogo} />
             })
             )}

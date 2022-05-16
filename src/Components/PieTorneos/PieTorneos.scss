@@ -1,0 +1,15 @@
+.pieTorneos{
+    background-color: #f8f9fa;
+    padding: 10px;
+    height: 20vh;
+    &__logos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        &--item{
+            min-width: 30vw;
+        }
+    }
+}

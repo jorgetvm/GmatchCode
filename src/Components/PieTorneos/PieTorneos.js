@@ -9,15 +9,15 @@ import CostaCalida from '../../Imagenes/Logos_CEU_blancos_png/CostaCalida.png'
 import CSD from '../../Imagenes/Logos_CEU_blancos_png/CSD.png'
 import RegiondeMurcia from '../../Imagenes/Logos_CEU_blancos_png/RegiondeMurcia.png'
 import UCAM25_color from '../../Imagenes/Logos_CEU_blancos_png/UCAM25_color.png'
-import './PieTorneos.css';
+import './PieTorneos.scss';
 export const PieTorneos = () => (
   <div className="pieTorneos">
-    <div className="Torneo__containerPartido__logos">
-      <div className="Torneo__containerPartido__logos--item"><img className="mapfre" src={CEDU} alt="mapfre" /></div>
-      <div className="Torneo__containerPartido__logos--item"><img className="rmct" src={CostaCalida} alt="rmct" /></div>
-      <div className="Torneo__containerPartido__logos--item"><img className="mapfre" src={CSD} alt="mapfre" /></div>
-      <div className="Torneo__containerPartido__logos--item"><img className="rfet" src={RegiondeMurcia} alt="reft" /></div>
-      <div className="Torneo__containerPartido__logos--item"><img className="rfet" src={UCAM25_color} alt="reft" /></div>
+    <div className="pieTorneos__logos">
+      <div className="pieTorneos__logos--item"><img className="mapfre" src={CEDU} alt="mapfre" /></div>
+      <div className="pieTorneos__logos--item"><img className="rmct" src={CostaCalida} alt="rmct" /></div>
+      <div className="pieTorneos__logos--item"><img className="mapfre" src={CSD} alt="mapfre" /></div>
+      <div className="pieTorneos__logos--item"><img className="rfet" src={RegiondeMurcia} alt="reft" /></div>
+      <div className="pieTorneos__logos--item"><img className="rfet" src={UCAM25_color} alt="reft" /></div>
     </div>
     <div><a href="http://info.gmatchapp.com">info.gmatchapp.com</a></div>
     <div>

@@ -3,6 +3,8 @@ import { filterPartidosByDate, checkNextDaymatchs, checkPrevDaymatchs } from '..
 import LogoGmatchNegroNuevo from '../../../Imagenes/LogoGmatchNegroNuevo.png';
 import { normalizeInfoTorneo } from '../Normalizer/index';
 import DetallePartidoTorneo from '../../../Components/DetallePartidoTorneo';
+import PieTorneos from '../../../Components/PieTorneos/PieTorneos';
+
 import './PartidosContainer.scss';
 import Calendar from '../../../Components/Calendar';
 
@@ -14,7 +16,7 @@ export const PartidosContainer = ({ torneo_id, nombre, numTorneos }) => {
   const [year, setYear] = useState(date.getUTCFullYear());
   const [partidosNormalizados, setPartidosNormalizados] = useState([]);
   const getInfo = () => {
-    fetch('https://test.gmatchapp.com/api/v1/partidos')
+    fetch('https://gmatchapp.com/api/v1/partidos')
       .then((response) => response.json())
       .then((data) => {
         setInfoPartidos({ Partidos: normalizeInfoTorneo(data, torneo_id) });
@@ -88,7 +90,7 @@ export const PartidosContainer = ({ torneo_id, nombre, numTorneos }) => {
         </div>
         )}
       </section>
-
+      <PieTorneos />
 
     </div>
   );

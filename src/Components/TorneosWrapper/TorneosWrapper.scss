@@ -1,6 +1,10 @@
 
 
 .TorneosWrapper{
+  min-height: inherit;
+  &__torneos{
+    min-height: inherit;
+  }
     &__divTituloLogo{
         display: flex;
         flex-direction: row;

@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Torneo from '../../Containers/Torneo';
-import PieTorneos from '../PieTorneos/PieTorneos';
 import LogoGmatchNegroNuevo from '../../Imagenes/LogoGmatchNegroNuevo.png';
 // import MAPFRE from '../../Imagenes/Logo MAPFRE_H RGB_B.png';
 // import RMCT from '../../Imagenes/MCT_REAL_pos.png';
@@ -20,6 +19,7 @@ export const TorneosWrapper = ({ torneos }) => {
   let logos = [];
   let nombre = '';
   const numTorneos = torneos.length;
+  debugger;
   const anchoPantalla = window.screen.width;
   const apiUrl = `https://gmatchapp.com/api/v1/torneos/${torneos[0]}`;
   const getInfo = () => {
@@ -53,16 +53,11 @@ export const TorneosWrapper = ({ torneos }) => {
   }
   return (
     <div className="TorneosWrapper">
-      {logos && logos.length >= 1 && printLogos(logos)}
-      <div className="TorneosWrapper__torneos">
-        <div className={`TorneosWrapper__torneos__torneo ${numTorneos > 1 ? 'doble' : ''}`}>
+        <div className={`TorneosWrapper__torneo`}>
           <Torneo id_torneo={torneos[0]} numTorneos={torneos.length} nombre={nombre} />
         </div>
+       
       </div>
-      {numTorneos && numTorneos > 1 && anchoPantalla < 1200 && (
-        <PieTorneos />
-      )}
-    </div>
 
 
   );
