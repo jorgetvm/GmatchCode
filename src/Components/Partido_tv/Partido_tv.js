@@ -44,7 +44,8 @@ class Partido_tv extends Component {
 
     const infoPartido = partido;
 
-    const { resultado, arbitro, torneo } = infoPartido;
+    const { resultado, arbitro, torneo, torneo_media } = infoPartido;
+    const {imagen_logo, imagenes_patrocinadores} = torneo_media;
     let nombreTorneo; let genero;
     if (torneo) {
       nombreTorneo = torneo.nombre;
@@ -137,6 +138,11 @@ class Partido_tv extends Component {
               <div>{mostrar_hora && (<div className="tiempoTv">{` ${horas}:${minutos}`}</div>)}</div>
             </div>
           </div>
+          {imagen_logo && imagen_logo.length > 0 && (
+            imagen_logo.map((eachLogo) => {
+              return <img className="logo" src={eachLogo} />
+            })
+            )}
         </div>
         
           {/* <div className="logoPista">
@@ -184,10 +190,15 @@ class Partido_tv extends Component {
 
           
           <div className="publicidad">
-            <div className="divLogo"><img className="logoTv " src={RegiodeMurcia_white} /></div>
+          {imagenes_patrocinadores && imagenes_patrocinadores.length > 0 && (
+            imagenes_patrocinadores.map((eachLogo) => {
+              return <div className="divLogo"><img className="logoTv " src={eachLogo} /></div>
+            })
+            )}
+            {/* <div className="divLogo"><img className="logoTv " src={RegiodeMurcia_white} /></div>
             <div className="divLogo"><img className="logoTv4 " src={CSD_white} /></div>
             <div className="divLogo"><img className="logoTv4" src={CostaCalida_white} /></div>
-            <div className="divLogo"><img className="logoTv5" src={UCAM25} /></div>
+            <div className="divLogo"><img className="logoTv5" src={UCAM25} /></div> */}
           </div>
 
 
