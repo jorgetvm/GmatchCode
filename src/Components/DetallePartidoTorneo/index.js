@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React  from 'react';
 import moment from 'moment';
 import {
   getCurretnSetfromMatch,
@@ -6,11 +6,12 @@ import {
   getMatchDuration,
 } from '../../Utils/Utils';
 import pelota from '../../Imagenes/pelota.png';
+import { RONDA_NAMING } from  './constants';
 import './DetallePartidoTorneo.scss';
 
 export const DetallePartidoTorneo = ({ partido }) => {
   const resultado = partido?.resultado || [];
-  const ronda = (typeof partido?.ronda === 'string') || '';
+  const ronda = RONDA_NAMING[partido?.ronda] || '';
   const {
     pista, estado, hora_prevista,deporte
   } = partido;
