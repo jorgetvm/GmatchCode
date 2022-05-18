@@ -19,7 +19,6 @@ export const TorneosWrapper = ({ torneos }) => {
   let logos = [];
   let nombre = '';
   const numTorneos = torneos.length;
-  debugger;
   const anchoPantalla = window.screen.width;
   const apiUrl = `https://gmatchapp.com/api/v1/torneos/${torneos[0]}`;
   const getInfo = () => {
@@ -39,24 +38,11 @@ export const TorneosWrapper = ({ torneos }) => {
     nombre = Torneo.nombre;
     logos = Torneo.imagenes_patrocinadores;
   }
-  const printLogos = (logos) =>{
-    return(
-      <div className="TorneosWrapper__divTituloLogo">
-        <img src={LogoGmatchNegroNuevo} alt="logo gmatch" />
-        {logos.map(eachLogo =>{
-          return(
-            <img src={eachLogo} alt='logo' />
-          )
-        })}
-      </div>
-    )
-  }
   return (
     <div className="TorneosWrapper">
         <div className={`TorneosWrapper__torneo`}>
-          <Torneo id_torneo={torneos[0]} numTorneos={torneos.length} nombre={nombre} />
+          <Torneo id_torneo={torneos[0]} numTorneos={torneos.length} nombre={nombre} logos={logos} />
         </div>
-       
       </div>
 
 

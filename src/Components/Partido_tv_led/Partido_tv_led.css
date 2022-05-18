@@ -1,4 +1,4 @@
-:root {
+.App {
     --color-letras: #d2c226;
     --jugadores-size: 6vw;
     --points-size: 8vw;
@@ -108,10 +108,12 @@
     font-weight: bold;
 }
 .grupo1Led{    
+    width: 100%;
     align-items: center;
     flex-direction: row;
     display: flex;
     color: var(--color-letras);
+    justify-content: center;
 }
 .grupo2Led{
     justify-content: flex-end;

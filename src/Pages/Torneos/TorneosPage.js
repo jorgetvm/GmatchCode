@@ -2,6 +2,7 @@
 import React from 'react';
 import { obtenerValorParametro, getTorneosId } from '../../Utils/Utils';
 import TorneosWrapper from '../../Components/TorneosWrapper';
+import './TorneosPage.scss';
 
 export const TorneosPage = () => {
   const idsTorneo = obtenerValorParametro('id');
@@ -10,7 +11,6 @@ export const TorneosPage = () => {
   if (idsTorneo) {
     torneosIds = getTorneosId(obtenerValorParametro('id'));
   }
-  console.log(torneosIds)
   return (
     <section className="TorneosPage">
       {torneosIds && (

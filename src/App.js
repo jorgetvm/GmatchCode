@@ -22,12 +22,12 @@ function App() {
   return (
       <div className="App">
         {location && (
-          <section>
+          <div>
             {(location && location === 'torneo' )&& (<TorneosPage/>)}
             {location === 'partido_web' && (<PartidoWeb/>)}
             {location === 'partido_obs' && (<PartidoObs/>)}
             {location === 'partido_led' && (<PartidoLed/>)}
-          </section>
+          </div>
         )}
         {/* <Switch>
         <Route exact path="/" component={componentToUse} />

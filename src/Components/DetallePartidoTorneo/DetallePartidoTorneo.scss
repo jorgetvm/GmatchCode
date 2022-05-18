@@ -16,6 +16,9 @@
         display: flex;
         flex-direction: row;
         &__horaPista{
+            & i {
+                padding: 0px 10px;
+            }
             width: 15%;
             display: flex;
             flex-direction: column;
@@ -128,214 +131,13 @@
   
   }
 
-
-// .Partido{
-//     color: #0B0B0B;
-//     width: 100%;
-//     padding: 16px;
-
-// }
-// .info{border-bottom: 1px solid #6c757d;}
-
-// .hora{
-//     display: inline-flex;
-// }
-// .nombre{
-
-//     width: 80%;
-//     color:black;
-//     display:inline-block;
-// }
-
-// .informacion{
-//     padding:16px;
-//     text-align: left;
-//     border: 1px solid;
-//     border-color: lightgrey;
-//     background-color: #e9ecef;
-//     border-radius: 18px;
-// }
-// .juegos{
-
-//     margin-right:8px;
-// }
-// .iconoSaque{
-//     height: 70px;
-// }
-// .iconoSaque_hidden{
-//     visibility: hidden;
-//     height: 40px;
-// }
-// .puntos_p{
-//     text-align: right;
-//     color: #d39e00;
-//     width: 40%;
-//     height: 100%;
-//     display: flex;
-//     align-self: end;
-//     align-items: center;
-//     justify-content: flex-end;
-// }
-// .juegos {
-//     width:40px;
-// }
-// .sets{
-//     color:black;
-// }
-
-// .icono{
-//     align-items: center;
-//     display: flex;
-// }
-// .ronda{
-//     width: 33%;
-//     color:black;
-//     text-align: center;
-
-// }
-// .pista{
-//     width: auto;
-//     min-width: 25%;
-//     color:black;
-// }
-
-// .Jugador{
-//     font-size: 3em;
-//     flex-direction: row;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-// }
-// .info_{
-//     font-size: 2.2em;
-//     width: 100%;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-// }
-// .hora_prevista{
-//     color:black;
-//     display: flex;
-//     align-items: center;
-// }
-// .info1{
-//     display: flex;
-//     flex-direction: row;
-//     width: 70%;
-//     align-self: end;
-// }
-// .info2{
-
-//     display: flex;
-//     width: 30%;
-//     flex-direction: row;
-//     align-self: center;
-//     justify-content:space-evenly;
-// }
-
-// .opacidad{
-//     opacity:0.7;
-// }
-// .pelota{
-//     width: 60%;
-//     display: flex;
-//     flex-direction: row;
-//     align-content: center;
-//     justify-content: center;
-//     align-items: center;
-// }
-// .setsTotal{
-//     margin-left: 30px;
-// }
-// .pierde{
-//     font-weight: normal;
-// }
-// .gana{
-//     font-weight: bold;
-// }
-// .info .Vivo{
-//     color: #ff0303;
-//     opacity: 1;
-//   }
-// .Vivo{
-//     width: 33%;
-//     text-align: end;
-// }
-// .Vivo i,.hora_prevista i{
-//     margin-right:10px;
-// }
-// .pista{
-//     text-align: left;
-// }
-// .auxiliar_flex{
-//     display: flex;
-//     flex-direction: row;
-// }
-// .flex2{
-//     display: flex;
-//     text-align: right;
-//     flex-direction: row;
-//     align-items: center;
-//     width: 30%;
-// }
-
-//  @media ( max-width:768px){
-
-//     .Jugador,.info_{font-size: 2em;}
-//     .iconoSaque{height: 38px;}
-//     .nombre {width:70%}
-//  }
-//  @media ( max-width:500px){
-//     .Jugador,.info_{font-size: 1.5em;}
-//     .iconoSaque{height: 25px;}
-//  }
-/*
-@media (max-width:1240px){
-    .info_{
-        font-size: 1.8em;
+  @media (min-width: 1400px) {
+    .DetallePartidoTorneoContainer{
+            width: 50%;
+            
     }
-}
-@media (max-width:1208px){
-    .Jugador{font-size: 1.5em;}
-}
-
-@media (max-width:768px){
-
-    .info_{
-        font-size: 1rem;
+    .DetallePartidoTorneoContainer:nth-child(odd){
+        border-right: 1px solid rgba(128, 128, 128, 0.29);
     }
-    .ronda{
-        width:40%;
-    }
-    .iconoSaque{height: 35px;}
-    .setsTotal{
-        text-align: left;
-        margin-left: 20px;
-        position: inherit;
-    }
-    .puntos_p{
-        width:20px;
-
-    }
-
-    .Jugador{font-size: 1.5em;}
-    .juegos {
-        width:40px;
-    }
-    .sets{
-        width:10px;
-
-    }
-}
-@media (max-width:430px){
-    .Jugador{font-size: 1em;}
-    .nombre{
-
-        width: 100%;
-    }
-    .Jugador{font-size: 15px;}
-   .iconoSaque{height: 28px;}
-   .info_{
-    font-size: 1rem;
-}
-}*/
+  
+  }

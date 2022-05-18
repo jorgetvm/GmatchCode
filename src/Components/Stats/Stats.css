@@ -57,7 +57,8 @@
     font-size: 0.8em;
 
 }
-.contenedor{width: 100%;
+.contenedor{
+    width: 100%;
     padding: 0px 60px;
     padding-top: 5%;
     color: black;}

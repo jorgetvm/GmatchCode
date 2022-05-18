@@ -9,9 +9,10 @@ import pelota from '../../Imagenes/pelota.png';
 import './DetallePartidoTorneo.scss';
 
 export const DetallePartidoTorneo = ({ partido }) => {
-  const resultado = partido.resultado || [];
+  const resultado = partido?.resultado || [];
+  const ronda = (typeof partido?.ronda === 'string') || '';
   const {
-    pista, estado, hora_prevista,
+    pista, estado, hora_prevista,deporte
   } = partido;
   const currentSet = getCurretnSetfromMatch(resultado);
   const {
@@ -30,8 +31,6 @@ export const DetallePartidoTorneo = ({ partido }) => {
     hora_inicio,
     set_actual,
   } = resultado;
-  console.log(resultado)
-  let { ronda } = resultado;
   const nombrej1 = partido.jugadores[0] ? partido.jugadores[0].nombre : '';
   const nombrej2 = partido.jugadores[1] ? partido.jugadores[1].nombre : '';
   let claseSaque1 = 'iconoSaque';
@@ -43,9 +42,6 @@ export const DetallePartidoTorneo = ({ partido }) => {
     claseSaque1 = 'iconoSaque_hidden';
   }
 
-  if (!ronda) {
-    ronda = 'Cuartos de final';
-  }
   const { horas, minutos } = getMatchDuration(hora_inicio);
   const hora_prevista_comienzo = moment.utc(hora_prevista).local().format('HH:mm');
   const {
@@ -59,6 +55,8 @@ export const DetallePartidoTorneo = ({ partido }) => {
     cs4j2,
     cp1j1,
     cp2j2,
+    set_totalj1,
+    set_totalj2,
   } = getClasesSet(
     set1_j1,
     set1_j2,
@@ -80,8 +78,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
     else clasej2 = 'gana';
   }
 
-console.log(partido)
-console.log(hora_prevista_comienzo)
+
   return (
     <div className="DetallePartidoTorneoContainer">
       <div className="DetallePartidoTorneoContainer__upperInfo">
@@ -153,97 +150,31 @@ console.log(hora_prevista_comienzo)
 
                 )}
               </div>
-              <div className={`DetallePartidoTorneo__informacion__resultados__set ${set_actual === 1 ? 'DetallePartidoTorneo__informacion__resultados__set--activo' : ''}`}>
-                <div className={cs1j1}>{set1_j1}</div>
-                <div className={cs1j2}>{set1_j2}</div>
-              </div>
-              <div className={`DetallePartidoTorneo__informacion__resultados__set ${set_actual === 2 ? 'DetallePartidoTorneo__informacion__resultados__set--activo' : ''}`}>
-                <div className={cs2j1}>{set2_j1}</div>
-                <div className={cs2j2}>{set2_j2}</div>
-              </div>
-              <div className={`DetallePartidoTorneo__informacion__resultados__set ${set_actual === 3 ? 'DetallePartidoTorneo__informacion__resultados__set--activo' : ''}`}>
-                <div className={cs3j1}>{set3_j1}</div>
-                <div className={cs3j2}>{set3_j2}</div>
-              </div>
+              {deporte !== 3 && (
+                <><div className={`DetallePartidoTorneo__informacion__resultados__set ${set_actual === 1 ? 'DetallePartidoTorneo__informacion__resultados__set--activo' : ''}`}>
+                  <div className={cs1j1}>{set1_j1}</div>
+                  <div className={cs1j2}>{set1_j2}</div>
+                </div><div className={`DetallePartidoTorneo__informacion__resultados__set ${set_actual === 2 ? 'DetallePartidoTorneo__informacion__resultados__set--activo' : ''}`}>
+                    <div className={cs2j1}>{set2_j1}</div>
+                    <div className={cs2j2}>{set2_j2}</div>
+                  </div><div className={`DetallePartidoTorneo__informacion__resultados__set ${set_actual === 3 ? 'DetallePartidoTorneo__informacion__resultados__set--activo' : ''}`}>
+                    <div className={cs3j1}>{set3_j1}</div>
+                    <div className={cs3j2}>{set3_j2}</div>
+                  </div></>
+              )}
+              {deporte === 3 && (
+                <><div className='DetallePartidoTorneo__informacion__resultados__set'>
+                  <div className={set_totalj1}>{sets_j1}</div>
+                  <div className={set_totalj2}>{sets_j2}</div>
+                </div></>
+              )}
+              
             </div>
 
           )}
 
         </div>
-        {/*
-          <div className={`DetallePartidoTorneo__informacion ${opacidad}`}>
-            <div className="">
-            {estado == 1 && (
-              <div className="">
-                <div className="">{`Pista ${pista}`}</div>
-                <div className="">{`${ronda}`}</div>
-
-                <div className={claseTime}>
-                  <i className="fas fa-circle"></i>
-                  {`${horas}:${minutos}`}
-                </div>
-              </div>
-            )}
-            {estado == 2 && (
-              <div className="">
-                <div className={claseTime} className="hora_prevista">
-                  Finalizado
-                </div>
-                <div className="">{`Pista ${pista}`}</div>
-              </div>
-            )}
-            {estado == 0 && (
-              <div className="">
-                <div className={claseTime} className="hora_prevista">
-                  <i className="far fa-clock icono"></i>
-                  {`${hora_prevista_comienzo}`}
-                </div>
-                <div className="">{`Pista ${pista}`}</div>
-              </div>
-            )}
-          </div> */}
-
-        {/* <div className="">
-            <div className="">
-              <div className={`nombre ${clasej1}`}>{nombrej1}</div>
-              {estado == 1 && (
-                <div className="flex flex2">
-                  <div className="pelota">
-                    <img className={claseSaque1} src={pelota} alt="" />
-                  </div>
-
-                  <div className={`puntos_p  ${cp1j1}`}>{puntos_j1}</div>
-                </div>
-              )}
-            </div>
-            <div className="">
-              <div className={`sets  ${cs1j1}`}>{set1_j1}</div>
-
-              <div className={`sets  ${cs2j1}`}>{set2_j1}</div>
-              <div className={`sets  ${cs3j1}`}>{set3_j1}</div>
-            </div>
-          </div>
-
-          <div className="">
-            <div className="">
-              <div className={`nombre ${clasej2}`}>{nombrej2}</div>
-              {estado == 1 && (
-                <div className="flex flex2">
-                  <div className="pelota">
-                    <img className={claseSaque2} src={pelota} alt="" />
-                  </div>
-                  <div className={`puntos_p  ${cp2j2}`}>{puntos_j2}</div>
-                </div>
-              )}
-            </div>
-            <div className="info2">
-              <div className={`sets  ${cs1j2}`}>{set1_j2}</div>
-
-              <div className={`sets  ${cs2j2}`}>{set2_j2}</div>
-              <div className={`sets  ${cs3j2}`}>{set3_j2}</div>
-            </div>
-          </div>
-        </div> */}
+        
       </div>
     </div>
   );

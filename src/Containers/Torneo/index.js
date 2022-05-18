@@ -8,20 +8,18 @@ import PieTorneos from '../../Components/PieTorneos/PieTorneos';
 import { filtraTorneo_id } from '../../Utils/Utils';
 import PartidosContainer from './PartidosContainer';
 
-export const Torneo = ({ id_torneo, numTorneos, nombre }) => {
+export const Torneo = ({ id_torneo, numTorneos, nombre, logos }) => {
   
  
   const anchoPantalla = window.screen.width;
   return (
     <div className={`Torneo`}>
       <div className="Torneo__containerPartido ">
-      <div className="Torneo__containerPartido__nombre">
-            {nombre}
-          </div>
         <PartidosContainer
           torneo_id={id_torneo}
           nombre={nombre}
           numTorneos={numTorneos}
+          logos={logos}
         />
       </div>
     </div>

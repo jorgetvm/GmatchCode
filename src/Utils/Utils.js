@@ -359,7 +359,6 @@ export const getMatchDuration = (hora_inicio) => {
   ahora = moment.utc(ahora).format('YYYYMMDD HH:mm')
   let innicio =  moment.utc(hora_inicio, "YYYYMMDD HH:mm").local().format('YYYYMMDD HH:mm');
   const date = moment(ahora, 'YYYYMMDD HH:mm');
-debugger;
   const minutos_ = moment(innicio, 'YYYYMMDD HH:mm:ss');
 
 

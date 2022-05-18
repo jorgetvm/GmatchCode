@@ -36,6 +36,9 @@
     width: 60vw;
     color: #114d0b;
     background-color: white;
+    &--ancho{
+        width: 80vw;
+    }
 }
 .pistaTv{
     width: 100%;
@@ -84,8 +87,8 @@
     align-items: center;
 }
 .resultadoTv{
-    width: 41%;
-    min-width: 41%;
+    width: 36%;
+    min-width: 36%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -97,7 +100,7 @@
 }
 .nombre_jugador{
     text-align: -webkit-left;
-    line-height: 10vh;
+    line-height: 14vh;
 }
 .textoPequeño{
     font-size: 5vw;
@@ -109,6 +112,7 @@
     flex-direction: row;
     display: flex;
     color: aliceblue;
+    justify-content: center;
 }
 .grupo2{    
     line-height: 25vh;
@@ -158,3 +162,4 @@
 .partidotv{
     background-image: url('../../Imagenes/pista3.jpg');
 }
+

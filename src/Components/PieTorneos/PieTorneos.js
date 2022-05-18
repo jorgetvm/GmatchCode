@@ -10,23 +10,19 @@ import CSD from '../../Imagenes/Logos_CEU_blancos_png/CSD.png'
 import RegiondeMurcia from '../../Imagenes/Logos_CEU_blancos_png/RegiondeMurcia.png'
 import UCAM25_color from '../../Imagenes/Logos_CEU_blancos_png/UCAM25_color.png'
 import './PieTorneos.scss';
-export const PieTorneos = () => (
+export const PieTorneos = (logos) => {
+  const { logos: logosInfo } = logos;
+  return (
   <div className="pieTorneos">
     <div className="pieTorneos__logos">
-      <div className="pieTorneos__logos--item"><img className="mapfre" src={CEDU} alt="mapfre" /></div>
-      <div className="pieTorneos__logos--item"><img className="rmct" src={CostaCalida} alt="rmct" /></div>
-      <div className="pieTorneos__logos--item"><img className="mapfre" src={CSD} alt="mapfre" /></div>
-      <div className="pieTorneos__logos--item"><img className="rfet" src={RegiondeMurcia} alt="reft" /></div>
-      <div className="pieTorneos__logos--item"><img className="rfet" src={UCAM25_color} alt="reft" /></div>
+      {logosInfo.map((eachLogo, index) => <div className="pieTorneos__logos--item"><img className="pieTorneos__logos--item__logo" src={eachLogo} alt="logo" /></div>)}
     </div>
-    <div><a href="http://info.gmatchapp.com">info.gmatchapp.com</a></div>
-    <div>
-      Murcia, España -
-      <a href="mailto:info@gmatchapp.com">info@gmatchapp.com</a>
+    <div className="pieTorneos__legal">
+      <span>© Copyright 2020 GMatch - Todos los derechos reservados <a href="http://info.gmatchapp.com">info.gmatchapp.com</a></span>
     </div>
-    <div>© Copyright 2020 GMatch - Todos los derechos reservados</div>
+   
   </div>
-);
+)}
 
 
 export default PieTorneos;

@@ -36,14 +36,12 @@ export const PartidoObsPage = () => {
       }
     });
   }
-
-  console.log(infopartido_tv);
   return (
-    <section className="PartidoObsPage">
+    <div className="PartidoObsPage">
       {infopartido_tv && (
       <Partido_obs partido={infopartido_tv} />
       )}
-    </section>
+    </div>
   );
 };
 

@@ -20,18 +20,11 @@ import './Partido_tv_led.css';
 
 
 const Partido_tv_led = ({ partido }) => {
-  const { resultado, arbitros, torneo } = partido;
-  let nombreTorneo = 'Campeonato de España';
-  let nombreCLub = 'REAL MURCIA CLUB DE TENIS 1919';
+  const { resultado, arbitros, torneo, deporte } = partido;
+  const nombreTorneo = torneo?.nombre || '';
+  const nombreCLub = torneo?.club.descripcion || '' ;
 
 
-  if (torneo && torneo.nombre) {
-    nombreTorneo = torneo.nombre;
-  }
-
-  if (torneo && torneo.descripcion) {
-    nombreCLub = torneo.descripcion;
-  }
 
   let autoarbitraje = 0;
   let horade_inicio;
@@ -85,7 +78,7 @@ const Partido_tv_led = ({ partido }) => {
     claseSaque1 = 'iconoSaque_hidden';
     claseSaque2 = '';
   }
-  if (sets_j1 + sets_j2 >= 3) {
+  if (sets_j1 + sets_j2 >= 3 && deporte !== 3) {
     claseSaque2 = 'iconoSaque_hidden';
     claseSaque1 = 'iconoSaque_hidden';
   }
@@ -116,11 +109,18 @@ const Partido_tv_led = ({ partido }) => {
               <span className="nombre_jugadorLed">{jugador1}</span>
             </div>
             <div className="resultadoTvLed">
-              <div className="grupo1Led">
+              {deporte !== 3 && (
+                <div className="grupo1Led">
                 <div className="setTvLed ">{set1_j1}</div>
                 <div className="setTvLed ">{set2_j1}</div>
                 <div className="setTvLed">{set3_j1}</div>
               </div>
+              )}
+              {deporte === 3 && (
+                <div className="grupo1Led">
+                <div className="setTvLed ">{sets_j1}</div>
+              </div>
+              )}
               <div className="grupo2Led">
                 <div className="puntosTvLed ">{pj1}</div>
               </div>
@@ -132,11 +132,18 @@ const Partido_tv_led = ({ partido }) => {
               <span className="nombre_jugadorLed">{jugador2}</span>
             </div>
             <div className="resultadoTvLed">
-              <div className="grupo1Led">
-                <div className="setTvLed ">{set1_j2}</div>
-                <div className="setTvLed ">{set2_j2}</div>
-                <div className="setTvLed">{set3_j2}</div>
+              {deporte !== 3 && (
+                <div className="grupo1Led">
+                  <div className="setTvLed ">{set1_j2}</div>
+                  <div className="setTvLed ">{set2_j2}</div>
+                  <div className="setTvLed">{set3_j2}</div>
+                </div>
+              )}
+              {deporte === 3 && (
+                <div className="grupo1Led">
+                <div className="setTvLed ">{sets_j2}</div>
               </div>
+              )}
               <div className="grupo2Led">
                 <div className="puntosTvLed ">{pj2}</div>
               </div>

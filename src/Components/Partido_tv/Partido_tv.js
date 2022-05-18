@@ -24,7 +24,7 @@ import MiraDigital_white from '../../Imagenes/MiraDigital_white.png';
 
 import pista3 from '../../Imagenes/pista3.jpg';
 
-import './Partido_tv.css';
+import './Partido_tv.scss';
 
 
 class Partido_tv extends Component {
@@ -44,7 +44,7 @@ class Partido_tv extends Component {
 
     const infoPartido = partido;
 
-    const { resultado, arbitro, torneo, torneo_media } = infoPartido;
+    const { resultado, arbitro, torneo, torneo_media, deporte } = infoPartido;
     const {imagen_logo, imagenes_patrocinadores, club_logo} = torneo_media;
     let nombreTorneo; let genero;
     if (torneo) {
@@ -107,7 +107,7 @@ class Partido_tv extends Component {
       claseSaque1 = 'iconoSaque_hidden';
       claseSaque2 = '';
     }
-    if (sets_j1 + sets_j2 >= 3) {
+    if (sets_j1 + sets_j2 >= 3 && deporte !== 3) {
       claseSaque2 = 'iconoSaque_hidden';
       claseSaque1 = 'iconoSaque_hidden';
     }
@@ -126,13 +126,12 @@ class Partido_tv extends Component {
     const espaciosJ2 = jugador2.split(" ").length >2 ? 'textoPequeño' : '' ;
     const textoPequeño = espaciosJ1 || espaciosJ2;
     const { horas, minutos } = getMatchDuration(hora_inicio);
-    debugger;
     return (
       <>
         <div className="contianerPartidoTv">
         <div className="logoPista">
           <img className="logo_pista" src={GMatch_NEW_WHITE} />
-          <div className="nombretorneo texto_info">
+          <div className={`nombretorneo texto_info ${!(club_logo && club_logo.length > 0) ? 'nombretorneo--ancho' : ''}`}>
             <div className="nombre_hora">
               <div>{`${nombreTorneo}`}</div>
               <div>{mostrar_hora && (<div className="tiempoTv">{` ${horas}:${minutos}`}</div>)}</div>
@@ -158,11 +157,18 @@ class Partido_tv extends Component {
                   <span className={`nombre_jugador ${textoPequeño}`}>{jugador1}</span>
                 </div>
                 <div className="resultadoTv">
-                  <div className="grupo1">
+                  {deporte !== 3 && (
+                    <div className="grupo1">
                     <div className="setTv ">{set1_j1}</div>
                     <div className="setTv ">{set2_j1}</div>
                     <div className="setTv">{set3_j1}</div>
                   </div>
+                  )}
+                  {deporte === 3 && (
+                    <div className="grupo1">
+                    <div className="setTv ">{sets_j1}</div>
+                  </div>
+                  )}
                   <div className="grupo2">
                     <div className="puntosTv ">{pj1}</div>
                   </div>
@@ -174,11 +180,18 @@ class Partido_tv extends Component {
                   <span className={`nombre_jugador ${textoPequeño}`}>{jugador2}</span>
                 </div>
                 <div className="resultadoTv">
-                  <div className="grupo1">
+                  {deporte !== 3 && (
+                    <div className="grupo1">
                     <div className="setTv ">{set1_j2}</div>
                     <div className="setTv ">{set2_j2}</div>
                     <div className="setTv">{set3_j2}</div>
                   </div>
+                  )}
+                  {deporte === 3 && (
+                    <div className="grupo1">
+                    <div className="setTv ">{sets_j2}</div>
+                  </div>
+                  )}
                   <div className="grupo2">
                     <div className="puntosTv ">{pj2}</div>
                   </div>

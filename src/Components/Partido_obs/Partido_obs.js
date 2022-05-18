@@ -17,12 +17,11 @@ class Partido_obs extends Component {
 
 
   render() {
-    console.log('partido_obs');
     const { partido, obs } = this.props;
 
     const infoPartido = partido;
 
-    const { resultado, arbitro, torneo } = infoPartido;
+    const { resultado, arbitro, torneo, deporte } = infoPartido;
     let nombreTorneo;
     if (torneo) {
       nombreTorneo = torneo.nombre;
@@ -65,28 +64,7 @@ class Partido_obs extends Component {
       set2_j2 = resultado.set2_j2;
       set3_j2 = resultado.set3_j2;
       sets_j2 = resultado.sets_j2;
-    }/* else{
-    /*jugador1="Rafa Nadal";
-    jugador2="Roger Federer";
-    pista="1";
-
-    hora_prevista=moment.utc(hora_prevista).local().format('HH:mm');
-    hora_inicio=moment.utc(hora_prevista).local().format('HH:mm');
-    puntos_j1="15";
-    juegos_j1="2";
-    set1_j1="6";
-    set2_j1="2";
-    set3_j1="0";
-    saque_actual=1;
-    sets_j1=1;
-    ganador=null;
-    puntos_j2="30";
-    juegos_j2="5";
-    set1_j2="4";
-    set2_j2="5";
-    set3_j2="0";
-    sets_j2=0;
-} */
+    }
     if (obs) {
       document.body.setAttribute('class', 'obs_body');
     }
@@ -153,7 +131,7 @@ class Partido_obs extends Component {
     } else {
       claseSaque1 = 'iconoSaque_hidden';
     }
-    if (sets_j1 + sets_j2 >= 3) {
+    if (sets_j1 + sets_j2 >= 3 && deporte !== 3) {
       claseSaque2 = 'iconoSaque_hidden';
       claseSaque1 = 'iconoSaque_hidden';
     }
@@ -171,12 +149,7 @@ class Partido_obs extends Component {
 
     return (
       <>
-
-
         <div className="contenedor">
-          {/* <div className="obs_logos">
-                <img src={LogoGmatchNegroNuevo} />
-            </div> */}
           <div className="obs_gmatch">
             Powered by GMatch
           </div>
@@ -188,23 +161,36 @@ class Partido_obs extends Component {
                 <div className="obs_puntos">{pj1}</div>
               </div>
 
+              {deporte !== 3 && (
+                <>
+                  <div className="obs_set">
+                    {set1_j1}
+                    {' '}
+                  </div>
+                  {(sets_j1 + sets_j2) > 0 && (
+                    <div className="obs_set">
+                      {set2_j1}
+                      {' '}
+                    </div>
+                  )}
+                  {(sets_j1 + sets_j2) > 1 && (
+                    <div className="obs_set">
+                      {set3_j1}
+                      {' '}
+                    </div>
+                  )}
+                </>
+              )}
+              {deporte == 3 && (
 
-              <div className="obs_set">
-                {set1_j1}
-                {' '}
-              </div>
-              {(sets_j1 + sets_j2) > 0 && (
-              <div className="obs_set">
-                {set2_j1}
-                {' '}
-              </div>
+                <div className="obs_set">
+                  {sets_j1}
+                  {' '}
+                </div>
+
               )}
-              {(sets_j1 + sets_j2) > 1 && (
-              <div className="obs_set">
-                {set3_j1}
-                {' '}
-              </div>
-              )}
+
+
             </div>
             <div className="obs_jugador  obs_borde2">
               <div className="obs_nombre">
@@ -213,19 +199,30 @@ class Partido_obs extends Component {
                 <div className="obs_puntos">{pj2}</div>
               </div>
 
-
-              <div className="obs_set">{set1_j2}</div>
-              {(sets_j1 + sets_j2) > 0 && (
-              <div className="obs_set">
-                {set2_j2}
-                {' '}
-              </div>
+              {deporte !== 3 && (
+                <>
+                  <div className="obs_set">{set1_j2}</div>
+                  {(sets_j1 + sets_j2) > 0 && (
+                    <div className="obs_set">
+                      {set2_j2}
+                      {' '}
+                    </div>
+                  )}
+                  {(sets_j1 + sets_j2) > 1 && (
+                    <div className="obs_set">
+                      {set3_j2}
+                      {' '}
+                    </div>
+                  )}
+                </>
               )}
-              {(sets_j1 + sets_j2) > 1 && (
-              <div className="obs_set">
-                {set3_j2}
-                {' '}
-              </div>
+              {deporte == 3 && (
+
+                <div className="obs_set">
+                  {sets_j2}
+                  {' '}
+                </div>
+
               )}
             </div>
             <div className="obs_pista">

@@ -4,11 +4,10 @@ import LogoGmatchNegroNuevo from '../../../Imagenes/LogoGmatchNegroNuevo.png';
 import { normalizeInfoTorneo } from '../Normalizer/index';
 import DetallePartidoTorneo from '../../../Components/DetallePartidoTorneo';
 import PieTorneos from '../../../Components/PieTorneos/PieTorneos';
-
 import './PartidosContainer.scss';
 import Calendar from '../../../Components/Calendar';
 
-export const PartidosContainer = ({ torneo_id, nombre, numTorneos }) => {
+export const PartidosContainer = ({ torneo_id, nombre, logos }) => {
   const [infoPartidos, setInfoPartidos] = useState('');
   const [date, setDate] = useState(new Date());
   const [day, setDay] = useState(date.getDate());
@@ -58,22 +57,17 @@ export const PartidosContainer = ({ torneo_id, nombre, numTorneos }) => {
   }, [date]);
   return (
     <div className="PartidosContainer">
-      {numTorneos && numTorneos <= 1 && anchoPantalla < 1200 && (
-        <div className="PartidosContainer__divTituloLogo">
-
-          <div className="PartidosContainer__divTituloLogo__logo">
-            <a href="http://info.gmatchapp.com">
-              <img src={LogoGmatchNegroNuevo} alt="Gmatch" />
-            </a>
-          </div>
-          <div className="PartidosContainer__divTituloLogo__titulo">
-            {`${nombre}`}
-          </div>
+      <div className="PartidosContainer__divTituloLogo">
+        <div className="PartidosContainer__divTituloLogo__logo">
+          <a href="http://info.gmatchapp.com">
+            <img src={LogoGmatchNegroNuevo} alt="Gmatch" />
+          </a>
         </div>
-      )}
-
-      <section>
-        {(day && month) && (
+        <div className="PartidosContainer__divTituloLogo__titulo">
+          {`${nombre}`}
+        </div>
+      </div>
+      {(day && month) && (
         <Calendar
           nextDayOnClick={nextDayOnClick}
           netxDayMatchs={checkNextDaymatchs(infoPartidos, date)}
@@ -81,17 +75,18 @@ export const PartidosContainer = ({ torneo_id, nombre, numTorneos }) => {
           prevDayMatchs={checkPrevDaymatchs(infoPartidos, date)}
           day={day}
           month={month}
-          diaSemana={date.getDay()}
-        />
-        )}
-        {partidosNormalizados && partidosNormalizados.length > 0 && (
+          diaSemana={date.getDay()} />
+      )}
+      {partidosNormalizados && partidosNormalizados.length > 0 && (
         <div className="PartidosContainer__Partidos">
-          {partidosNormalizados.map((partido, index) => <DetallePartidoTorneo partido={partido} />)}
+          {partidosNormalizados.map((partido, index) => <DetallePartidoTorneo partido={partido}/>)}
         </div>
-        )}
-      </section>
-      <PieTorneos />
-
+      )}
+      {logos && logos.length > 0 && (
+        <PieTorneos logos={logos} />
+      )}
+      
+     
     </div>
   );
 };
