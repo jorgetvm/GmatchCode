@@ -82,6 +82,14 @@ export const PartidosContainer = ({ torneo_id, nombre, logos }) => {
           {partidosNormalizados.map((partido, index) => <DetallePartidoTorneo partido={partido}/>)}
         </div>
       )}
+      {!partidosNormalizados  || (partidosNormalizados && partidosNormalizados.length === 0 ) && (
+        <div className="PartidosContainer__noInfo">
+          <div>
+            No hay partidos todavía, vuelva proximamente.
+          </div>
+        <a href="https://www.gifsanimados.org/cat-tenis-172.htm"><img src="https://www.gifsanimados.org/data/media/172/tenis-imagen-animada-0056.gif" border="0" alt="tenis-imagen-animada-0056" /></a>
+        </div>
+      )}
       {logos && logos.length > 0 && (
         <PieTorneos logos={logos} />
       )}

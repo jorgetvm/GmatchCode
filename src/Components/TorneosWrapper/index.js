@@ -36,7 +36,7 @@ export const TorneosWrapper = ({ torneos }) => {
   if (infoTorneo) {
     const { Torneo } = infoTorneo;
     nombre = Torneo.nombre;
-    logos = Torneo.imagenes_patrocinadores;
+    logos = Torneo.imagenes_patrocinadores_color || Torneo.imagenes_patrocinadores;
   }
   return (
     <div className="TorneosWrapper">

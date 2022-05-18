@@ -51,6 +51,17 @@
         align-content: center;
         justify-content: flex-start;
     }
+    &__noInfo{
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+        & img{
+            max-width: 100vw;
+        }
+    }
 }
 .PartidosPadelContainer{
 
