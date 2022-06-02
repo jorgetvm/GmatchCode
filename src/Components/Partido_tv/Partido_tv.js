@@ -202,7 +202,7 @@ class Partido_tv extends Component {
           </div>
 
           
-          <div className="publicidad">
+          <div className="logosBlanco">
           {imagenes_patrocinadores && imagenes_patrocinadores.length > 0 && (
             imagenes_patrocinadores.map((eachLogo) => {
               return <div className="divLogo"><img className="logoTv " src={eachLogo} /></div>
