@@ -7,7 +7,7 @@ import PieTorneos from '../../../Components/PieTorneos/PieTorneos';
 import './PartidosContainer.scss';
 import Calendar from '../../../Components/Calendar';
 
-export const PartidosContainer = ({ torneo_id, nombre, logos }) => {
+export const PartidosContainer = ({ torneo_id, nombre, logos, logosTorneo }) => {
   const [infoPartidos, setInfoPartidos] = useState('');
   const [date, setDate] = useState(new Date());
   const [day, setDay] = useState(date.getDate());
@@ -66,6 +66,11 @@ export const PartidosContainer = ({ torneo_id, nombre, logos }) => {
         <div className="PartidosContainer__divTituloLogo__titulo">
           {`${nombre}`}
         </div>
+        {logosTorneo && (
+          <div className="PartidosContainer__divTituloLogo__logo">
+            <img src={logosTorneo} alt="Gmatch--logo" />
+          </div>
+        )}
       </div>
       {(day && month) && (
         <Calendar

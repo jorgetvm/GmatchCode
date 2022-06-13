@@ -1,0 +1,35 @@
+.hola{
+    color:green;
+    font-size: 40px;
+}
+.header {
+    width:100%;
+}
+.header .flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.header .item{
+    padding: 10px;
+    width:auto;
+    text-align: center;
+    font-size: 24px;
+    transition: 0.25s;
+}
+.header .item:hover{color:blue;transform: scale(1.2);}
+.header a{cursor:pointer;}
+.header .menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.banner{
+    width: 100%;
+}
+.header .imagen img{width: 343px;}
+
