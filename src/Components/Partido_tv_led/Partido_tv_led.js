@@ -99,6 +99,7 @@ const Partido_tv_led = ({ partido }) => {
   return (
     <div className="contianerPartidoTvLed">
       <div className="nombretorneoLed ">
+        <div className="divLogoLed"><img className="logoTvLed" src={GMatch_NEW_WHITE} /></div>
         <div className="nombreTor">{`${nombreTorneo}`}</div>
       </div>
       <div className="resultadosTvLed">
@@ -153,7 +154,7 @@ const Partido_tv_led = ({ partido }) => {
 
       </div>
       <div className="publicidadLed">
-        <div className="divLogoLed"><img className="logoTvLed" src={GMatch_NEW_WHITE} /></div>
+        <div className="divLogoLed"><img className="logoTvLed" src={MCT_REAL_neg} /></div>
         <div className="nombreClub">{`${nombreCLub}`}</div>
         <div>{mostrar_hora && (<div className="tiempoTvLed">{` ${horas}:${minutos}`}</div>)}</div>
 

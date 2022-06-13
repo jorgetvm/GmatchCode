@@ -38,7 +38,6 @@ export const TorneosWrapper = ({ torneos }) => {
     const { Torneo } = infoTorneo;
     nombre = Torneo.nombre;
     logos = Torneo.imagenes_patrocinadores_color || Torneo.imagenes_patrocinadores;
-    debugger;
     logosTorneo = Torneo.imagen_logo[0] || '';
   }
   return (
