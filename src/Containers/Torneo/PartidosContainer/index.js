@@ -51,7 +51,7 @@ export const PartidosContainer = ({ torneo_id, nombre, logos, logosTorneo }) => 
     }
   };
   useEffect(() => {
-    setDay(date.getUTCDate());
+    setDay(date.getDate());
     setMonth(date.getUTCMonth());
     getInfo();
   }, [date]);
