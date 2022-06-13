@@ -123,6 +123,20 @@
     width: 200px;
 }
 
+@media(max-width: 768px) {
+    .PartidosContainer{
+        &__divTituloLogo{
+            &__logo{
+                &--aux{
+                    &__img{
+                        width: 80px !important;
+                    }
+                }
+            }
+        }
+    }
+ 
+}
 @media (min-width: 1400px) {
     .PartidosContainer{
         &__Partidos{

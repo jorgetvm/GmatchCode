@@ -68,7 +68,7 @@ export const PartidosContainer = ({ torneo_id, nombre, logos, logosTorneo }) => 
         </div>
         {logosTorneo && (
           <div className="PartidosContainer__divTituloLogo__logo PartidosContainer__divTituloLogo__logo--aux">
-            <img src={logosTorneo} alt="Gmatch--logo" />
+            <img src={logosTorneo} alt="Gmatch--logo" className="PartidosContainer__divTituloLogo__logo--aux__img"/>
           </div>
         )}
       </div>
