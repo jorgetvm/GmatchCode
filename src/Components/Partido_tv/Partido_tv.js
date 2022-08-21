@@ -139,7 +139,7 @@ class Partido_tv extends Component {
           </div>
           {club_logo && club_logo.length > 0 && (
             club_logo.map((eachLogo) => {
-              return <img className="logo" src={eachLogo} />
+              return <img className="logo_club" src={eachLogo} />
             })
             )}
         </div>
