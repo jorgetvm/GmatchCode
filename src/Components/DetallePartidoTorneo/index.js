@@ -1,5 +1,6 @@
 import React  from 'react';
 import moment from 'moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   getCurretnSetfromMatch,
   getClasesSet,
@@ -7,6 +8,7 @@ import {
 } from '../../Utils/Utils';
 import pelota from '../../Imagenes/pelota.png';
 import { RONDA_NAMING } from  './constants';
+
 import './DetallePartidoTorneo.scss';
 
 export const DetallePartidoTorneo = ({ partido }) => {
@@ -175,8 +177,12 @@ export const DetallePartidoTorneo = ({ partido }) => {
           )}
 
         </div>
-        
+       
+      
       </div>
+      <div className="iconStats">
+          <FontAwesomeIcon icon="fa-solid fa-chart-simple" />
+        </div>
     </div>
   );
 };

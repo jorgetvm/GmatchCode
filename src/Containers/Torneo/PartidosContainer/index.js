@@ -7,7 +7,7 @@ import PieTorneos from '../../../Components/PieTorneos/PieTorneos';
 import './PartidosContainer.scss';
 import Calendar from '../../../Components/Calendar';
 
-export const PartidosContainer = ({ torneo_id, nombre, logos, logosTorneo }) => {
+export const PartidosContainer = ({ torneo_id, nombre, logos, logosTorneo, numTorneos }) => {
   const [infoPartidos, setInfoPartidos] = useState('');
   const [date, setDate] = useState(new Date());
   const [day, setDay] = useState(date.getDate());
@@ -56,8 +56,9 @@ export const PartidosContainer = ({ torneo_id, nombre, logos, logosTorneo }) => 
     getInfo();
   }, [date]);
   return (
-    <div className="PartidosContainer">
-      <div className="PartidosContainer__divTituloLogo">
+    <div className={`PartidosContainer`}>
+      {numTorneos === 2 && (
+        <div className="PartidosContainer__divTituloLogo">
         <div className="PartidosContainer__divTituloLogo__logo">
           <a href="http://info.gmatchapp.com">
             <img src={LogoGmatchNegroNuevo} alt="Gmatch" />
@@ -72,18 +73,41 @@ export const PartidosContainer = ({ torneo_id, nombre, logos, logosTorneo }) => 
           </div>
         )}
       </div>
-      {(day && month) && (
-        <Calendar
-          nextDayOnClick={nextDayOnClick}
-          netxDayMatchs={checkNextDaymatchs(infoPartidos, date)}
-          prevDayOnClick={prevDayOnClick}
-          prevDayMatchs={checkPrevDaymatchs(infoPartidos, date)}
-          day={day}
-          month={month}
-          diaSemana={date.getDay()} />
       )}
+      {numTorneos === 1 && (
+        <div className="PartidosContainer__divTituloLogo">
+        <div className="PartidosContainer__divTituloLogo__logo">
+          <a href="http://info.gmatchapp.com">
+            <img src={LogoGmatchNegroNuevo} alt="Gmatch" />
+          </a>
+        </div>
+        <div className="PartidosContainer__divTituloLogo__titulo">
+          {`${nombre}`}
+        </div>
+        {logosTorneo && (
+          <div className="PartidosContainer__divTituloLogo__logo PartidosContainer__divTituloLogo__logo--aux">
+            <img src={logosTorneo} alt="Gmatch--logo" className="PartidosContainer__divTituloLogo__logo--aux__img"/>
+          </div>
+        )}
+      </div>
+      )}
+      {numTorneos === 1 && (
+        <>
+          {(day && month) && (
+          <Calendar
+            nextDayOnClick={nextDayOnClick}
+            netxDayMatchs={checkNextDaymatchs(infoPartidos, date)}
+            prevDayOnClick={prevDayOnClick}
+            prevDayMatchs={checkPrevDaymatchs(infoPartidos, date)}
+            day={day}
+            month={month}
+            diaSemana={date.getDay()} />
+        )}
+        </>
+      )}
+      
       {partidosNormalizados && partidosNormalizados.length > 0 && (
-        <div className="PartidosContainer__Partidos">
+        <div className={`PartidosContainer__Partidos${numTorneos == 2 ? '--doble' : ''}`}>
           {partidosNormalizados.map((partido, index) => <DetallePartidoTorneo partido={partido}/>)}
         </div>
       )}
@@ -95,7 +119,7 @@ export const PartidosContainer = ({ torneo_id, nombre, logos, logosTorneo }) => 
         <a href="https://www.gifsanimados.org/cat-tenis-172.htm"><img src="https://www.gifsanimados.org/data/media/172/tenis-imagen-animada-0056.gif" border="0" alt="tenis-imagen-animada-0056" /></a>
         </div>
       )}
-      {logos && logos.length > 0 && (
+      {logos && logos.length > 0 && numTorneos === 1 && (
         <PieTorneos logos={logos} />
       )}
       

@@ -13,7 +13,7 @@ export const Torneo = ({ id_torneo, numTorneos, nombre, logos, logosTorneo }) =>
  
   const anchoPantalla = window.screen.width;
   return (
-    <div className={`Torneo`}>
+    <div className={`Torneo${numTorneos? '--doble' : ''}`}>
       <div className="Torneo__containerPartido ">
         <PartidosContainer
           torneo_id={id_torneo}

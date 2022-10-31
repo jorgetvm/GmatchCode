@@ -16,11 +16,16 @@ import './TorneosWrapper.scss';
 
 export const TorneosWrapper = ({ torneos }) => {
   const [infoTorneo, setInfoTorneo] = useState('');
+  const [infoTorneo2, setInfoTorneo2] = useState('');
   let logos = [];
   let nombre = '';
   let logosTorneo = '';
+  let logos2 = [];
+  let nombre2 = '';
+  let logosTorneo2 = '';
   const numTorneos = torneos.length;
   const anchoPantalla = window.screen.width;
+
   const apiUrl = `https://gmatchapp.com/api/v1/torneos/${torneos[0]}`;
   const getInfo = () => {
     fetch(apiUrl)
@@ -30,8 +35,20 @@ export const TorneosWrapper = ({ torneos }) => {
       })
       .catch((error) => console.log('error', error));
   };
+  const apiUrl2 = `https://gmatchapp.com/api/v1/torneos/${torneos[1]}`;
+  const getInfo2 = () => {
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        setInfoTorneo2({ Torneo2: data });
+      })
+      .catch((error) => console.log('error', error));
+  };
   useEffect(() => {
     getInfo();
+    if(numTorneos === 2 ) {
+      getInfo2();
+    }
   }, []);
 
   if (infoTorneo) {
@@ -40,10 +57,19 @@ export const TorneosWrapper = ({ torneos }) => {
     logos = Torneo.imagenes_patrocinadores_color || Torneo.imagenes_patrocinadores;
     logosTorneo = Torneo.imagen_logo[0] || '';
   }
+  if (infoTorneo2) {
+    const { Torneo2 } = infoTorneo2;
+    nombre2 = Torneo2.nombre;
+    logos2 = Torneo2.imagenes_patrocinadores_color || Torneo2.imagenes_patrocinadores;
+    logosTorneo2 = Torneo2.imagen_logo[0] || '';
+  }
   return (
     <div className="TorneosWrapper">
         <div className={`TorneosWrapper__torneo`}>
           <Torneo id_torneo={torneos[0]} numTorneos={torneos.length} nombre={nombre} logos={logos} logosTorneo={logosTorneo} />
+          {numTorneos === 2 && (
+            <Torneo id_torneo={torneos[1]} numTorneos={torneos.length} nombre={nombre2} logos={logos2} logosTorneo={logosTorneo2} />
+          )}
         </div>
       </div>
 

@@ -159,7 +159,7 @@ export const filtraTorneo_id = (Torneos, torneo_id) => {
 export const filtraPartidosDependsTorneoId = (partidos, torneo_id) => {
   const result = [];
   partidos.map((partido) => {
-    if (partido.torneo && partido.torneo.id == torneo_id ||  partido.torneo.hashid == torneo_id) {
+    if (partido.torneo && partido.torneo.id == torneo_id ||  partido.torneo.hashid == torneo_id  || partido.torneo.slug == torneo_id) {
       result.push(partido);
     }
   });
