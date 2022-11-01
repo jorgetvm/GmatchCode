@@ -67,6 +67,7 @@ export const PartidosContainer = ({ torneo_id, nombre, logos, logosTorneo, numTo
         <div className="PartidosContainer__divTituloLogo__titulo">
           {`${nombre}`}
         </div>
+        
         {logosTorneo && (
           <div className="PartidosContainer__divTituloLogo__logo PartidosContainer__divTituloLogo__logo--aux">
             <img src={logosTorneo} alt="Gmatch--logo" className="PartidosContainer__divTituloLogo__logo--aux__img"/>

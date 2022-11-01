@@ -13,6 +13,7 @@ import CSD from '../../Imagenes/Logos_CEU_blancos_png/CSD.png'
 import RegiondeMurcia from '../../Imagenes/Logos_CEU_blancos_png/RegiondeMurcia.png'
 import UCAM25_color from '../../Imagenes/Logos_CEU_blancos_png/UCAM25_color.png'
 import './TorneosWrapper.scss';
+import PieTorneos from '../PieTorneos/PieTorneos';
 
 export const TorneosWrapper = ({ torneos }) => {
   const [infoTorneo, setInfoTorneo] = useState('');
@@ -55,20 +56,20 @@ export const TorneosWrapper = ({ torneos }) => {
     const { Torneo } = infoTorneo;
     nombre = Torneo.nombre;
     logos = Torneo.imagenes_patrocinadores_color || Torneo.imagenes_patrocinadores;
-    logosTorneo = Torneo.imagen_logo[0] || '';
+    logosTorneo = Torneo.club_logo[0] || '';
   }
   if (infoTorneo2) {
     const { Torneo2 } = infoTorneo2;
     nombre2 = Torneo2.nombre;
     logos2 = Torneo2.imagenes_patrocinadores_color || Torneo2.imagenes_patrocinadores;
-    logosTorneo2 = Torneo2.imagen_logo[0] || '';
+    logosTorneo2 = Torneo2.club_logo[0] || '';
   }
   return (
     <div className="TorneosWrapper">
         <div className={`TorneosWrapper__torneo`}>
           <Torneo id_torneo={torneos[0]} numTorneos={torneos.length} nombre={nombre} logos={logos} logosTorneo={logosTorneo} />
           {numTorneos === 2 && (
-            <Torneo id_torneo={torneos[1]} numTorneos={torneos.length} nombre={nombre2} logos={logos2} logosTorneo={logosTorneo2} />
+            <><Torneo id_torneo={torneos[1]} numTorneos={torneos.length} nombre={nombre2} logos={logos2} logosTorneo={logosTorneo2} /><PieTorneos logos={logos} /></>
           )}
         </div>
       </div>
