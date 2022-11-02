@@ -26,7 +26,7 @@ export const TorneosWrapper = ({ torneos }) => {
   let logosTorneo2 = '';
   const numTorneos = torneos.length;
   const anchoPantalla = window.screen.width;
-
+ 
   const apiUrl = `https://gmatchapp.com/api/v1/torneos/${torneos[0]}`;
   const getInfo = () => {
     fetch(apiUrl)
@@ -38,12 +38,12 @@ export const TorneosWrapper = ({ torneos }) => {
   };
   const apiUrl2 = `https://gmatchapp.com/api/v1/torneos/${torneos[1]}`;
   const getInfo2 = () => {
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        setInfoTorneo2({ Torneo2: data });
+    fetch(apiUrl2)
+      .then((response2) => response2.json())
+      .then((data2) => {
+        setInfoTorneo2({ Torneo2: data2 });
       })
-      .catch((error) => console.log('error', error));
+      .catch((error2) => console.log('error', error2));
   };
   useEffect(() => {
     getInfo();
@@ -51,7 +51,7 @@ export const TorneosWrapper = ({ torneos }) => {
       getInfo2();
     }
   }, []);
-
+let nombreTorneo2 = "";
   if (infoTorneo) {
     const { Torneo } = infoTorneo;
     nombre = Torneo.nombre;
@@ -60,6 +60,7 @@ export const TorneosWrapper = ({ torneos }) => {
   }
   if (infoTorneo2) {
     const { Torneo2 } = infoTorneo2;
+    nombreTorneo2 = Torneo2.nombre
     nombre2 = Torneo2.nombre;
     logos2 = Torneo2.imagenes_patrocinadores_color || Torneo2.imagenes_patrocinadores;
     logosTorneo2 = Torneo2.club_logo[0] || '';
@@ -69,7 +70,7 @@ export const TorneosWrapper = ({ torneos }) => {
         <div className={`TorneosWrapper__torneo`}>
           <Torneo id_torneo={torneos[0]} numTorneos={torneos.length} nombre={nombre} logos={logos} logosTorneo={logosTorneo} />
           {numTorneos === 2 && (
-            <><Torneo id_torneo={torneos[1]} numTorneos={torneos.length} nombre={nombre2} logos={logos2} logosTorneo={logosTorneo2} /><PieTorneos logos={logos} /></>
+            <><Torneo id_torneo={torneos[1]} numTorneos={torneos.length} nombre={nombreTorneo2} logos={logos2} logosTorneo={logosTorneo2} /><PieTorneos logos={logos} /></>
           )}
         </div>
       </div>
