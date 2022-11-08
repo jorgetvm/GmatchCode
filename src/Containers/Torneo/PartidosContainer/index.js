@@ -15,7 +15,7 @@ export const PartidosContainer = ({ torneo_id, nombre, logos, logosTorneo, numTo
   const [year, setYear] = useState(date.getUTCFullYear());
   const [partidosNormalizados, setPartidosNormalizados] = useState([]);
   const getInfo = () => {
-    fetch('https://gmatchapp.com/api/v1/partidos')
+    fetch(`https://gmatchapp.com/api/v1/partidos-torneo/${torneo_id}`)
       .then((response) => response.json())
       .then((data) => {
         setInfoPartidos({ Partidos: normalizeInfoTorneo(data, torneo_id) });
@@ -23,10 +23,12 @@ export const PartidosContainer = ({ torneo_id, nombre, logos, logosTorneo, numTo
       .catch((error) => console.log('error', error));
   };
   useEffect(() => {
-    getInfo();
+    if( !infoPartidos ) {
+      getInfo();
+    }
     setInterval(() => {
       getInfo();
-    }, 10000);
+    }, 25000);
   }, []);
   const anchoPantalla = window.screen.width;
 
@@ -53,7 +55,6 @@ export const PartidosContainer = ({ torneo_id, nombre, logos, logosTorneo, numTo
   useEffect(() => {
     setDay(date.getDate());
     setMonth(date.getUTCMonth());
-    getInfo();
   }, [date]);
   return (
     <div className={`PartidosContainer`}>

@@ -56,6 +56,7 @@ class DetallePartido extends Component {
         const currentSet= this.curretnSet(resultado);
         console.log(currentSet);
         const nombrej1= Partidos.jugadores[0].nombre;
+        const team1 = Partidos.jugadores[0].nombre;
         const nombrej2= Partidos.jugadores[1].nombre;
         let duracion=moment();
         let claseTime="Vivo";

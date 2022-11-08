@@ -32,6 +32,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
     set3_j2,
     sets_j2,
     hora_inicio,
+    hora_fin,
     set_actual,
   } = resultado;
   const nombrej1 = partido.jugadores[0] ? partido.jugadores[0].nombre : '';
@@ -80,7 +81,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
     if (ganador === 1) clasej1 = 'gana';
     else clasej2 = 'gana';
   }
-
+debugger;
 
   return (
     <div className="DetallePartidoTorneoContainer">
@@ -107,7 +108,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
             )}
           </div>
         )}
-        {estado == 2 && (
+        {(estado == 2 || hora_fin) && (
           <div className="DetallePartidoTorneo__horaPista">
             <div className="DetallePartidoTorneo__horaPista__check">
               {ganador == 1 && (
