@@ -56,14 +56,14 @@ let nombreTorneo2 = "";
     const { Torneo } = infoTorneo;
     nombre = Torneo.nombre;
     logos = Torneo.imagenes_patrocinadores_color || Torneo.imagenes_patrocinadores;
-    logosTorneo = Torneo.club_logo[0] || '';
+    logosTorneo = Torneo.imagen_logo[0] || '';
   }
   if (infoTorneo2) {
     const { Torneo2 } = infoTorneo2;
     nombreTorneo2 = Torneo2.nombre
     nombre2 = Torneo2.nombre;
     logos2 = Torneo2.imagenes_patrocinadores_color || Torneo2.imagenes_patrocinadores;
-    logosTorneo2 = Torneo2.club_logo[0] || '';
+    logosTorneo2 = Torneo2.imagen_logo[0] || '';
   }
   return (
     <div className="TorneosWrapper">

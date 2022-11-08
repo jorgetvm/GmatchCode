@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import './Modal.css'
 
-export const Modal = (props) =>{
+export const StatsModal = (props) =>{
     const { nameJ1, nameJ2, acesJ1, acesJ2, doblesJ1, doblesJ2, puntosJ1, puntosJ2} = props;
     const tile = `Estadísticas ${nameJ1} vs ${nameJ2}`;
     const acesJ1porcentaje = ((acesJ1+acesj2)/acesJ1)*100;
@@ -84,4 +84,4 @@ function App() {
   );
 }
 
-render(<App />);
+export default StatsModal;
