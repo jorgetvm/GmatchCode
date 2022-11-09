@@ -7,6 +7,7 @@ import {
   getMatchDuration,
 } from '../../Utils/Utils';
 import pelota from '../../Imagenes/pelota.png';
+// import StatsModal from '../Modal/Modal';
 import { RONDA_NAMING } from  './constants';
 
 import './DetallePartidoTorneo.scss';
@@ -81,8 +82,9 @@ export const DetallePartidoTorneo = ({ partido }) => {
     if (ganador === 1) clasej1 = 'gana';
     else clasej2 = 'gana';
   }
-debugger;
-
+  // const showModal = () =>{
+  //   return <StatsModal props={resultado}/>
+  // }
   return (
     <div className="DetallePartidoTorneoContainer">
       <div className="DetallePartidoTorneoContainer__upperInfo">
@@ -172,14 +174,16 @@ debugger;
                   <div className={set_totalj2}>{sets_j2}</div>
                 </div></>
               )}
-              
             </div>
 
           )}
 
         </div>
-       
-      
+       {/* <div className='DetallePartidoTorneo__stats' onClick={() => showModal()}>
+          <i class="fa fa-bar-chart" aria-hidden="true"></i>
+          
+       </div>
+       */}
       </div>
       <div className="iconStats">
           <FontAwesomeIcon icon="fa-solid fa-chart-simple" />
