@@ -1,4 +1,6 @@
-import React  from 'react';
+import React, { useEffect, useState }  from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -7,12 +9,12 @@ import {
   getMatchDuration,
 } from '../../Utils/Utils';
 import pelota from '../../Imagenes/pelota.png';
-// import StatsModal from '../Modal/Modal';
 import { RONDA_NAMING } from  './constants';
-
+import { calculeStats } from './utils';
 import './DetallePartidoTorneo.scss';
 
 export const DetallePartidoTorneo = ({ partido }) => {
+  const [show, setShow] = useState(false);
   const resultado = partido?.resultado || [];
   const ronda = RONDA_NAMING[partido?.ronda] || '';
   const {
@@ -82,13 +84,28 @@ export const DetallePartidoTorneo = ({ partido }) => {
     if (ganador === 1) clasej1 = 'gana';
     else clasej2 = 'gana';
   }
-  // const showModal = () =>{
-  //   return <StatsModal props={resultado}/>
-  // }
+  const {  stats_aces_j1, stats_aces_j2, stats_doble_faltas_j1, stats_doble_faltas_j2, stats_puntos_j1, stats_puntos_j2} = resultado;
+   const tile = `Estadísticas`;
+   const { acesJ1porcentaje, acesJ2porcentaje, doblesJ1porcentaje, doblesJ2porcentaje, puntosJ1porcentaje, puntosJ2porcentaje } = calculeStats({stats_aces_j1, stats_aces_j2, stats_doble_faltas_j1, stats_doble_faltas_j2, stats_puntos_j1, stats_puntos_j2})
+ const showModal = () =>{
+    setShow(true)
+    if( window && window.dataLayer){
+      window.dataLayer.push({'event': 'showModal', 'event_category': 'interaction', 'event_label': `${nombrej1}vs${nombrej2}`, 'event_value': '0'});
+    }
+ };
+ const closeModal = () =>{
+  setShow(false)
+  if( window && window.dataLayer){
+    window.dataLayer.push({'event': 'closeModal', 'event_category': 'interaction', 'event_label': `${nombrej1}vs${nombrej2}`, 'event_value': '0'});
+  }
+};
   return (
     <div className="DetallePartidoTorneoContainer">
       <div className="DetallePartidoTorneoContainer__upperInfo">
         <div className="DetallePartidoTorneoContainer__upperInfo__ronda">{ronda}</div>
+        {estado != 0 && (
+          <div className="DetallePartidoTorneoContainer__upperInfo__stats" onClick={showModal} >Live Stats</div>
+        )}
         <div className="DetallePartidoTorneoContainer__upperInfo__pista">{`Pista ${pista}`}</div>
       </div>
 
@@ -121,6 +138,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
               {ganador == 2 && (
                 <i className="far fa-check-circle" />
               )}
+             
             </div>
           </div>
         )}
@@ -179,17 +197,91 @@ export const DetallePartidoTorneo = ({ partido }) => {
           )}
 
         </div>
-       {/* <div className='DetallePartidoTorneo__stats' onClick={() => showModal()}>
-          <i class="fa fa-bar-chart" aria-hidden="true"></i>
-          
-       </div>
-       */}
+        
+      
       </div>
-      <div className="iconStats">
-          <FontAwesomeIcon icon="fa-solid fa-chart-simple" />
-        </div>
+
+        <Modal
+          show={show}
+          size="lg"
+          aria-labelledby={tile}
+          centered
+          onHide={closeModal}
+        >
+          <Modal.Header>
+            <Modal.Title id={tile}>
+              <div className="title">
+              <div>{tile}</div>
+                <div onClick={closeModal} className="title_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+              </div>
+            
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+          <div className="nombres_stats">
+                <div className="nombres_stats_j1">{nombrej1}</div>
+                <div className="nombres_stats_j2">{nombrej2}</div>
+            </div>
+            <h4 className="title_stats">Aces</h4>
+             
+            <div className="aces_stats ">
+                <div className="nombres_stats">
+                    <div>{stats_aces_j1}</div>
+                    <div>{stats_aces_j2}</div>
+                </div>
+                <div class="container_stats">
+                    <div className="first-progrss" style={{width: `${acesJ1porcentaje}%`}} />
+                    <div className="second-progrss" style={{width: `${acesJ2porcentaje}%`}} />
+                </div>
+            </div>
+            <h4 className="title_stats">Doble faltas</h4>
+            <div className="dobles_stats">
+                <div className="nombres_stats">
+                    <div>{stats_doble_faltas_j1}</div>
+                    <div>{stats_doble_faltas_j2}</div>
+                </div>
+                <div class="container_stats">
+                    <div className="first-progrss" style={{width: `${doblesJ1porcentaje}%`}} />
+                    <div className="second-progrss" style={{width: `${doblesJ2porcentaje}%`}} />
+                </div>
+            </div>
+            <h4 className="title_stats">Puntos</h4>
+            <div className="puntos_stats">
+                <div className="nombres_stats">
+                    <div>{stats_puntos_j1}</div>
+                    <div>{stats_puntos_j2}</div>
+                </div>
+                <div class="container_stats">
+                    <div className="first-progrss" style={{width: `${puntosJ1porcentaje}%`}} />
+                    <div className="second-progrss" style={{width: `${puntosJ2porcentaje}%`}} />
+                </div>
+            </div>
+          </Modal.Body>
+
+        </Modal>
     </div>
   );
 };
+
+// const StatsModal = (props) =>{
+
+//   debugger;
+//   const { nameJ1, nameJ2, acesJ1, acesJ2, doblesJ1, doblesJ2, puntosJ1, puntosJ2} = props;
+//    const tile = `Estadísticas ${nameJ1} vs ${nameJ2}`;
+//    const acesJ1porcentaje = ((acesJ1+acesJ2)/acesJ1)*100;
+//    const acesJ2porcentaje = ((acesJ1+acesJ2)/acesJ2)*100;
+//    const doblesJ1porcentaje = ((doblesJ1+doblesJ2)/doblesJ1)*100;
+//    const doblesJ2porcentaje = ((doblesJ1+doblesJ2)/doblesJ2)*100;
+//    const puntosJ1porcentaje = ((puntosJ1+puntosJ2)/puntosJ1)*100;
+//    const puntosJ2porcentaje = ((puntosJ1+puntosJ2)/puntosJ2)*100;
+
+//    return (<>
+  
+//       {show && (
+          
+//       )}
+//      </>  
+//      );
+// }
 
 export default DetallePartidoTorneo;
