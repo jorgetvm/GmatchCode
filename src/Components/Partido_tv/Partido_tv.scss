@@ -8,7 +8,7 @@
     justify-content: space-between;
 }
 .resultadosTv{
-    height: 60vh;
+    height: 50vh;
     background-color: #19331f;
    
 }
@@ -113,7 +113,7 @@
     justify-content: center;
 }
 .grupo2{    
-    line-height: 25vh;
+    line-height: 10vh;
     width: 33%;
     align-items: center;
     flex-direction: row;
@@ -128,7 +128,7 @@
 
 
 .logosBlanco{
-    height: 13vh;
+    height: 15vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -186,5 +186,14 @@
     }
     .texto_nombres{
         font-size: 7vw;
+    }
+    .grupo2{    
+        line-height: 25vh;
+    }
+    .logosBlanco{
+        height: 13vh;
+    }
+    .resultadosTv{
+        height: 60vh;
     }
   }
