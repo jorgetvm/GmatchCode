@@ -20,7 +20,7 @@
 .texto_nombres{
     font-family: arial;
     font-weight: bold;
-    font-size: 7vw;
+    font-size: 10vw;
     color: aliceblue;
 }
 .nombresTv{
@@ -68,13 +68,11 @@
     justify-content: space-between;
     padding: 0rem 1vw;
 }
-.logoPista .logo_pista{
-    width: 22vh;
-}
+
 .nombre_hora{
     display: flex;
     flex-direction: row;
-    font-size: 3vw;
+    font-size: 4vw;
     height: 100%;
     justify-content: space-between;
     align-items: center;
@@ -87,7 +85,7 @@
     align-items: center;
 }
 .resultadoTv{
-    width: 36%;
+    width: 45%;
     min-width: 36%;
     display: flex;
     flex-direction: row;
@@ -166,3 +164,27 @@
     background-image: url('../../Imagenes/pista3.jpg');
 }
 
+.logo_club{
+    width: 15vh;
+}
+
+.logo_pista{
+    width: 15vh;
+}
+@media (min-width: 768px) {
+    .logo_club{
+        width: 15vw;
+    }
+    .logoPista .logo_pista{
+        width: 22vh;
+    }
+    .nombre_hora{
+        font-size: 3vw;
+    }
+    .resultadoTv{
+        width: 33%;
+    }
+    .texto_nombres{
+        font-size: 7vw;
+    }
+  }

@@ -234,7 +234,7 @@ export const DetallePartidoTorneo = ({ partido }) => {
                     <div className="second-progrss" style={{width: `${acesJ2porcentaje}%`}} />
                 </div>
             </div>
-            <h4 className="title_stats">Doble faltas</h4>
+            <h4 className="title_stats">Dobles faltas</h4>
             <div className="dobles_stats">
                 <div className="nombres_stats">
                     <div>{stats_doble_faltas_j1}</div>
