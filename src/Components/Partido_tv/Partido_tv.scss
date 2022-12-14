@@ -157,7 +157,7 @@
     height: 50px;
 }
 .logo_club{
-    width: 15vw;
+    width: 15vh;
 }
 
 .partidotv{
@@ -173,7 +173,7 @@
 }
 @media (min-width: 768px) {
     .logo_club{
-        width: 15vw;
+        width: 22vh;
     }
     .logoPista .logo_pista{
         width: 22vh;
@@ -197,3 +197,25 @@
         height: 60vh;
     }
   }
+
+  @media  (orientation: landscape) and (max-width: 900px) {
+
+                    .resultadoTv{
+                        font-size: 7vw;
+                    }
+                    .texto_nombres{
+                        font-size: 7vw;
+                    }
+                    .grupo2 {
+                        line-height: 16vh;
+                    }
+                    .logo_pista {
+                        width: 22vh;
+                    }
+                    .logo_club {
+                        width: 25vh;
+                    }
+                    .logoTv {
+                        height: 15vh;
+                    }
+}
