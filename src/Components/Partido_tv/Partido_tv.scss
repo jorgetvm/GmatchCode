@@ -1,26 +1,55 @@
 
 .contianerPartidoTv{
     height: 100vh;
-    background-image: url('../../Imagenes/pista3.jpg');
+    background-size: cover;
     padding: 1vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+.tenis{
+    &.contianerPartidoTv{
+        background-image: url('../../Imagenes/pista3.jpg');
+    }
+    .resultadosTv{
+        background-color:var(--greenTenis);
+    }
+    .grupo2{
+        color: var(--greenTenis);
+    }
+    .footer{
+        background-color: var(--greenTenisLogosBackGround);
+    }
+}
+
+.pingPong{
+    &.contianerPartidoTv{
+        background-image: url('../../Imagenes/pp2.jpg');
+    }
+    .resultadosTv{
+        background-color:var(--bluepp);
+    }
+    .grupo2{
+        color: var(--bluepp);
+    }
+    .footer{
+        background-color: var(--bluepp);
+    }
+    .cabecera .nombretorneo{
+        color: var(--bluepp);
+    }
+
+
+}
+
 .resultadosTv{
     height: 50vh;
-    background-color: #19331f;
-   
-}
-.texto_info{
-    font-family: arial;
-    font-weight: bold;
-    font-size: 7vh;
+    border-radius: 5px;
 }
 .texto_nombres{
     font-family: arial;
     font-weight: bold;
-    font-size: 10vw;
+    font-size: 7vw;
     color: aliceblue;
 }
 .nombresTv{
@@ -30,16 +59,7 @@
     justify-content: space-around;
     height: 100%;
 }
-.nombretorneo{
-    height: 13vh;
-    padding: 0 1vw;
-    width: 60vw;
-    color: #114d0b;
-    background-color: white;
-    &--ancho{
-        width: 80vw;
-    }
-}
+
 .pistaTv{
     width: 100%;
     display: flex;
@@ -48,6 +68,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.separador{
+    color: white;
+    min-height: 4px;
+    height: 4px;
+    background-color: white;
+    border: none;
+    margin: 0;
 }
 
 .jugador1Tv, .jugador2Tv{
@@ -69,15 +97,7 @@
     padding: 0rem 1vw;
 }
 
-.nombre_hora{
-    display: flex;
-    flex-direction: row;
-    font-size: 4vw;
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-}
+
 .jugadorTv{
     width: auto;
     display: flex;
@@ -86,7 +106,7 @@
 }
 .resultadoTv{
     width: 45%;
-    min-width: 36%;
+    min-width: 45%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -98,7 +118,7 @@
 }
 .nombre_jugador{
     text-align: -webkit-left;
-    line-height: 14vh;
+    line-height: 11vh;
 }
 .textoPequeño{
     font-size: 5vw;
@@ -118,7 +138,6 @@
     align-items: center;
     flex-direction: row;
     display: flex;
-    color: #114d0b;
     background-color: white;
     justify-content: center;
 }
@@ -128,11 +147,7 @@
 
 
 .logosBlanco{
-    height: 15vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: #374a3b;
+    
 }
 .logoTv{
    height: 10vh;
@@ -178,9 +193,7 @@
     .logoPista .logo_pista{
         width: 22vh;
     }
-    .nombre_hora{
-        font-size: 3vw;
-    }
+
     .resultadoTv{
         width: 33%;
     }
@@ -199,7 +212,9 @@
   }
 
   @media  (orientation: landscape) and (max-width: 900px) {
-
+                    .resultadosTv {
+                        height: 53vh;
+                    }
                     .resultadoTv{
                         font-size: 7vw;
                     }

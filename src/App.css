@@ -1,3 +1,9 @@
+:root {
+  --bluepp: #0d56a5;
+  --greenTenis: #19331f;
+  --greenTenisLogosBackGround: #374a3b;
+}
+
 .App {
   text-align: center;
 }
@@ -30,6 +36,7 @@ margin-right: auto;
 .App-link {
   color: #61dafb;
 }
+
 
 @keyframes App-logo-spin {
   from {

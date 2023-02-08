@@ -5,8 +5,8 @@ import {
   Route,
 } from 'react-router-dom';
 import './App.css';
-
-
+import { createStore } from 'redux';
+import {Provider, useDispatch} from 'react-redux';
 import TorneosPage from './Pages/Torneos/TorneosPage';
 import PartidoWeb from './Pages/Partidos/Web/PartidoWeb';
 import PartidoObs from './Pages/Partidos/Obs/PartidoObs';
@@ -14,12 +14,16 @@ import PartidoLed from './Pages/Partidos/Led/PartidoLed';
 import PartidoStats from './Pages/Partidos/Stats/PartidoStats';
 import { HashRouter } from 'react-router-dom';
 import { obtenerValorParametro, getTorneosId } from './Utils/Utils';
+import { actions } from '../src/reducers/main';
+import rootReducers from './reducers/index';
 
 function App() {
-
+  const store = createStore(rootReducers);
   const location = obtenerValorParametro('location');
   console.log(location)
+  // dispatch(actions.getTournamentInfo());
   return (
+    <Provider store={store}>
       <div className="App">
         {location && (
           <div>
@@ -39,6 +43,7 @@ function App() {
           <Route exact path="/tenis/partido" component={PartidoWeb} />
         </Switch> */}
       </div>
+    </Provider>
   );
 }
 

@@ -1,0 +1,62 @@
+
+.StatsModal{
+    .boton{
+        cursor: pointer;
+        font-weight: 600;
+        width: 32vw;
+        background-color: var(--greenTenis);
+        color: white;
+        margin: 0 auto;
+        border: 1px solid transparent;
+        border-radius: 4px;
+
+    }
+    .modal-content{
+        .nombres_stats{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            font-weight: bold;
+            &_j1{
+                color:#d05964,
+            }
+            &_j2{
+                color:#38cd5a;
+            }
+        }
+        .title{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .modal-title{
+            width: 100%;
+        }
+        .title_close{
+            cursor: pointer;
+            display: inline;
+        }
+        .title_stats{
+            padding-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .container_stats{
+            width: 100%;
+            height: 20px;
+            border: 1px solid #000;
+            display: flex;
+          }
+          
+          .first-progrss{
+            width: 50%;
+            background:#d05964;
+          }
+          .second-progrss{
+            width: 50%;
+            background:#38cd5a;
+          }
+    }
+}
+

@@ -473,3 +473,8 @@ export const checkPrevDaymatchs = (infoPartidos, date) => {
   }
   return result;
 };
+
+const getPartidoType = (tipoPartido) =>{
+  let result
+}
+// const tipoPartido = getPartidoType(tipo_partido);

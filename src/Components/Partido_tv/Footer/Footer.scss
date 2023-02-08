@@ -1,0 +1,29 @@
+.footer{
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    align-items: center;
+    .logoFooter{
+        height: fit-content;
+        min-width: 85px;
+        .eachLogoFooter{
+            width: 15vw;
+        }
+    }
+}
+@media (min-width: 800px) {
+    .footer{
+        .logoFooter{
+            .eachLogoFooter{
+                width: 15vh;
+            }
+        }
+
+       
+        
+    }
+}

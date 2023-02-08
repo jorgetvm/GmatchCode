@@ -1,0 +1,90 @@
+.cabecera{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .cabeceralogos{
+        height: 9vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+        .logoClub, .logoGmatch{
+            width: 21vw;
+            img{
+                width: -webkit-fill-available;
+            }
+        }
+   
+    }
+    .nombretorneo{
+        height: 5vh;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 0 4vw;
+        color: #114d0b;
+        background-color: white;
+        font-family: arial;
+        font-weight: bold;
+        font-size: 7vh;
+        border: 1px solid white;
+        border-radius: 4px;
+
+        .nombre_hora{
+            display: flex;
+            flex-direction: row;
+            font-size: 3vw;
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            .tiempoTv{
+                margin: 0 10px;
+            }
+        }
+    }
+    
+}
+@media (min-width: 800px) {
+    .cabecera{
+        .cabeceralogos{
+            height: 14vh;
+           
+            .logoClub{
+                width: 14vh;
+                img{
+                    width: -webkit-fill-available;
+                }
+            }
+            .logoGmatch{
+
+                width: 14vh;
+                img{
+                    width: -webkit-fill-available;
+                }
+            }
+            
+        }
+        .nombretorneo{
+            height: 7vh;
+            position: absolute;
+            top: 6vh;
+            width: 60vw;
+            left: 20vw;
+        }
+    }
+}
+@media (orientation: landscape) {
+    .cabecera{
+        .cabeceralogos{
+            height: 14vh;
+           
+            .logoClub, .logoGmatch{
+                width: 14vh;
+                img{
+                    width: -webkit-fill-available;
+                }
+            }            
+        }
+    }
+}
