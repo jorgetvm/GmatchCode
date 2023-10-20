@@ -150,9 +150,9 @@ class Partido_obs extends Component {
     return (
       <>
         <div className="contenedor">
-          <div className="obs_gmatch">
+          {/* <div className="obs_gmatch">
             Powered by GMatch
-          </div>
+          </div> */}
           <div className="obs_jugadores">
             <div className="obs_jugador obs_borde1">
               <div className="obs_nombre">
