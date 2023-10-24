@@ -4,11 +4,18 @@ import MainContainer from '../../../Containers/MainContainer/MainContainer';
 import { obtenerValorParametro, getTorneosId } from '../../../Utils/Utils';
 import Partido_tv from '../../../Components/Partido_tv/Partido_tv';
 import { API_PARTIDOS, TIME_API_PARTIDOS } from '../../../Utils/Constants';
+import { useDispatch } from 'react-redux';
+import { actions } from '../../../reducers/main';
+import { useSelector } from 'react-redux'
+
 
 export const PartidoWebPage = () => {
   const [infoPartido, setInfoPartido] = useState(null);
   const [idPartido, setIdPartido] = useState(obtenerValorParametro('id'));
-
+  const dispatch = useDispatch();
+  // const { tournamentInfo } = useSelector((state) => state.main);
+  dispatch(actions.getTournamentInfo(4));
+  // console.log(tournamentInfo, 'tournamentInfo');
   let infopartido_tv = null;
 
   useEffect(() => {

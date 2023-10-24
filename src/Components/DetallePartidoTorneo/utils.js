@@ -27,7 +27,6 @@ export const calculeStats = ({stats_aces_j1,stats_aces_j2,stats_doble_faltas_j1,
         doblesJ1porcentaje = ((stats_doble_faltas_j1+stats_doble_faltas_j2)/stats_doble_faltas_j2)*100;
         doblesJ2porcentaje = ((stats_doble_faltas_j1+stats_doble_faltas_j2)/stats_doble_faltas_j1)*100;
     }
-    debugger;
 
     let puntosJ1porcentaje = 0;
     let puntosJ2porcentaje = 0;

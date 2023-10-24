@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import moment from 'moment';
 import pelota from '../../Imagenes/pelota.png';
-
-import GMatch_NEW_WHITE from '../../Imagenes/GMatch_NEW_WHITE.png';
+import pngegg from '../../Imagenes/pngegg.png';
+import { SPORT_TYPES } from '../../Utils/Constants';
 import LOGO_FPRM_white from '../../Imagenes/LOGO_FPRM_white.png';
 import Dominos from '../../Imagenes/Dominos.png';
 import rfet3 from '../../Imagenes/rfet3.png';
@@ -14,7 +14,8 @@ import CostaCalida_white from '../../Imagenes/Logos_CEU_blancos_png/CostaCalida_
 import CSD_white from '../../Imagenes/Logos_CEU_blancos_png/CSD_white.png';
 import RegiodeMurcia_white from '../../Imagenes/Logos_CEU_blancos_png/RegiodeMurcia_white.png';
 import UCAM25 from '../../Imagenes/Logos_CEU_blancos_png/UCAM25.png';
-
+import Cabecera from './Cabecera';
+import Footer from './Footer';
 
 import {
   getMatchDuration,
@@ -25,6 +26,7 @@ import MiraDigital_white from '../../Imagenes/MiraDigital_white.png';
 import pista3 from '../../Imagenes/pista3.jpg';
 
 import './Partido_tv.scss';
+import { StatsModal } from './StatsModal';
 
 
 class Partido_tv extends Component {
@@ -39,12 +41,11 @@ class Partido_tv extends Component {
 
   render() {
     console.log('partido_tv');
-
+ 
     const { partido } = this.props;
-
     const infoPartido = partido;
-
-    const { resultado, arbitro, torneo, torneo_media, deporte } = infoPartido;
+    const { resultado, arbitro, torneo, torneo_media, deporte, tipo_partido, estado } = infoPartido;
+    const {  stats_aces_j1, stats_aces_j2, stats_doble_faltas_j1, stats_doble_faltas_j2, stats_puntos_j1, stats_puntos_j2} = resultado;
     const {imagen_logo, imagenes_patrocinadores, club_logo} = torneo_media;
     let nombreTorneo; let genero;
     if (torneo) {
@@ -54,6 +55,7 @@ class Partido_tv extends Component {
       nombreTorneo = 'Campeonato de España';
       genero = 'Masculino';
     }
+    const tipoPartido = SPORT_TYPES[deporte];
     let autoarbitraje = 0;
     let horade_inicio;
     // const {puntos_j1} = resultado;
@@ -70,7 +72,6 @@ class Partido_tv extends Component {
     }
 
     if (resultado) {
-      console.log(resultado);
       jugador1 = infoPartido.jugadores[0].nombre;
       jugador2 = infoPartido.jugadores[1].nombre;
       pista = infoPartido.pista;
@@ -126,34 +127,31 @@ class Partido_tv extends Component {
     const espaciosJ2 = jugador2.split(" ").length >2 ? 'textoPequeño' : '' ;
     const textoPequeño = espaciosJ1 || espaciosJ2;
     const { horas, minutos } = getMatchDuration(hora_inicio);
+    const getPelotaSrc = (deporte)=> {
+      let result = pelota;
+      if (deporte !== 1 ){
+        result = pngegg;
+      }
+      return result
+    }
+ 
     return (
       <>
-        <div className="contianerPartidoTv">
-        <div className="logoPista">
-          <img className="logo_pista" src={GMatch_NEW_WHITE} />
-          <div className={`nombretorneo texto_info ${!(club_logo && club_logo.length > 0) ? 'nombretorneo--ancho' : ''}`}>
-            <div className="nombre_hora">
-              <div>{`${nombreTorneo}`}</div>
-              <div>{mostrar_hora && (<div className="tiempoTv">{` ${horas}:${minutos}`}</div>)}</div>
-            </div>
-          </div>
-          {club_logo && club_logo.length > 0 && (
-            club_logo.map((eachLogo) => {
-              return <img className="logo_club" src={eachLogo} />
-            })
-            )}
-        </div>
-        
-          {/* <div className="logoPista">
-            <img className="logo_pista" src={GMatch_NEW_WHITE} />
-            <div className="pistaTv texto_info">{`Pista ${pista}`}</div>
-          </div> */}
-          
+        <div className={`${tipoPartido} contianerPartidoTv `}>
+
+         <Cabecera  
+            club_logo={club_logo}
+            nombreTorneo={nombreTorneo}
+            horas={horas}
+            minutos={minutos}
+            mostrar_hora={mostrar_hora}
+            />
+
           <div className="resultadosTv">
             <div className="nombresTv texto_nombres">
               <div className="jugador1Tv">
                 <div className="jugadorTv">
-                  <div className="saque "><img className={`pelotaTv ${claseSaque1}`} src={pelota} alt="" /></div>
+                  <div className="saque "><img className={`pelotaTv ${claseSaque1}`} src={getPelotaSrc(deporte)} alt="" /></div>
                   <span className={`nombre_jugador ${textoPequeño}`}>{jugador1}</span>
                 </div>
                 <div className="resultadoTv">
@@ -174,9 +172,10 @@ class Partido_tv extends Component {
                   </div>
                 </div>
               </div>
+              <hr className="separador"></hr>
               <div className="jugador2Tv">
                 <div className="jugadorTv">
-                  <div className="saque "><img className={`pelotaTv ${claseSaque2}`} src={pelota} alt="" /></div>
+                  <div className="saque "><img className={`pelotaTv ${claseSaque2}`} src={getPelotaSrc(tipo_partido)} alt="" /></div>
                   <span className={`nombre_jugador ${textoPequeño}`}>{jugador2}</span>
                 </div>
                 <div className="resultadoTv">
@@ -200,73 +199,20 @@ class Partido_tv extends Component {
             </div>
 
           </div>
-
-          
-          <div className="logosBlanco">
-          {imagenes_patrocinadores && imagenes_patrocinadores.length > 0 && (
-            imagenes_patrocinadores.map((eachLogo) => {
-              return <div className="divLogo"><img className="logoTv " src={eachLogo} /></div>
-            })
-            )}
-            {/* <div className="divLogo"><img className="logoTv " src={RegiodeMurcia_white} /></div>
-            <div className="divLogo"><img className="logoTv4 " src={CSD_white} /></div>
-            <div className="divLogo"><img className="logoTv4" src={CostaCalida_white} /></div>
-            <div className="divLogo"><img className="logoTv5" src={UCAM25} /></div> */}
-          </div>
-
-
-        </div>
-        {/*
-        <div className="partidotv">
-            <div className="pista">
-                <div className="pista2">{`Pista ${pista}`}</div>
-                <div className="pista2">{`${nombreTorneo}`}</div>
-                <div className="pista2">{`${ronda}`}</div>
-            </div>
-
-            <div className="contenedor">
-                <div className="jugador">
-                    <div className="nombre">
-                    <span className="nombre_jugador">{jugador1}</span>
-                    <div className="saque tamaño_puntos"><img className={`pelota ${claseSaque1}`} src={pelota} alt=""/></div>
-                    <div className="puntos tamaño_puntos">{pj1}</div>
-                    </div>
-
-
-                    <div className="set tamaño_puntos">{set1_j1} <span className="set2">Set 1</span></div>
-                    <div className="set tamaño_puntos">{set2_j1} <span className="set2">Set 2</span></div>
-                    <div className="set tamaño_puntos">{set3_j1} <span className="set2">Set 3</span></div>
-                </div>
-                <div className="jugador paddingFix">
-                    <div className="nombre">
-                    <span className="nombre_jugador">{jugador2}</span>
-                    <div className="saque tamaño_puntos"><img className={`pelota ${claseSaque2}`} src={pelota} alt=""/></div>
-                    <div className="puntos tamaño_puntos">{pj2}</div>
-                    </div>
-
-
-                    <div className="set tamaño_puntos">{set1_j2}</div>
-                    <div className="set tamaño_puntos">{set2_j2}</div>
-                    <div className="set tamaño_puntos">{set3_j2}</div>
-                </div>
-            </div>
-            <div className="logo-partido">
-            <div className="logos">
-                <div className="divLogo"><img className="logo_padel"  src={GMatch_NEW_WHITE}/></div>
-                <div className="divLogo"><img className="logo_padel"   src={head}/></div>
-                <div className="divLogo"><img className="logo_padel3" src={LOGO_FPRM_white}/></div>
-                <div className="divLogo"><img className="logo_padel"  src={joma}/></div>
-                <div className="divLogo"><img className="logo_padel2"  src={MiraDigital_white}/></div>
-
-                {/*<div className="divLogo"><img className="logo"src={MCT_REAL_neg}/></div>*
-
-                {mostrar_hora && (<div className="tiempo"><i className="far fa-clock"></i>{` ${h} : ${min}`}</div>)}
-
-            </div>
-            </div>
+          <StatsModal 
+            nombrej1={jugador1}
+            nombrej2={jugador2}
+            stats_aces_j1={stats_aces_j1}
+            stats_aces_j2={stats_aces_j2}
+            stats_doble_faltas_j1={stats_doble_faltas_j1}
+            stats_doble_faltas_j2={stats_doble_faltas_j2}
+            stats_puntos_j1={stats_puntos_j1}
+            stats_puntos_j2={stats_puntos_j2}
+            estado={estado}
+          />
+          <Footer imagenes_patrocinadores={imagenes_patrocinadores}/>
         </div>
 
-        */}
       </>
     );
   }
