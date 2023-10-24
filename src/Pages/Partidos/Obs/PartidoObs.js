@@ -20,9 +20,10 @@ export const PartidoObsPage = () => {
       updateData();
     }, TIME_API_PARTIDOS);
 
-    fetch(API_PARTIDOS, {})
+    fetch(`${API_PARTIDOS}/${idPartido}`, {})
       .then((response) => response.json())
       .then((data) => {
+        debugger;
         setInfoPartido(data);
       })
       .catch((error) => console.log('error', error));
@@ -30,11 +31,7 @@ export const PartidoObsPage = () => {
 
 
   if (infoPartido) {
-    infoPartido.forEach((partido) => {
-      if (idPartido == partido.hashid) {
-        infopartido_tv = partido;
-      }
-    });
+    infopartido_tv = infoPartido;
   }
   return (
     <div className="PartidoObsPage">
