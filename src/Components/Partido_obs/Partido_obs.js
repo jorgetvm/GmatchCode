@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import moment from 'moment';
 import pelota from '../../Imagenes/pelota.png';
+import { RONDA_NAMING } from '../DetallePartidoTorneo/constants';
 import MCT_REAL_neg from '../../Imagenes/MCT_REAL_neg.png';
 import LogoGmatchNegroNuevo from '../../Imagenes/LogoGmatchNegroNuevo.png';
 import './Partido_obs.css';
@@ -21,7 +22,8 @@ class Partido_obs extends Component {
 
     const infoPartido = partido;
 
-    const { resultado, arbitro, torneo, deporte } = infoPartido;
+    const { resultado, arbitro, torneo, deporte, ronda } = infoPartido;
+    const rondaPartido = RONDA_NAMING[ronda] || null;;
     let nombreTorneo;
     if (torneo) {
       nombreTorneo = torneo.nombre;
@@ -226,7 +228,7 @@ class Partido_obs extends Component {
               )}
             </div>
             <div className="obs_pista">
-              <span className="obs_pista2">{`${nombreTorneo}`}</span>
+              <span className="obs_pista2">{`${rondaPartido}`}</span>
               <span className="obs_triangulo">&nbsp;</span>
             </div>
           </div>

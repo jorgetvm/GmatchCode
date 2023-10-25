@@ -4,7 +4,6 @@ import React, { useEffect, useState }  from 'react';
 
  export const StatsModal = (props) =>{
     const [show, setShow] = useState(false);
-    debugger;
     const { nameJ1, nameJ2, acesJ1, acesJ2, doblesJ1, doblesJ2, puntosJ1, puntosJ2} = props;
      const tile = `Estadísticas ${nameJ1} vs ${nameJ2}`;
      const acesJ1porcentaje = ((acesJ1+acesJ2)/acesJ1)*100;

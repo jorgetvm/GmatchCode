@@ -17,7 +17,6 @@ const MainReducer = (state = initialState, action) => {
             };
         }
         case TYPES.SET_TOURNAMENT_INFO: {
-            debugger;
             return {
                 ...state,
                 tournamentInfo: action.payload,

@@ -23,7 +23,6 @@ export const PartidoObsPage = () => {
     fetch(`${API_PARTIDOS}/${idPartido}`, {})
       .then((response) => response.json())
       .then((data) => {
-        debugger;
         setInfoPartido(data);
       })
       .catch((error) => console.log('error', error));
