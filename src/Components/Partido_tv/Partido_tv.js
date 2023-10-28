@@ -45,7 +45,6 @@ class Partido_tv extends Component {
     const { partido } = this.props;
     const infoPartido = partido;
     const { resultado, arbitro, torneo, torneo_media, deporte, tipo_partido, estado } = infoPartido;
-    debugger;
     const {  stats_aces_j1, stats_aces_j2, stats_doble_faltas_j1, stats_doble_faltas_j2, stats_puntos_j1, stats_puntos_j2} = resultado;
     const {imagen_logo, imagenes_patrocinadores, club_logo} = torneo_media;
     let nombreTorneo; let genero;
@@ -128,14 +127,14 @@ class Partido_tv extends Component {
     const espaciosJ2 = jugador2.split(" ").length >2 ? 'textoPequeño' : '' ;
     const textoPequeño = espaciosJ1 || espaciosJ2;
     const { horas, minutos } = getMatchDuration(hora_inicio);
-    const getPelotaSrc = (deporte)=> {
+    const getPelotaSrc = ({deporte})=> {
       let result = pelota;
-      // if (deporte !== 1 ){
-      //   result = pngegg;
-      // }
+      if (deporte && deporte !== 1 ){
+        result = pngegg;
+      }
       return result
     }
-    const pelotaSrc = getPelotaSrc(deporte);
+    const pelotaSrc = getPelotaSrc({deporte});
     return (
       <>
         <div className={`${tipoPartido} contianerPartidoTv `}>

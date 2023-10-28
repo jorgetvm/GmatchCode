@@ -22,8 +22,7 @@ import './Partido_tv_led.css';
 const Partido_tv_led = ({ partido }) => {
   const { resultado, arbitros, torneo, deporte } = partido;
   const nombreTorneo = torneo?.nombre || '';
-  const nombreCLub = torneo?.club.descripcion || '' ;
-
+  const nombreCLub = torneo?.club.nombre || '' ;
 
 
   let autoarbitraje = 0;

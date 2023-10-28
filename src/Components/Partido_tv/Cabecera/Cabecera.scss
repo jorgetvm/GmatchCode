@@ -90,7 +90,8 @@
             height: 7vh;
             position: absolute;
             top: 6vh;
-            width: 60vw;
+            min-width: 60vw;
+            width: fit-content;
             left: 20vw;
         }
     }
