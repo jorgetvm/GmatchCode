@@ -129,13 +129,13 @@ class Partido_obs extends Component {
       h = `0${h}`;
     }
     if (saque_actual === 1) {
-      claseSaque2 = 'iconoSaque_hidden';
+      claseSaque2 = 'iconoSaque_hidden_ob';
     } else {
-      claseSaque1 = 'iconoSaque_hidden';
+      claseSaque1 = 'iconoSaque_hidden_ob';
     }
     if (sets_j1 + sets_j2 >= 3 && deporte !== 3) {
-      claseSaque2 = 'iconoSaque_hidden';
-      claseSaque1 = 'iconoSaque_hidden';
+      claseSaque2 = 'iconoSaque_hidden_ob';
+      claseSaque1 = 'iconoSaque_hidden_ob';
     }
     let pj1;
     let pj2;
@@ -151,7 +151,7 @@ class Partido_obs extends Component {
 
     return (
       <>
-        <div className="contenedor">
+        <div className="contenedorObs">
           {/* <div className="obs_gmatch">
             Powered by GMatch
           </div> */}

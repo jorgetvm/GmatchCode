@@ -5,7 +5,7 @@
     justify-content: space-between;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 3rem;
+    font-size: 18px;
     font-family:  Arial;
 
     background: rgba(76,76,76,1);
@@ -18,19 +18,23 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=1 );
     border:0px solid grey;
 
-    padding:0px 40px;
+    padding:0px 4px;
     margin:0px;
+    height: 30px;
+    align-items: center;
 }
     
 .obs_borde1{
-    border-radius:40px 0px 0px 0px;
-    border-bottom: 3px solid black;
+    padding-top: 2px;
+    border-radius: 10px 0px 0px 0px;
+    border-bottom: 1px solid black;
 }
 .obs_borde2{
-    border-radius:0px 0px 0px 40px;
+    padding-top: 2px;
+    border-radius:0px 0px 0px 10px;
 }
 .obs_pelota{
-    width: 50px;
+    width: 16px;
 }
 .obs_nombre{
     width: 80%;
@@ -38,7 +42,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-right: 3rem;
+    padding-right: 8px;
+}
+.iconoSaque_hidden_ob{
+    visibility: hidden;
+    height: 10px;
 }
 .obs_nombre_jugador{
     font-weight: bold;
@@ -52,9 +60,9 @@
     text-overflow: ellipsis;
    
 }
-.obs_contenedor{width: 100%;
-    padding: 0px 60px;
-    padding-top: 5%;
+.obs_contenedor{
+    width: 30%;
+    padding: 0;
     color: black;}
 .obs_iconoSaque_hidden{
         visibility: hidden;
@@ -64,15 +72,12 @@
     font-weight: bold;
     display: flex;
     flex-direction: column-reverse;
-    margin-top: -153px;
-    width: 7%;
-    min-width: 7%;
     text-align: center;
 }
 .obs_set2{
     font-family:  Arial;
     color: #ffffff;
-    font-size: 58px;
+    font-size: 8px;
 
 }
 .obs_body{
@@ -89,15 +94,15 @@ cursor:none !important;}
 .obs_triangulo{
     width: 0;
     height: 0;
-    border-top: 74px solid black;
-    border-left: 110px solid transparent;
+    border-top: 20px solid black;
+    border-left: 19px solid transparent;
     
   }
 .obs_pista{
     display: flex;
     width: 100%;
     color:#ffffff;
-    font-size: 3rem;
+    font-size: 14px;
 
     font-family:  Arial;
     justify-content: right;
@@ -125,7 +130,7 @@ cursor:none !important;}
 .obs_puntos{
     font-family: Arial;
     text-shadow: 10px 10px 10px 10px #ff0000;
-    
+    min-width: 18px;
     font-weight: bold;
     color: white;
 }
@@ -137,15 +142,16 @@ cursor:none !important;}
 }
 .obs_logos img{
     width: 450px;  
-}
-.contenedor{
-    width: 100%;
-    padding: 0px 60px;
-    padding-top: 5%;
+} 
+.contenedorObs{
+    width: 340px;
     display: flex;
     color: black;
     flex-direction: column;
     align-items: flex-end;
+    bottom: 20px;
+    left: 20px;
+    position: absolute;
 }
 
 .obs_gmatch{
