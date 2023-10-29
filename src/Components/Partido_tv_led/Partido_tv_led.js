@@ -10,7 +10,7 @@ import rfet1 from '../../Imagenes/rfet1.png';
 import rfet2 from '../../Imagenes/rfet2.jpg';
 import rfet3 from '../../Imagenes/rfet3.png';
 import rfet4 from '../../Imagenes/rfet4.png';
-import rfet5 from '../../Imagenes/rfet5.png';
+import RFET_white from '../../Imagenes/RFET_white.png';
 import MCT_REAL_neg from '../../Imagenes/MCT_REAL_neg.png';
 
 import MiraDigital_white from '../../Imagenes/MiraDigital_white.png';
@@ -158,6 +158,7 @@ const Partido_tv_led = ({ partido }) => {
         <div className="divLogoLed"><img className="logoTvLed" src={MCT_REAL_neg} /></div>
         <div className="nombreClub">{`${nombreCLub}`}</div>
         <div>{mostrar_hora && (<div className="tiempoTvLed">{` ${horas}:${minutos}`}</div>)}</div>
+        <img className="logoTvLed" src={RFET_white} />
 
 
       </div>
