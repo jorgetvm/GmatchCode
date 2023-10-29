@@ -70,7 +70,7 @@ let nombreTorneo2 = "";
         <div className={`TorneosWrapper__torneo`}>
           <Torneo id_torneo={torneos[0]} numTorneos={torneos.length} nombre={nombre} logos={logos} logosTorneo={logosTorneo} />
           {numTorneos === 2 && (
-            <><Torneo id_torneo={torneos[1]} numTorneos={torneos.length} nombre={nombreTorneo2} logos={logos2} logosTorneo={logosTorneo2} /><PieTorneos logos={logos} /></>
+            <><div></div><Torneo id_torneo={torneos[1]} numTorneos={torneos.length} nombre={nombreTorneo2} logos={logos2} logosTorneo={logosTorneo2} /><PieTorneos logos={logos} /></>
           )}
         </div>
       </div>

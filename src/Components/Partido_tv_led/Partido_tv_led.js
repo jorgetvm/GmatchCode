@@ -21,9 +21,11 @@ import './Partido_tv_led.css';
 
 const Partido_tv_led = ({ partido }) => {
   const { resultado, arbitros, torneo, deporte } = partido;
-  const nombreTorneo = torneo?.nombre || '';
-  const nombreCLub = torneo?.club.nombre || '' ;
+  // const nombreTorneo = torneo?.nombre || '';
+  const nombreTorneo = 'CTO. ESPAÑA MAPFRE POR EQUIPOS';
 
+  // const nombreCLub = torneo?.club.nombre || '' ;
+  const nombreCLub = 'Copa Orange' ;
 
   let autoarbitraje = 0;
   let horade_inicio;
