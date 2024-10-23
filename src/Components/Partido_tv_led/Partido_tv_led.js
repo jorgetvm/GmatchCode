@@ -12,7 +12,7 @@ import rfet3 from '../../Imagenes/rfet3.png';
 import rfet4 from '../../Imagenes/rfet4.png';
 import RFET_white from '../../Imagenes/RFET_white.png';
 import MCT_REAL_neg from '../../Imagenes/MCT_REAL_neg.png';
-
+import { obtenerNombreJugadores } from '../../Utils/Utils';
 import MiraDigital_white from '../../Imagenes/MiraDigital_white.png';
 
 
@@ -42,9 +42,10 @@ const Partido_tv_led = ({ partido }) => {
   }
 
   if (resultado) {
-    console.log(resultado);
-    jugador1 = partido.jugadores[0].nombre;
-    jugador2 = partido.jugadores[1].nombre;
+
+    const { j1Nombre, j2Nombre} = obtenerNombreJugadores(partido.jugadores);
+    jugador1 = j1Nombre;
+    jugador2 = j2Nombre;
     pista = partido.pista;
     ronda = partido.ronda;
     hora_prevista = resultado.hora_prevista;

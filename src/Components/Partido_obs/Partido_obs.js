@@ -4,6 +4,7 @@ import pelota from '../../Imagenes/pelota.png';
 import { RONDA_NAMING } from '../DetallePartidoTorneo/constants';
 import MCT_REAL_neg from '../../Imagenes/MCT_REAL_neg.png';
 import LogoGmatchNegroNuevo from '../../Imagenes/LogoGmatchNegroNuevo.png';
+import { obtenerNombreJugadores } from '../../Utils/Utils';
 import './Partido_obs.css';
 
 
@@ -45,9 +46,10 @@ class Partido_obs extends Component {
       }
     }
     if (resultado) {
-      console.log(resultado);
-      jugador1 = infoPartido.jugadores[0].nombre;
-      jugador2 = infoPartido.jugadores[1].nombre;
+
+      const { j1Nombre, j2Nombre} = obtenerNombreJugadores(partido.jugadores);
+      jugador1 = j1Nombre;
+      jugador2 = j2Nombre;
       pista = infoPartido.pista;
 
       hora_prevista = resultado.hora_prevista;

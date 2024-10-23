@@ -478,3 +478,17 @@ const getPartidoType = (tipoPartido) =>{
   let result
 }
 // const tipoPartido = getPartidoType(tipo_partido);
+
+export const obtenerNombreJugadores = (jugadores) => {
+  let j1Nombre = '';
+  let j2Nombre = '';
+
+  jugadores.forEach(jugador => {
+      if (jugador.pivot.team === 1) {
+        j1Nombre = jugador.nombre;
+      } else if (jugador.pivot.team === 2) {
+        j2Nombre = jugador.nombre;
+      }
+  });
+  return { j1Nombre, j2Nombre };
+};

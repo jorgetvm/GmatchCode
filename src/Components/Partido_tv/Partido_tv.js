@@ -1,19 +1,20 @@
 import React, { Component, Fragment } from 'react';
-import moment from 'moment';
+
 import pelota from '../../Imagenes/pelota.png';
 import pngegg from '../../Imagenes/pngegg.png';
 import { SPORT_TYPES } from '../../Utils/Constants';
-import LOGO_FPRM_white from '../../Imagenes/LOGO_FPRM_white.png';
-import Dominos from '../../Imagenes/Dominos.png';
-import rfet3 from '../../Imagenes/rfet3.png';
-import rfet4 from '../../Imagenes/rfet4.png';
-import rfet5 from '../../Imagenes/rfet5.png';
-import CEDU_white from '../../Imagenes/Logos_CEU_blancos_png/CEDU_white.png';
-import MCT_REAL_neg from '../../Imagenes/MCT_REAL_neg.png';
-import CostaCalida_white from '../../Imagenes/Logos_CEU_blancos_png/CostaCalida_white.png';
-import CSD_white from '../../Imagenes/Logos_CEU_blancos_png/CSD_white.png';
-import RegiodeMurcia_white from '../../Imagenes/Logos_CEU_blancos_png/RegiodeMurcia_white.png';
-import UCAM25 from '../../Imagenes/Logos_CEU_blancos_png/UCAM25.png';
+// import LOGO_FPRM_white from '../../Imagenes/LOGO_FPRM_white.png';
+// import Dominos from '../../Imagenes/Dominos.png';
+// import rfet3 from '../../Imagenes/rfet3.png';
+// import rfet4 from '../../Imagenes/rfet4.png';
+// import rfet5 from '../../Imagenes/rfet5.png';
+// import CEDU_white from '../../Imagenes/Logos_CEU_blancos_png/CEDU_white.png';
+// import MCT_REAL_neg from '../../Imagenes/MCT_REAL_neg.png';
+// import CostaCalida_white from '../../Imagenes/Logos_CEU_blancos_png/CostaCalida_white.png';
+// import CSD_white from '../../Imagenes/Logos_CEU_blancos_png/CSD_white.png';
+// import RegiodeMurcia_white from '../../Imagenes/Logos_CEU_blancos_png/RegiodeMurcia_white.png';
+// import UCAM25 from '../../Imagenes/Logos_CEU_blancos_png/UCAM25.png';
+import { obtenerNombreJugadores } from '../../Utils/Utils';
 import Cabecera from './Cabecera';
 import Footer from './Footer';
 
@@ -72,8 +73,9 @@ class Partido_tv extends Component {
     }
 
     if (resultado) {
-      jugador1 = infoPartido.jugadores[0].nombre;
-      jugador2 = infoPartido.jugadores[1].nombre;
+      const { j1Nombre, j2Nombre} = obtenerNombreJugadores(partido.jugadores);
+      jugador1 = j1Nombre;
+      jugador2 = j2Nombre;
       pista = infoPartido.pista;
       ronda = infoPartido.ronda;
       hora_prevista = resultado.hora_prevista;
