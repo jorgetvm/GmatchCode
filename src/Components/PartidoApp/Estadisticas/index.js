@@ -17,11 +17,6 @@ const ComparadorEstadisticas = ({ data }) => {
   const TarjetaEstadisticas = ({ titulo, estadisticas }) => (
     <div
       style={{
-        backgroundColor: '#1e1e1e',
-        padding: '15px',
-        marginBottom: '20px',
-        borderRadius: '12px',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
       }}
     >
       <h3 style={{ color: '#fff', textAlign: 'center', marginBottom: '15px' }}>{titulo}</h3>

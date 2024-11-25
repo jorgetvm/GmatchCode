@@ -116,10 +116,11 @@ const PartidoApp = ({ partido }) => {
                         nombreTorneo={nombreTorneo}
                     />
                 </div>
+                <div className="estadisticas">
+                    <ComparadorEstadisticas data={partido.resultado} />
+                </div>
             </div>
-            <div className="estadisticas">
-                <ComparadorEstadisticas data={partido.resultado} />
-            </div>
+           
             <div className="Patrocinadores"><LogosTorneo logos={logosPatrocinadores} /></div>
 
             <style>{`
