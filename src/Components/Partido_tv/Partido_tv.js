@@ -139,7 +139,7 @@ class Partido_tv extends Component {
     const pelotaSrc = getPelotaSrc({deporte});
     return (
       <>
-        <div className={`${tipoPartido} contianerPartidoTv `}>
+        <div className={`tenis contianerPartidoTv `}>
 
          <Cabecera  
             club_logo={club_logo}

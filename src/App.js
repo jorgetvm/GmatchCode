@@ -11,6 +11,7 @@ import TorneosPage from './Pages/Torneos/TorneosPage';
 import PartidoWeb from './Pages/Partidos/Web/PartidoWeb';
 import PartidoObs from './Pages/Partidos/Obs/PartidoObs';
 import PartidoLed from './Pages/Partidos/Led/PartidoLed';
+import PartidoApp from './Pages/Partidos/App/PartidoApp';
 import PartidoStats from './Pages/Partidos/Stats/PartidoStats';
 import { HashRouter } from 'react-router-dom';
 import { obtenerValorParametro, getTorneosId } from './Utils/Utils';
@@ -31,6 +32,7 @@ function App() {
             {location === 'partido_web' && (<PartidoWeb/>)}
             {location === 'partido_obs' && (<PartidoObs/>)}
             {location === 'partido_led' && (<PartidoLed/>)}
+            {location === 'partido_App' && (<PartidoApp/>)}
           </div>
         )}
         {/* <Switch>

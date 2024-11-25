@@ -1,0 +1,12 @@
+.PartidoApp{
+    display: flex;
+    flex-direction: column;
+    .jugadorApp{
+        display: flex;
+        flex-direction: row;
+    }
+    .scoringApp{
+        display: flex;
+        flex-direction: row;
+    }
+}
