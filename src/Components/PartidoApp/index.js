@@ -103,7 +103,7 @@ const PartidoApp = ({ partido }) => {
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
             }} >
                 
-                <Logo />
+                <Logo deporte={SPORT_TYPES[deporte]}/>
                 
                 <div className="resultados">
                     <ResultadoPartido
@@ -123,7 +123,7 @@ const PartidoApp = ({ partido }) => {
                 </div>
             </div>
            
-            <div className="Patrocinadores"><LogosTorneo logos={logosPatrocinadores} /></div>
+            <div className="Patrocinadores"><LogosTorneo logos={logosPatrocinadores} deporte={SPORT_TYPES[deporte]}/></div>
 
             <style>{`
                 .PartidoApp{

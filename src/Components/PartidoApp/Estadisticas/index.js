@@ -56,7 +56,7 @@ const ComparadorEstadisticas = ({ data, deporte }) => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 marginBottom: '8px',
-                fontSize: '16px',
+                fontSize: '20px',
               }}
             >
               <span style={{ flex: '1', textAlign: 'left' }}>{stat.jugador1}</span>

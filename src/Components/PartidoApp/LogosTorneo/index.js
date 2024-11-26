@@ -1,8 +1,8 @@
 import React from 'react';
-import GMatch_NEW_WHITE from '../../../Imagenes/GMatch_NEW_WHITE.png'
+import padelNuestro from '../../../Imagenes/padelNuestro.svg'
 import GMatch_NEW_WHITEold from '../../../Imagenes/GMatch_NEW_WHITEold.png'
 
-export const LogosTorneo = ({ logos }) => {
+export const LogosTorneo = ({ logos, deporte }) => {
     debugger;
     return (
         <div style={{
@@ -14,7 +14,12 @@ export const LogosTorneo = ({ logos }) => {
             alignItems: 'center',
             justifyContent: 'center',
         }}
-        >
+        >{deporte && deporte === 'padel' && (
+            <div className="">
+                <img className="eachPatrocinador" src={padelNuestro} alt={`logo-PdelNuestro`} />
+            </div>
+        )}
+
             {logos.map((eachLogo, index) => (
                 <div className="" key={index}>
                     <img className="eachPatrocinador" src={eachLogo} alt={`logo-${index}`} />

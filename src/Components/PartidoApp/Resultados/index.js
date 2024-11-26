@@ -45,7 +45,7 @@ const ResultadoPartido = ({
       }}
     >
       {/* Título */}
-      <h2 style={{ textAlign: 'center', marginBottom: '20px', fontSize: '18px' }}>
+      <h2 style={{ textAlign: 'center', marginBottom: '20px', fontSize: '24px' }}>
         {nombreTorneo}
       </h2>
       <h3 style={{ textAlign: 'center', marginBottom: '20px', fontSize: '16px' }}>
@@ -65,14 +65,14 @@ const ResultadoPartido = ({
       >
         {/* Jugador 1 */}
         <div style={{ textAlign: 'left', flex: 1 }}>
-          <h3 style={{ margin: 0, fontSize: '18px', color: data?.ganador === 1 ? '#4CAF50' : '#fff' }}>
+          <h3 style={{ margin: 0, fontSize: '24px', color: data?.ganador === 1 ? '#4CAF50' : '#fff' }}>
             {jugador1}
           </h3>
         </div>
 
         {/* Jugador 2 */}
         <div style={{ textAlign: 'right', flex: 1 }}>
-          <h3 style={{ margin: 0, fontSize: '18px', color: data?.ganador === 2 ? '#4CAF50' : '#fff' }}>
+          <h3 style={{ margin: 0, fontSize: '24px', color: data?.ganador === 2 ? '#4CAF50' : '#fff' }}>
             {jugador2}
           </h3>
         </div>
@@ -98,13 +98,14 @@ const ResultadoPartido = ({
               alt="Pelota"
               style={{ width: '20px', height: '20px' }}
             />
-            <span style={{ fontSize: '18px', fontWeight: 'bold' }}>
+            <span style={{ fontSize: '24px', fontWeight: 'bold' }}>
               {data.puntos_j1 || 0}
             </span>
           </div>
           <div
             style={{
-              flex: 1,
+              display: 'flex',
+              alignItems: 'center',
               textAlign: 'center',
               fontWeight: 'bold',
               fontSize: '28px',
@@ -114,7 +115,7 @@ const ResultadoPartido = ({
             {data.sets_j1 || 0} - {data.sets_j2 || 0}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ fontSize: '18px', fontWeight: 'bold' }}>
+            <span style={{ fontSize: '24px', fontWeight: 'bold' }}>
               {data.puntos_j2 || 0}
             </span>
             <img
