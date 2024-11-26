@@ -4,8 +4,9 @@ import pelota from '../../Imagenes/pelota.png';
 
 import {
     getMatchDuration,
+    obtenerNombreJugadores,
 } from '../../Utils/Utils';
-import { obtenerNombreJugadores } from '../../Utils/Utils';
+import { SPORT_TYPES } from '../../Utils/Constants';
 import ComparadorEstadisticas from './Estadisticas';
 
 import './PartidoApp.css';
@@ -15,7 +16,7 @@ import LogosTorneo from './LogosTorneo';
 
 
 const PartidoApp = ({ partido }) => {
-    const { resultado, arbitros, torneo, deporte, torneo_media } = partido;
+    const { resultado, arbitros, torneo, deporte, torneo_media, sets_partido } = partido;
     const nombreTorneo = torneo?.nombre || 'CTO. ESPAÑA MAPFRE POR EQUIPOS';
     // const nombreTorneo = 'CTO. ESPAÑA MAPFRE POR EQUIPOS';
     const logosPatrocinadores = torneo_media?.imagenes_patrocinadores || null;
@@ -114,10 +115,11 @@ const PartidoApp = ({ partido }) => {
                         claseSaque2={claseSaque2}
                         ronda={ronda}
                         nombreTorneo={nombreTorneo}
+                        sets_partido={sets_partido}
                     />
                 </div>
                 <div className="estadisticas">
-                    <ComparadorEstadisticas data={partido.resultado} />
+                    <ComparadorEstadisticas data={partido.resultado} deporte={SPORT_TYPES[deporte]}/>
                 </div>
             </div>
            

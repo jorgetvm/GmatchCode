@@ -1,81 +1,113 @@
 import React from 'react';
 
-const ComparadorEstadisticas = ({ data }) => {
+const ComparadorEstadisticas = ({ data, deporte }) => {
   if (!data) return <p>No hay datos disponibles.</p>;
 
-  // Agrupación de estadísticas
-  const estadisticasSaque = [
-    { label: 'Aces', j1: data.stats_aces_j1, j2: data.stats_aces_j2 },
-    { label: 'Doble Faltas', j1: data.stats_doble_faltas_j1, j2: data.stats_doble_faltas_j2 },
-    { label: 'Faltas Totales', j1: data.stats_faltas_j1, j2: data.stats_faltas_j2 },
-    { label: 'Sets Ganados', j1: data.sets_j1, j2: data.sets_j2 },
-    { label: 'Puntos Totales', j1: data.stats_puntos_j1, j2: data.stats_puntos_j2 },
+  const obtenerEstadisticas = () => {
+    switch (deporte.toLowerCase()) {
+      case 'tenis':
+      case 'padel':
+        return [
+          { label: 'Aces', jugador1: data.stats_aces_j1, jugador2: data.stats_aces_j2 },
+          { label: 'Saques Fallados', jugador1: data.stats_faltas_j1, jugador2: data.stats_faltas_j2 },
+          { label: 'Doble Faltas', jugador1: data.stats_doble_faltas_j1, jugador2: data.stats_doble_faltas_j2 },
+          {
+            label: 'Porcentaje de saque',
+            jugador1: `${Math.round(
+              (data.stats_puntos_j1 / (data.stats_puntos_j1 + data.stats_faltas_j1 || 1)) * 100
+            )}%`,
+            jugador2: `${Math.round(
+              (data.stats_puntos_j2 / (data.stats_puntos_j2 + data.stats_faltas_j2 || 1)) * 100
+            )}%`,
+          },
+          { label: 'Puntos Totales', jugador1: data.stats_puntos_j1, jugador2: data.stats_puntos_j2 },
+        ];
+      case 'pingpong':
+        return [
+          { label: 'Puntos Totales', jugador1: data.stats_puntos_j1, jugador2: data.stats_puntos_j2 },
+        ];
+      default:
+        return [];
+    }
+  };
+
+  const warnings = [
+    { label: 'Warnings', jugador1: data.warnings_j1, jugador2: data.warnings_j2 },
   ];
 
+  const estadisticas = obtenerEstadisticas().concat(
+    data.warnings_j1 || data.warnings_j2 ? warnings : []
+  );
 
   // Componente para una tarjeta de estadísticas
   const TarjetaEstadisticas = ({ titulo, estadisticas }) => (
-    <div
-      style={{
-      }}
-    >
+    <div>
       <h3 style={{ color: '#fff', textAlign: 'center', marginBottom: '15px' }}>{titulo}</h3>
-      {estadisticas.map((stat, index) => (
-        <div key={index} style={{ marginBottom: '15px', color: '#fff' }}>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: '8px',
-              fontSize: '16px',
-            }}
-          >
-            <span style={{ flex: '1', textAlign: 'left' }}>{stat.j1}</span>
-            <span style={{ flex: '2', textAlign: 'center', fontWeight: 'bold' }}>{stat.label}</span>
-            <span style={{ flex: '1', textAlign: 'right' }}>{stat.j2}</span>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              height: '8px',
-              backgroundColor: '#333',
-              borderRadius: '4px',
-              overflow: 'hidden',
-            }}
-          >
+      {estadisticas.map((stat, index) => {
+        const total = parseInt(stat.jugador1, 10) + parseInt(stat.jugador2, 10) || 1;
+        const porcentajeJ1 = (parseInt(stat.jugador1, 10) / total) * 100;
+        const porcentajeJ2 = (parseInt(stat.jugador2, 10) / total) * 100;
+
+        return (
+          <div key={index} style={{ marginBottom: '15px', color: '#fff' }}>
             <div
               style={{
-                width: `${(stat.j1 / (stat.j1 + stat.j2)) * 100 || 0}%`,
-                backgroundColor: '#4caf50',
-                height: '100%',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: '8px',
+                fontSize: '16px',
               }}
-            ></div>
-            <div
-              style={{
-                width: `${(stat.j2 / (stat.j1 + stat.j2)) * 100 || 0}%`,
-                backgroundColor: '#2196f3',
-                height: '100%',
-              }}
-            ></div>
+            >
+              <span style={{ flex: '1', textAlign: 'left' }}>{stat.jugador1}</span>
+              <span style={{ flex: '2', textAlign: 'center', fontWeight: 'bold' }}>{stat.label}</span>
+              <span style={{ flex: '1', textAlign: 'right' }}>{stat.jugador2}</span>
+            </div>
+            {stat.label !== 'Warnings' && (
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  height: '8px',
+                  backgroundColor: '#333',
+                  borderRadius: '4px',
+                  overflow: 'hidden',
+                }}
+              >
+                <div
+                  style={{
+                    width: `${porcentajeJ1}%`,
+                    backgroundColor: '#4caf50',
+                    height: '100%',
+                    transition: 'width 0.3s ease-in-out',
+                  }}
+                ></div>
+                <div
+                  style={{
+                    width: `${porcentajeJ2}%`,
+                    backgroundColor: '#2196f3',
+                    height: '100%',
+                    transition: 'width 0.3s ease-in-out',
+                  }}
+                ></div>
+              </div>
+            )}
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 
   return (
-    <div style={{ backgroundColor: '#121212', padding: '20px', borderRadius: '12px' }}>
-      <div style={{
-        maxWidth: '700px',
-        marginLeft: 'auto',
-        marginRight: 'auto'
-      }}>
-        <h2 style={{ color: '#fff', textAlign: 'center', marginBottom: '20px' }}>Estadísticas</h2>
-        <TarjetaEstadisticas titulo="" estadisticas={estadisticasSaque} />
+    <div style={{ backgroundColor: '#121212',  borderRadius: '12px' }}>
+      <div
+        style={{
+          maxWidth: '700px',
+          margin: '0 auto',
+        }}
+      >
+        <TarjetaEstadisticas titulo="Estadísticas" estadisticas={estadisticas} />
       </div>
-
     </div>
   );
 };
