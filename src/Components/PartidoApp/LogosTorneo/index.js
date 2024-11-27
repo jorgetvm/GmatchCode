@@ -16,7 +16,8 @@ export const LogosTorneo = ({ logos, deporte }) => {
         }}
         >{deporte && deporte === 'padel' && (
             <div className="">
-                <img className="eachPatrocinador" src={padelNuestro} alt={`logo-PdelNuestro`} />
+                <a href="https://www.padelnuestro.com"><img className="eachPatrocinador" src={padelNuestro} alt={`logo-PdelNuestro`} /></a>
+                
             </div>
         )}
 

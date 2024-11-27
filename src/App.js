@@ -29,10 +29,10 @@ function App() {
         {location && (
           <div>
             {(location && location === 'torneo' )&& (<TorneosPage/>)}
-            {location === 'partido_web' && (<PartidoWeb/>)}
+            {/* {location === 'partido_web' && (<PartidoWeb/>)} */}
             {location === 'partido_obs' && (<PartidoObs/>)}
             {location === 'partido_led' && (<PartidoLed/>)}
-            {location === 'partido_App' && (<PartidoApp/>)}
+            {location === 'partido_web' && (<PartidoApp/>)}
           </div>
         )}
         {/* <Switch>
