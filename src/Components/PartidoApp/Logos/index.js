@@ -1,20 +1,24 @@
 import React from 'react';
 import GMatch_NEW_WHITE from '../../../Imagenes/GMatch_NEW_WHITE.png'
-import GMatch_NEW_WHITEold from  '../../../Imagenes/GMatch_NEW_WHITEold.png'
+import GMatch_NEW_WHITEold from '../../../Imagenes/GMatch_NEW_WHITEold.png'
 
-export const Logo = ({deporte}) => {
+export const Logo = ({ deporte }) => {
 
     return (
-        <div  style={{
+        <div style={{
             paddingBottom: '1rem',
-          }}
-          >
+        }}
+        >
             <div className="imagen">
                 <a href="http://info.gmatchapp.com">
                     <img className="logoGmatch" src={GMatch_NEW_WHITEold} />
                 </a>
-                <h2 style={{ textAlign: 'center', marginBottom: '20px', fontSize: '18px' }}>
-                  {deporte}
+                <h2 style={{
+                    fontFamily: 'arial black',
+                    fontWeight: 'bold',
+                    fontStyle: 'italic', textAlign: 'center', marginBottom: '20px', fontSize: '18px'
+                }}>
+                    {deporte}
                 </h2>
             </div>
             <style>
