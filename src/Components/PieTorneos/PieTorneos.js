@@ -18,7 +18,7 @@ export const PieTorneos = (logos) => {
       {logosInfo.map((eachLogo, index) => <div className="pieTorneos__logos--item"><img className="pieTorneos__logos--item__logo" src={eachLogo} alt="logo" /></div>)}
     </div>
     <div className="pieTorneos__legal">
-      <span>© Copyright 2020 GMatch - Todos los derechos reservados <a href="http://info.gmatchapp.com">info.gmatchapp.com</a></span>
+      <span>© Copyright 2025 GMatch - Todos los derechos reservados <a href="http://info.gmatchapp.com">info.gmatchapp.com</a></span>
     </div>
    
   </div>

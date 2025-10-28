@@ -12,6 +12,8 @@ import rfet3 from '../../Imagenes/rfet3.png';
 import rfet4 from '../../Imagenes/rfet4.png';
 import RFET_white from '../../Imagenes/RFET_white.png';
 import MCT_REAL_neg from '../../Imagenes/MCT_REAL_neg.png';
+import IBERDROLA from '../../Imagenes/iberdrola.png';
+import MAPFRE from '../../Imagenes/mapfre.png';
 import { obtenerNombreJugadores } from '../../Utils/Utils';
 import MiraDigital_white from '../../Imagenes/MiraDigital_white.png';
 
@@ -25,7 +27,7 @@ const Partido_tv_led = ({ partido }) => {
   const nombreTorneo = 'CTO. ESPAÑA MAPFRE POR EQUIPOS';
 
   // const nombreCLub = torneo?.club.nombre || '' ;
-  const nombreCLub = 'Copa Orange' ;
+  const nombreCLub = '' ;
 
   let autoarbitraje = 0;
   let horade_inicio;
@@ -157,10 +159,9 @@ const Partido_tv_led = ({ partido }) => {
       </div>
       <div className="publicidadLed">
         <div className="divLogoLed"><img className="logoTvLed" src={MCT_REAL_neg} /></div>
-        <div className="nombreClub">{`${nombreCLub}`}</div>
+        <div className="divLogoLed"><img className="logoTvLed" src={MAPFRE} /></div>
+        <div className="divLogoLed"><img className="logoTvLed" src={RFET_white} /></div>
         <div>{mostrar_hora && (<div className="tiempoTvLed">{` ${horas}:${minutos}`}</div>)}</div>
-        <img className="logoTvLed" src={RFET_white} />
-
 
       </div>
 
